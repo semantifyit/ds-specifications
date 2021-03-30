@@ -1,0 +1,15 @@
+{
+  "$type": "DataType",
+  "$dataType": "Date",
+  "name": "Date",
+  "description": "Use the YYYY-MM-DD format",
+  "defaultValue": "2018-04-20",
+  "rules": [
+    {
+      "$type": "DateRule",
+      "$rule": "isAfter",
+      "parameter": "2017-12-31",
+      "description": "The date must be after 2017."
+    }
+  ]
+}

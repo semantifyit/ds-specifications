@@ -1,0 +1,14 @@
+{
+  "$type": "RestrictedProperty",
+  "$property": "telephone",
+  "name": "Telephone Number",
+  "description": "Telephone number of the Restaurant",
+  "cardinality": "1-3",
+  "uniqueValues": true,
+  "expectedTypes": [
+    {
+      "$type": "DataType",
+      "$dataType": "Text"
+    }
+  ]
+}

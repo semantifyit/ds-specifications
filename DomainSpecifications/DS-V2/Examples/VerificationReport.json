@@ -1,0 +1,175 @@
+{
+  "$type": "ValidationReport",
+  "$schema": "http://ontologies.sti-innsbruck.at/dsv-json/1.0/",
+  "$SDOversion": "http://schema.org/version/3.4/",
+  "$extensions": {
+    "erDet": "http://www.error-details.com/vocabulary/"
+  },
+  "isValid": false,
+  "name": "Validation Report February Nr. 1234",
+  "description": "Validation report for ACME Hotel Innsbruck on the 03.02.2018 based on annotation extracted from http://www.acme-innsbruck.at/ The annotation is not conform to the domain specification. They were 7 errors found, from which 2 are critical.",
+  "annotation": {
+    "@context": "http://schema.org",
+    "@type": "Hotel",
+    "name": "ACME Hotel Innsbruck",
+    "description": "A beautifully located business hotel right in the heart of the alps. Watch the sun rise over the scenic Inn valley while enjoying your morning coffee.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "AT",
+      "addressLocality": "Innsbruck",
+      "addressRegion": "Tyrol",
+      "postalCode": "60204",
+      "streetAddress": "Technikerstrasse 21"
+    },
+    "location": {
+      "@type": "PostalAddress",
+      "addressCountry": "AT"
+    },
+    "telephone": [
+      "+43 512 8000-0",
+      5125535
+    ],
+    "photo": "http://www.acme-innsbruck.at//media/hotel_front.png",
+    "starRating": {
+      "@type": "Ratin",
+      "ratingValue": "4"
+    },
+    "priceRange": "$100 - $240"
+  },
+  "domainSpecification": {
+    "$type": "DomainSpecification",
+    "$schema": "http://ontologies.sti-innsbruck.at/dsv-json/1.0/",
+    "$SDOversion": "http://schema.org/version/3.4/",
+    "name": "Austrian Hotel",
+    "description": "Example DS for Hotels in Austria",
+    "version": "v 1.4",
+    "definitions": {
+      "countryRule": {
+        "$type": "$TextRule",
+        "$rule": "equals",
+        "value": "Austria",
+        "description": "Country must be 'Austria'."
+      }
+    },
+    "classes": [
+      {
+        "$type": "RestrictedClass",
+        "$class": [
+          "Hotel"
+        ],
+        "name": "Hotel",
+        "additionalPropertiesAllowed": true,
+        "properties": [
+          {
+            "$type": "RestrictedProperty",
+            "$property": "telephone",
+            "description": "Telephone number(s) of the Restaurant",
+            "cardinality": "1-3",
+            "uniqueValues": true,
+            "expectedTypes": [
+              {
+                "$type": "DataType",
+                "$dataType": "Text"
+              }
+            ]
+          },
+          {
+            "$type": "RestrictedProperty",
+            "$property": "address",
+            "cardinality": "1",
+            "expectedTypes": [
+              {
+                "$type": "RestrictedClass",
+                "$class": [
+                  "PostalAddress"
+                ],
+                "properties": [
+                  {
+                    "$type": "RestrictedProperty",
+                    "$property": "addressCountry",
+                    "cardinality": "1",
+                    "expectedTypes": [
+                      {
+                        "$type": "DataType",
+                        "$dataType": "Text",
+                        "rules": [
+                          {
+                            "$ref": "/definitions/countryRule"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "$type": "Property",
+                    "$property": "addressLocality",
+                    "description": "City of the Hotel.",
+                    "cardinality": "1"
+                  },
+                  {
+                    "$type": "RestrictedProperty",
+                    "$property": "postalCode",
+                    "description": "Postal code of the city.",
+                    "cardinality": "1",
+                    "expectedTypes": [
+                      {
+                        "$type": "DataType",
+                        "$dataType": "Text",
+                        "description": "Postal code of the city. Must be a number with a length of 4 characters.",
+                        "rules": [
+                          {
+                            "$type": "$TextRule",
+                            "$rule": "matchesPattern",
+                            "pattern": "^[0-9]{4}$"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "errors": [
+    {
+      "$type": "AnnotationError",
+      "severity": "Error",
+      "code": 302,
+      "name": "Nonconform @type",
+      "description": "Used @type is nonconform to Schema.org",
+      "dataPath": {
+        "$ref": "/annotation/starRating"
+      }
+    },
+    {
+      "$type": "ComplianceError",
+      "severity": "Error",
+      "code": 505,
+      "name": "Nonconform range",
+      "description": "Property has a value with a @type/DataType that is nonconform to the DS.",
+      "specificationPath": {
+        "$ref": "/domainSpecification/classes/0/properties/0"
+      },
+      "dataPath": {
+        "$ref": "/annotation/telephone/1"
+      }
+    },
+    {
+      "$type": "ComplianceError",
+      "severity": "Error",
+      "code": 552,
+      "name": "TextRule violation",
+      "description": "A TextRule was violated.",
+      "specificationPath": {
+        "$ref": "/domainSpecification/classes/0/properties/1/expectedTypes/0/properties/2/expectedTypes/0/rules/0"
+      },
+      "dataPath": {
+        "$ref": "/annotation/address/postalCode"
+      }
+    }
+  ]
+}

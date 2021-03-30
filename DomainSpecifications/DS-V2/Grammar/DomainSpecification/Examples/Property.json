@@ -1,0 +1,7 @@
+{
+  "$type": "Property",
+  "$property": "addressLocality",
+  "name": "City",
+  "description": "City of the Restaurant",
+  "cardinality": "1"
+}

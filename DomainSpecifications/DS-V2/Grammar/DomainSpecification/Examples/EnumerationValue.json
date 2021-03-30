@@ -1,0 +1,6 @@
+{
+  "$type": "EnumerationValue",
+  "$enumerationValue": "EBook",
+  "name": "EBook",
+  "description": "The Book format type: Ebook."
+}

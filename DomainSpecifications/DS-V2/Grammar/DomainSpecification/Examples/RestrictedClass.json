@@ -1,0 +1,83 @@
+{
+  "$type": "RestrictedClass",
+  "$class": [
+    "LodgingBusiness",
+    "Restaurant"
+  ],
+  "name": "Hotel and Restaurant",
+  "description": "Describes a lodging business which is also a restaurant.",
+  "additionalPropertiesAllowed": false,
+  "subClassesAllowed": [
+    [
+      "Motel",
+      "Restaurant"
+    ],
+    [
+      "Restaurant"
+    ],
+    [
+      "Hotel",
+      "Restaurant"
+    ],
+    [
+      "Resort",
+      "Restaurant"
+    ]
+  ],
+  "properties": [
+    {
+      "$type": "RestrictedProperty",
+      "$property": "telephone",
+      "description": "Telephone number(s) of the Business.",
+      "cardinality": "1-3",
+      "uniqueValues": true,
+      "expectedTypes": [
+        {
+          "$type": "DataType",
+          "$dataType": "Text"
+        }
+      ]
+    },
+    {
+      "$type": "Property",
+      "$property": "address",
+      "cardinality": "1"
+    },
+    {
+      "$type": "Property",
+      "$property": "name",
+      "cardinality": "1"
+    },
+    {
+      "$type": "Property",
+      "$property": "description",
+      "cardinality": "1"
+    }
+  ],
+  "rules": [
+    {
+      "$type": "LogicalRule",
+      "$rule": "ifThen",
+      "ifRules": [
+        {
+          "$type": "TextRule",
+          "$rule": "equals",
+          "subject": {
+            "$path": "/address/addressCountry"
+          },
+          "parameter": "Austria"
+        }
+      ],
+      "thenRules": [
+        {
+          "$type": "TextRule",
+          "$rule": "startsWith",
+          "subject": {
+            "$path": "/telephone"
+          },
+          "parameter": "+43"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+{
+  "@context": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "http://schema.org/",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "ds": "http://vocab.sti2.at/ds/",
+    "rdfs:subClassOf": {
+      "@type": "@id"
+    },
+    "schema:domainIncludes": {
+      "@type": "@id"
+    },
+    "schema:rangeIncludes": {
+      "@type": "@id"
+    },
+    "schema:sameAs": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "ds:DomainSpecification",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Domain Specification",
+      "rdfs:comment": "Domain specifications are formalized, machine-readable, and structured documents that define syntactic and semantic, domain-specific constraints for Schema.org annotations.",
+      "rdfs:subClassOf": [
+        "schema:CreativeWork",
+        "sh:NodeShape"
+      ]
+    },
+    {
+      "@id": "ds:Vocabulary",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Vocabulary",
+      "rdfs:comment": "An RDF Vocabulary that is conform to the vocabulary-structure used by Schema.org.",
+      "rdfs:subClassOf": "schema:CreativeWork",
+      "schema:sameAs": "owl:Ontology"
+    },
+    {
+      "@id": "ds:usedVocabulary",
+      "@type": "rdf:Property",
+      "rdfs:label": "Used Vocabulary",
+      "rdfs:comment": "An RDF Vocabulary used by the Domain Specification besides Schema.org.",
+      "schema:domainIncludes": "ds:DomainSpecification",
+      "schema:rangeIncludes": "ds:Vocabulary"
+    },
+    {
+      "@id": "ds:VerificationReport",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "todo the result of the verification (compliance check) of a data entity with a given Domain Specification",
+      "rdfs:label": "Verification Report",
+      "rdfs:subClassOf": "schema:CreativeWork"
+    },
+    {
+      "@id": "ds:verificationResult",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The outcome of the verification process.",
+      "schema:domainIncludes": "ds:VerificationReport",
+      "rdfs:label": "verification result",
+      "schema:rangeIncludes": "ds:VerificationResult"
+    },
+    {
+      "@id": "ds:VerificationResult",
+      "@type": "rdf:Class",
+      "rdfs:comment": "Enumeration for the possible verification outcomes.",
+      "rdfs:label": "VerificationResult",
+      "rdfs:subClassOf": "schema:Enumeration"
+    },
+    {
+      "@id": "ds:Valid",
+      "@type": "ds:VerificationResult",
+      "rdfs:comment": "The verification concluded in a valid outcome.",
+      "rdfs:label": "Valid"
+    },
+    {
+      "@id": "ds:Invalid",
+      "@type": "ds:VerificationResult",
+      "rdfs:comment": "The verification concluded in an invalid outcome.",
+      "rdfs:label": "Invalid"
+    },
+    {
+      "@id": "ds:ValidWithWarnings",
+      "@type": "ds:VerificationResult",
+      "rdfs:comment": "The verification concluded in a valid outcome, but with warnings.",
+      "rdfs:label": "Valid with Warnings"
+    },
+    {
+      "@id": "ds:usedDomainSpecification",
+      "@type": "rdf:Property",
+      "rdfs:comment": "todo the DS that was used for the generation of this verification report.",
+      "schema:domainIncludes": "ds:VerificationReport",
+      "rdfs:label": "used domainSpecification",
+      "schema:rangeIncludes": "ds:DomainSpecification"
+    },
+    {
+      "@id": "ds:errors",
+      "@type": "rdf:Property",
+      "rdfs:comment": "todo the errors generated during the verification process",
+      "rdfs:label": "errors",
+      "rdfs:domain": "ds:VerificationReport",
+      "rdfs:range": "ds:Error"
+    },
+    {
+      "@id": "ds:Error",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "todo an Error produced during the verification process",
+      "rdfs:label": "Error",
+      "rdfs:subClassOf": "schema:CreativeWork"
+    },
+    {
+      "@id": "ds:AnnotationError",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "todo an Error produced during the verification process - ",
+      "rdfs:label": "Annotation Error",
+      "rdfs:subClassOf": "ds:Error"
+    },
+    {
+      "@id": "ds:MetaError",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "todo an Error produced during the verification process - ",
+      "rdfs:label": "Meta Error",
+      "rdfs:subClassOf": "ds:Error"
+    },
+    {
+      "@id": "ds:ComplianceError",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "todo an Error produced during the verification process - ",
+      "rdfs:label": "ComplianceError",
+      "rdfs:subClassOf": "ds:Error"
+    },
+    {
+      "@id": "ds:ExecutionError",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "todo an Error produced during the verification process - ",
+      "rdfs:label": "ExecutionError",
+      "rdfs:subClassOf": "ds:Error"
+    },
+    {
+      "@id": "ds:JsonError",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "todo an Error produced during the verification process - ",
+      "rdfs:label": "JsonError",
+      "rdfs:subClassOf": "ds:Error"
+    },
+    {
+      "@id": "ds:JsonLdError",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "todo an Error produced during the verification process - ",
+      "rdfs:label": "JsonLdError",
+      "rdfs:subClassOf": "ds:Error"
+    },
+    {
+      "@id": "ds:severity",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The severity of the Error.",
+      "schema:domainIncludes": "ds:Error",
+      "rdfs:label": "severity",
+      "schema:rangeIncludes": "ds:SeverityLevel"
+    },
+    {
+      "@id": "ds:SeverityLevel",
+      "@type": "rdf:Class",
+      "rdfs:comment": "Enumeration for the severity of an error.",
+      "rdfs:label": "Severity level",
+      "rdfs:subClassOf": "schema:Enumeration"
+    },
+    {
+      "@id": "ds:InformationalSeverity",
+      "@type": "ds:SeverityLevel",
+      "rdfs:comment": "Information severity level.",
+      "rdfs:label": "Informational Severity"
+    },
+    {
+      "@id": "ds:WarningSeverity",
+      "@type": "ds:SeverityLevel",
+      "rdfs:comment": "Warning severity level.",
+      "rdfs:label": "Warning Severity"
+    },
+    {
+      "@id": "ds:ErrorSeverity",
+      "@type": "ds:SeverityLevel",
+      "rdfs:comment": "Error severity level.",
+      "rdfs:label": "Error Severity"
+    },
+    {
+      "@id": "ds:CriticalSeverity",
+      "@type": "ds:SeverityLevel",
+      "rdfs:comment": "Critical severity level.",
+      "rdfs:label": "Critical Severity"
+    },
+    {
+      "@id": "ds:errorCode",
+      "@type": "rdf:Property",
+      "rdfs:comment": "todo the code of an Error, official values for this property are listed at TODO.",
+      "schema:domainIncludes": "ds:Error",
+      "rdfs:label": "errorCode",
+      "schema:rangeIncludes": "schema:Integer"
+    },
+    {
+      "@id": "sh:value",
+      "@type": "rdf:Property",
+      "rdfs:comment": "todo An RDF node that has caused the result.",
+      "schema:domainIncludes": "ds:Error",
+      "rdfs:label": "value"
+    },
+    {
+      "@id": "ds:dsPath",
+      "@type": "rdf:Property",
+      "rdfs:comment": "todo  string indicating the path within the DS where the error occurred - this should work for annotation and triple based verification",
+      "schema:domainIncludes": "ds:Error",
+      "rdfs:label": "dsPath"
+    },
+    {
+      "@id": "ds:dataPath",
+      "@type": "rdf:Property",
+      "rdfs:comment": "todo array pointing to the place where the error occurred  - this should work for annotation and triple based verification",
+      "schema:domainIncludes": "ds:Error",
+      "rdfs:label": "dataPath"
+    }
+  ],
+  "@id": "http://vocab.sti2.at/ds/"
+}

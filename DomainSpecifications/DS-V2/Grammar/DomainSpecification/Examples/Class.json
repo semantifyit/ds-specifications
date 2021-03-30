@@ -1,0 +1,9 @@
+{
+  "$type": "Class",
+  "$class": [
+    "Restaurant"
+  ],
+  "subClassesAllowed": false,
+  "name": "Standard Restaurant",
+  "description": "The standard restaurant class."
+}

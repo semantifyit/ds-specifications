@@ -1,0 +1,22 @@
+{
+  "$type": "RestrictedEnumeration",
+  "$enumeration": "DayOfWeek",
+  "name": "Day of the Week",
+  "description": "The day of the week.",
+  "expectedEnumerationValues": [
+    {
+      "$type": "EnumerationValue",
+      "$enumerationValue": "Monday",
+      "description": "Everyone hates this day."
+    },
+    {
+      "$type": "EnumerationValue",
+      "$enumerationValue": "Tuesday"
+    },
+    {
+      "$type": "EnumerationValue",
+      "$enumerationValue": "Friday",
+      "description": "Everyone loves this day."
+    }
+  ]
+}

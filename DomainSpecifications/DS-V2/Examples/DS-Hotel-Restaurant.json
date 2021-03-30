@@ -1,0 +1,105 @@
+{
+  "$type": "DomainSpecification",
+  "$schema": "http://ontologies.sti-innsbruck.at/dsv-json/1.0/",
+  "$SDOversion": "http://schema.org/version/3.4/",
+  "$extensions": {
+    "pri": "http://jan.at/DS-Priority-Vocabulary/1.2/"
+  },
+  "name": "Austrian Hotel",
+  "description": "Example DS for Hotels in Austria",
+  "version": "v 1.4",
+  "definitions": {
+    "countryRule": {
+      "$type": "$TextRule",
+      "$rule": "equals",
+      "parameter": "Austria",
+      "description": "Country must be 'Austria'."
+    }
+  },
+  "classes": [
+    {
+      "$type": "RestrictedClass",
+      "$class": [
+        "Hotel",
+        "Restaurant"
+      ],
+      "name": "Hotel and Restaurant",
+      "additionalPropertiesAllowed": true,
+      "properties": [
+        {
+          "$type": "RestrictedProperty",
+          "$property": "telephone",
+          "description": "Telephone number(s) of the Restaurant",
+          "cardinality": "1-3",
+          "uniqueValues": true,
+          "expectedTypes": [
+            {
+              "$type": "DataType",
+              "$dataType": "Text"
+            }
+          ],
+          "pri:priority": 1
+        },
+        {
+          "$type": "RestrictedProperty",
+          "$property": "address",
+          "cardinality": "1",
+          "expectedTypes": [
+            {
+              "$type": "RestrictedClass",
+              "$class": [
+                "PostalAddress"
+              ],
+              "properties": [
+                {
+                  "$type": "RestrictedProperty",
+                  "$property": "addressCountry",
+                  "cardinality": "1",
+                  "expectedTypes": [
+                    {
+                      "$type": "DataType",
+                      "$dataType": "Text",
+                      "defaultValue": "Austria",
+                      "rules": [
+                        {
+                          "$ref": "/definitions/countryRule"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$type": "Property",
+                  "$property": "addressLocality",
+                  "description": "City of the Hotel.",
+                  "cardinality": "1"
+                },
+                {
+                  "$type": "RestrictedProperty",
+                  "$property": "postalCode",
+                  "description": "Postal code of the city.",
+                  "cardinality": "1",
+                  "expectedTypes": [
+                    {
+                      "$type": "DataType",
+                      "$dataType": "Text",
+                      "description": "Postal code of the city. Must be a number with a length of 4 characters.",
+                      "rules": [
+                        {
+                          "$type": "$TextRule",
+                          "$rule": "matchesPattern",
+                          "parameter": "^[0-9]{4}$"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "pri:priority": 2
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,936 @@
+{
+  "@context": {
+    "dsv": "http://ontologies.sti-innsbruck.at/dsv/",
+    "schema": "http://schema.org/"
+  },
+  "@type": "dsv:DomainSpecification",
+  "schema:url": "http://sdo-validator.sti2.at/example/ds-blog-posting.jsonld",
+  "schema:name": "Blog Posting specification",
+  "schema:author": "STI Innsbruck",
+  "dsv:class": [
+    {
+      "@type": "dsv:RestrictedClass",
+      "schema:name": "BlogPosting",
+      "dsv:baseClass": {
+        "@id": "schema:BlogPosting"
+      },
+      "dsv:expectedType": [
+        {
+          "@id": "schema:BlogPosting",
+          "schema:name": "BlogPosting",
+          "dsv:property": [
+            {
+              "@type": "schema:Property",
+              "@id": "schema:about",
+              "schema:name": "about",
+              "dsv:isOptional": true,
+              "dsv:multipleValuesAllowed": false,
+              "dsv:expectedType": [
+                {
+                  "@type": "dsv:RestrictedClass",
+                  "schema:name": "Thing",
+                  "dsv:baseClass": {
+                    "@id": "schema:Thing"
+                  },
+                  "dsv:expectedType": [
+                    {
+                      "@id": "schema:Thing",
+                      "schema:name": "Thing",
+                      "dsv:property": [
+                        {
+                          "@type": "schema:Property",
+                          "@id": "schema:description",
+                          "schema:name": "description",
+                          "dsv:isOptional": true,
+                          "dsv:multipleValuesAllowed": false,
+                          "dsv:expectedType": [
+                            {
+                              "@type": "schema:DataType",
+                              "@id": "schema:Text",
+                              "schema:name": "Text"
+                            }
+                          ]
+                        },
+                        {
+                          "@type": "schema:Property",
+                          "@id": "schema:name",
+                          "schema:name": "name",
+                          "dsv:isOptional": false,
+                          "dsv:multipleValuesAllowed": false,
+                          "dsv:expectedType": [
+                            {
+                              "@type": "schema:DataType",
+                              "@id": "schema:Text",
+                              "schema:name": "Text"
+                            }
+                          ]
+                        },
+                        {
+                          "@type": "schema:Property",
+                          "@id": "schema:url",
+                          "schema:name": "url",
+                          "dsv:isOptional": true,
+                          "dsv:multipleValuesAllowed": false,
+                          "dsv:expectedType": [
+                            {
+                              "@type": "schema:DataType",
+                              "@id": "schema:URL",
+                              "schema:name": "URL"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "@id": "schema:Event",
+                      "schema:name": "Event",
+                      "dsv:property": [
+                        {
+                          "@type": "schema:Property",
+                          "@id": "schema:description",
+                          "schema:name": "description",
+                          "dsv:isOptional": true,
+                          "dsv:multipleValuesAllowed": false,
+                          "dsv:expectedType": [
+                            {
+                              "@type": "schema:DataType",
+                              "@id": "schema:Text",
+                              "schema:name": "Text"
+                            }
+                          ]
+                        },
+                        {
+                          "@type": "schema:Property",
+                          "@id": "schema:name",
+                          "schema:name": "name",
+                          "dsv:isOptional": false,
+                          "dsv:multipleValuesAllowed": false,
+                          "dsv:expectedType": [
+                            {
+                              "@type": "schema:DataType",
+                              "@id": "schema:Text",
+                              "schema:name": "Text"
+                            }
+                          ]
+                        },
+                        {
+                          "@type": "schema:Property",
+                          "@id": "schema:url",
+                          "schema:name": "url",
+                          "dsv:isOptional": true,
+                          "dsv:multipleValuesAllowed": false,
+                          "dsv:expectedType": [
+                            {
+                              "@type": "schema:DataType",
+                              "@id": "schema:URL",
+                              "schema:name": "URL"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "@id": "schema:Place",
+                      "schema:name": "Place",
+                      "dsv:property": [
+                        {
+                          "@type": "schema:Property",
+                          "@id": "schema:description",
+                          "schema:name": "description",
+                          "dsv:isOptional": true,
+                          "dsv:multipleValuesAllowed": false,
+                          "dsv:expectedType": [
+                            {
+                              "@type": "schema:DataType",
+                              "@id": "schema:Text",
+                              "schema:name": "Text"
+                            }
+                          ]
+                        },
+                        {
+                          "@type": "schema:Property",
+                          "@id": "schema:name",
+                          "schema:name": "name",
+                          "dsv:isOptional": false,
+                          "dsv:multipleValuesAllowed": false,
+                          "dsv:expectedType": [
+                            {
+                              "@type": "schema:DataType",
+                              "@id": "schema:Text",
+                              "schema:name": "Text"
+                            }
+                          ]
+                        },
+                        {
+                          "@type": "schema:Property",
+                          "@id": "schema:url",
+                          "schema:name": "url",
+                          "dsv:isOptional": true,
+                          "dsv:multipleValuesAllowed": false,
+                          "dsv:expectedType": [
+                            {
+                              "@type": "schema:DataType",
+                              "@id": "schema:URL",
+                              "schema:name": "URL"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "@type": "schema:Property",
+              "@id": "schema:articleBody",
+              "schema:name": "articleBody",
+              "dsv:isOptional": true,
+              "dsv:multipleValuesAllowed": false,
+              "dsv:expectedType": [
+                {
+                  "@type": "schema:DataType",
+                  "@id": "schema:Text",
+                  "schema:name": "Text"
+                }
+              ]
+            },
+            {
+              "@type": "schema:Property",
+              "@id": "schema:author",
+              "schema:name": "author",
+              "dsv:isOptional": false,
+              "dsv:multipleValuesAllowed": false,
+              "dsv:expectedType": [
+                {
+                  "@type": "dsv:RestrictedClass",
+                  "schema:name": "Person",
+                  "dsv:baseClass": {
+                    "@id": "schema:Person"
+                  },
+                  "dsv:expectedType": [
+                    {
+                      "@id": "schema:Person",
+                      "schema:name": "Person",
+                      "dsv:property": [
+                        {
+                          "@type": "schema:Property",
+                          "@id": "schema:name",
+                          "schema:name": "name",
+                          "dsv:isOptional": false,
+                          "dsv:multipleValuesAllowed": false,
+                          "dsv:expectedType": [
+                            {
+                              "@type": "schema:DataType",
+                              "@id": "schema:Text",
+                              "schema:name": "Text"
+                            }
+                          ]
+                        },
+                        {
+                          "@type": "schema:Property",
+                          "@id": "schema:url",
+                          "schema:name": "url",
+                          "dsv:isOptional": true,
+                          "dsv:multipleValuesAllowed": false,
+                          "dsv:expectedType": [
+                            {
+                              "@type": "schema:DataType",
+                              "@id": "schema:URL",
+                              "schema:name": "URL"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "@type": "dsv:RestrictedClass",
+                  "schema:name": "Organization",
+                  "dsv:baseClass": {
+                    "@id": "schema:Organization"
+                  },
+                  "dsv:expectedType": [
+                    {
+                      "@id": "schema:Organization",
+                      "schema:name": "Organization",
+                      "dsv:property": [
+                        {
+                          "@type": "schema:Property",
+                          "@id": "schema:logo",
+                          "schema:name": "logo",
+                          "dsv:isOptional": false,
+                          "dsv:multipleValuesAllowed": false,
+                          "dsv:expectedType": [
+                            {
+                              "@type": "dsv:RestrictedClass",
+                              "schema:name": "ImageObject",
+                              "dsv:baseClass": {
+                                "@id": "schema:ImageObject"
+                              },
+                              "dsv:expectedType": [
+                                {
+                                  "@id": "schema:ImageObject",
+                                  "schema:name": "ImageObject",
+                                  "dsv:property": [
+                                    {
+                                      "@type": "schema:Property",
+                                      "@id": "schema:height",
+                                      "schema:name": "height",
+                                      "dsv:isOptional": false,
+                                      "dsv:multipleValuesAllowed": false,
+                                      "dsv:expectedType": [
+                                        {
+                                          "@type": "dsv:RestrictedClass",
+                                          "schema:name": "QuantitativeValue",
+                                          "dsv:baseClass": {
+                                            "@id": "schema:QuantitativeValue"
+                                          },
+                                          "dsv:expectedType": [
+                                            {
+                                              "@id": "schema:QuantitativeValue",
+                                              "schema:name": "QuantitativeValue",
+                                              "dsv:property": [
+                                                {
+                                                  "@type": "schema:Property",
+                                                  "@id": "schema:unitCode",
+                                                  "schema:name": "unitCode",
+                                                  "dsv:isOptional": true,
+                                                  "dsv:multipleValuesAllowed": false,
+                                                  "dsv:expectedType": [
+                                                    {
+                                                      "@type": "schema:DataType",
+                                                      "@id": "schema:Text",
+                                                      "schema:name": "Text"
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "@type": "schema:Property",
+                                                  "@id": "schema:value",
+                                                  "schema:name": "value",
+                                                  "dsv:isOptional": false,
+                                                  "dsv:multipleValuesAllowed": false,
+                                                  "dsv:expectedType": [
+                                                    {
+                                                      "@type": "schema:DataType",
+                                                      "@id": "schema:Number",
+                                                      "schema:name": "Number"
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "@type": "schema:Property",
+                                      "@id": "schema:url",
+                                      "schema:name": "url",
+                                      "dsv:isOptional": false,
+                                      "dsv:multipleValuesAllowed": false,
+                                      "dsv:expectedType": [
+                                        {
+                                          "@type": "schema:DataType",
+                                          "@id": "schema:URL",
+                                          "schema:name": "URL"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "@type": "schema:Property",
+                                      "@id": "schema:width",
+                                      "schema:name": "width",
+                                      "dsv:isOptional": false,
+                                      "dsv:multipleValuesAllowed": false,
+                                      "dsv:expectedType": [
+                                        {
+                                          "@type": "dsv:RestrictedClass",
+                                          "schema:name": "QuantitativeValue",
+                                          "dsv:baseClass": {
+                                            "@id": "schema:QuantitativeValue"
+                                          },
+                                          "dsv:expectedType": [
+                                            {
+                                              "@id": "schema:QuantitativeValue",
+                                              "schema:name": "QuantitativeValue",
+                                              "dsv:property": [
+                                                {
+                                                  "@type": "schema:Property",
+                                                  "@id": "schema:unitCode",
+                                                  "schema:name": "unitCode",
+                                                  "dsv:isOptional": true,
+                                                  "dsv:multipleValuesAllowed": false,
+                                                  "dsv:expectedType": [
+                                                    {
+                                                      "@type": "schema:DataType",
+                                                      "@id": "schema:Text",
+                                                      "schema:name": "Text"
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "@type": "schema:Property",
+                                                  "@id": "schema:value",
+                                                  "schema:name": "value",
+                                                  "dsv:isOptional": false,
+                                                  "dsv:multipleValuesAllowed": false,
+                                                  "dsv:expectedType": [
+                                                    {
+                                                      "@type": "schema:DataType",
+                                                      "@id": "schema:Number",
+                                                      "schema:name": "Number"
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "@type": "schema:Property",
+                          "@id": "schema:name",
+                          "schema:name": "name",
+                          "dsv:isOptional": false,
+                          "dsv:multipleValuesAllowed": false,
+                          "dsv:expectedType": [
+                            {
+                              "@type": "schema:DataType",
+                              "@id": "schema:Text",
+                              "schema:name": "Text"
+                            }
+                          ]
+                        },
+                        {
+                          "@type": "schema:Property",
+                          "@id": "schema:url",
+                          "schema:name": "url",
+                          "dsv:isOptional": true,
+                          "dsv:multipleValuesAllowed": false,
+                          "dsv:expectedType": [
+                            {
+                              "@type": "schema:DataType",
+                              "@id": "schema:URL",
+                              "schema:name": "URL"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "@type": "schema:Property",
+              "@id": "schema:contentLocation",
+              "schema:name": "contentLocation",
+              "dsv:isOptional": true,
+              "dsv:multipleValuesAllowed": false,
+              "dsv:expectedType": [
+                {
+                  "@type": "dsv:RestrictedClass",
+                  "schema:name": "Place",
+                  "dsv:baseClass": {
+                    "@id": "schema:Place"
+                  },
+                  "dsv:expectedType": [
+                    {
+                      "@id": "schema:AdministrativeArea",
+                      "schema:name": "AdministrativeArea",
+                      "dsv:property": [
+                        {
+                          "@type": "schema:Property",
+                          "@id": "schema:address",
+                          "schema:name": "address",
+                          "dsv:isOptional": true,
+                          "dsv:multipleValuesAllowed": false,
+                          "dsv:expectedType": [
+                            {
+                              "@type": "dsv:RestrictedClass",
+                              "schema:name": "PostalAddress",
+                              "dsv:baseClass": {
+                                "@id": "schema:PostalAddress"
+                              },
+                              "dsv:expectedType": [
+                                {
+                                  "@id": "schema:PostalAddress",
+                                  "schema:name": "PostalAddress",
+                                  "dsv:property": [
+                                    {
+                                      "@type": "schema:Property",
+                                      "@id": "schema:addressCountry",
+                                      "schema:name": "addressCountry",
+                                      "dsv:isOptional": true,
+                                      "dsv:multipleValuesAllowed": false,
+                                      "dsv:expectedType": [
+                                        {
+                                          "@type": "schema:DataType",
+                                          "@id": "schema:Text",
+                                          "schema:name": "Text"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "@type": "schema:Property",
+                          "@id": "schema:name",
+                          "schema:name": "name",
+                          "dsv:isOptional": false,
+                          "dsv:multipleValuesAllowed": false,
+                          "dsv:expectedType": [
+                            {
+                              "@type": "schema:DataType",
+                              "@id": "schema:Text",
+                              "schema:name": "Text"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "@type": "schema:Property",
+              "@id": "schema:datePublished",
+              "schema:name": "datePublished",
+              "dsv:isOptional": false,
+              "dsv:multipleValuesAllowed": false,
+              "dsv:expectedType": [
+                {
+                  "@type": "schema:DataType",
+                  "@id": "schema:Date",
+                  "schema:name": "Date"
+                }
+              ]
+            },
+            {
+              "@type": "schema:Property",
+              "@id": "schema:description",
+              "schema:name": "description",
+              "dsv:isOptional": true,
+              "dsv:multipleValuesAllowed": false,
+              "dsv:expectedType": [
+                {
+                  "@type": "schema:DataType",
+                  "@id": "schema:Text",
+                  "schema:name": "Text"
+                }
+              ]
+            },
+            {
+              "@type": "schema:Property",
+              "@id": "schema:headline",
+              "schema:name": "headline",
+              "dsv:isOptional": false,
+              "dsv:multipleValuesAllowed": false,
+              "dsv:expectedType": [
+                {
+                  "@type": "schema:DataType",
+                  "@id": "schema:Text",
+                  "schema:name": "Text"
+                }
+              ]
+            },
+            {
+              "@type": "schema:Property",
+              "@id": "schema:image",
+              "schema:name": "image",
+              "dsv:isOptional": false,
+              "dsv:multipleValuesAllowed": true,
+              "dsv:expectedType": [
+                {
+                  "@type": "dsv:RestrictedClass",
+                  "schema:name": "ImageObject",
+                  "dsv:baseClass": {
+                    "@id": "schema:ImageObject"
+                  },
+                  "dsv:expectedType": [
+                    {
+                      "@id": "schema:ImageObject",
+                      "schema:name": "ImageObject",
+                      "dsv:property": [
+                        {
+                          "@type": "schema:Property",
+                          "@id": "schema:height",
+                          "schema:name": "height",
+                          "dsv:isOptional": false,
+                          "dsv:multipleValuesAllowed": false,
+                          "dsv:expectedType": [
+                            {
+                              "@type": "dsv:RestrictedClass",
+                              "schema:name": "QuantitativeValue",
+                              "dsv:baseClass": {
+                                "@id": "schema:QuantitativeValue"
+                              },
+                              "dsv:expectedType": [
+                                {
+                                  "@id": "schema:QuantitativeValue",
+                                  "schema:name": "QuantitativeValue",
+                                  "dsv:property": [
+                                    {
+                                      "@type": "schema:Property",
+                                      "@id": "schema:unitCode",
+                                      "schema:name": "unitCode",
+                                      "dsv:isOptional": true,
+                                      "dsv:multipleValuesAllowed": false,
+                                      "dsv:expectedType": [
+                                        {
+                                          "@type": "schema:DataType",
+                                          "@id": "schema:Text",
+                                          "schema:name": "Text"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "@type": "schema:Property",
+                                      "@id": "schema:value",
+                                      "schema:name": "value",
+                                      "dsv:isOptional": false,
+                                      "dsv:multipleValuesAllowed": false,
+                                      "dsv:expectedType": [
+                                        {
+                                          "@type": "schema:DataType",
+                                          "@id": "schema:Number",
+                                          "schema:name": "Number"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "@type": "schema:Property",
+                          "@id": "schema:url",
+                          "schema:name": "url",
+                          "dsv:isOptional": false,
+                          "dsv:multipleValuesAllowed": false,
+                          "dsv:expectedType": [
+                            {
+                              "@type": "schema:DataType",
+                              "@id": "schema:URL",
+                              "schema:name": "URL"
+                            }
+                          ]
+                        },
+                        {
+                          "@type": "schema:Property",
+                          "@id": "schema:width",
+                          "schema:name": "width",
+                          "dsv:isOptional": false,
+                          "dsv:multipleValuesAllowed": false,
+                          "dsv:expectedType": [
+                            {
+                              "@type": "dsv:RestrictedClass",
+                              "schema:name": "QuantitativeValue",
+                              "dsv:baseClass": {
+                                "@id": "schema:QuantitativeValue"
+                              },
+                              "dsv:expectedType": [
+                                {
+                                  "@id": "schema:QuantitativeValue",
+                                  "schema:name": "QuantitativeValue",
+                                  "dsv:property": [
+                                    {
+                                      "@type": "schema:Property",
+                                      "@id": "schema:unitCode",
+                                      "schema:name": "unitCode",
+                                      "dsv:isOptional": true,
+                                      "dsv:multipleValuesAllowed": false,
+                                      "dsv:expectedType": [
+                                        {
+                                          "@type": "schema:DataType",
+                                          "@id": "schema:Text",
+                                          "schema:name": "Text"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "@type": "schema:Property",
+                                      "@id": "schema:value",
+                                      "schema:name": "value",
+                                      "dsv:isOptional": false,
+                                      "dsv:multipleValuesAllowed": false,
+                                      "dsv:expectedType": [
+                                        {
+                                          "@type": "schema:DataType",
+                                          "@id": "schema:Number",
+                                          "schema:name": "Number"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "@type": "schema:Property",
+              "@id": "schema:inLanguage",
+              "schema:name": "inLanguage",
+              "dsv:isOptional": false,
+              "dsv:multipleValuesAllowed": false,
+              "dsv:expectedType": [
+                {
+                  "@type": "schema:DataType",
+                  "@id": "schema:Text",
+                  "schema:name": "Text"
+                }
+              ]
+            },
+            {
+              "@type": "schema:Property",
+              "@id": "schema:mainEntityOfPage",
+              "schema:name": "mainEntityOfPage",
+              "dsv:isOptional": true,
+              "dsv:multipleValuesAllowed": false,
+              "dsv:expectedType": [
+                {
+                  "@type": "schema:DataType",
+                  "@id": "schema:URL",
+                  "schema:name": "URL"
+                }
+              ]
+            },
+            {
+              "@type": "schema:Property",
+              "@id": "schema:publisher",
+              "schema:name": "publisher",
+              "dsv:isOptional": false,
+              "dsv:multipleValuesAllowed": false,
+              "dsv:expectedType": [
+                {
+                  "@type": "dsv:RestrictedClass",
+                  "schema:name": "Organization",
+                  "dsv:baseClass": {
+                    "@id": "schema:Organization"
+                  },
+                  "dsv:expectedType": [
+                    {
+                      "@id": "schema:Organization",
+                      "schema:name": "Organization",
+                      "dsv:property": [
+                        {
+                          "@type": "schema:Property",
+                          "@id": "schema:logo",
+                          "schema:name": "logo",
+                          "dsv:isOptional": false,
+                          "dsv:multipleValuesAllowed": false,
+                          "dsv:expectedType": [
+                            {
+                              "@type": "dsv:RestrictedClass",
+                              "schema:name": "ImageObject",
+                              "dsv:baseClass": {
+                                "@id": "schema:ImageObject"
+                              },
+                              "dsv:expectedType": [
+                                {
+                                  "@id": "schema:ImageObject",
+                                  "schema:name": "ImageObject",
+                                  "dsv:property": [
+                                    {
+                                      "@type": "schema:Property",
+                                      "@id": "schema:height",
+                                      "schema:name": "height",
+                                      "dsv:isOptional": false,
+                                      "dsv:multipleValuesAllowed": false,
+                                      "dsv:expectedType": [
+                                        {
+                                          "@type": "dsv:RestrictedClass",
+                                          "schema:name": "QuantitativeValue",
+                                          "dsv:baseClass": {
+                                            "@id": "schema:QuantitativeValue"
+                                          },
+                                          "dsv:expectedType": [
+                                            {
+                                              "@id": "schema:QuantitativeValue",
+                                              "schema:name": "QuantitativeValue",
+                                              "dsv:property": [
+                                                {
+                                                  "@type": "schema:Property",
+                                                  "@id": "schema:unitCode",
+                                                  "schema:name": "unitCode",
+                                                  "dsv:isOptional": true,
+                                                  "dsv:multipleValuesAllowed": false,
+                                                  "dsv:expectedType": [
+                                                    {
+                                                      "@type": "schema:DataType",
+                                                      "@id": "schema:Text",
+                                                      "schema:name": "Text"
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "@type": "schema:Property",
+                                                  "@id": "schema:value",
+                                                  "schema:name": "value",
+                                                  "dsv:isOptional": false,
+                                                  "dsv:multipleValuesAllowed": false,
+                                                  "dsv:expectedType": [
+                                                    {
+                                                      "@type": "schema:DataType",
+                                                      "@id": "schema:Number",
+                                                      "schema:name": "Number"
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "@type": "schema:Property",
+                                      "@id": "schema:url",
+                                      "schema:name": "url",
+                                      "dsv:isOptional": false,
+                                      "dsv:multipleValuesAllowed": false,
+                                      "dsv:expectedType": [
+                                        {
+                                          "@type": "schema:DataType",
+                                          "@id": "schema:URL",
+                                          "schema:name": "URL"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "@type": "schema:Property",
+                                      "@id": "schema:width",
+                                      "schema:name": "width",
+                                      "dsv:isOptional": false,
+                                      "dsv:multipleValuesAllowed": false,
+                                      "dsv:expectedType": [
+                                        {
+                                          "@type": "dsv:RestrictedClass",
+                                          "schema:name": "QuantitativeValue",
+                                          "dsv:baseClass": {
+                                            "@id": "schema:QuantitativeValue"
+                                          },
+                                          "dsv:expectedType": [
+                                            {
+                                              "@id": "schema:QuantitativeValue",
+                                              "schema:name": "QuantitativeValue",
+                                              "dsv:property": [
+                                                {
+                                                  "@type": "schema:Property",
+                                                  "@id": "schema:unitCode",
+                                                  "schema:name": "unitCode",
+                                                  "dsv:isOptional": true,
+                                                  "dsv:multipleValuesAllowed": false,
+                                                  "dsv:expectedType": [
+                                                    {
+                                                      "@type": "schema:DataType",
+                                                      "@id": "schema:Text",
+                                                      "schema:name": "Text"
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "@type": "schema:Property",
+                                                  "@id": "schema:value",
+                                                  "schema:name": "value",
+                                                  "dsv:isOptional": false,
+                                                  "dsv:multipleValuesAllowed": false,
+                                                  "dsv:expectedType": [
+                                                    {
+                                                      "@type": "schema:DataType",
+                                                      "@id": "schema:Number",
+                                                      "schema:name": "Number"
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "@type": "schema:Property",
+                          "@id": "schema:name",
+                          "schema:name": "name",
+                          "dsv:isOptional": false,
+                          "dsv:multipleValuesAllowed": false,
+                          "dsv:expectedType": [
+                            {
+                              "@type": "schema:DataType",
+                              "@id": "schema:Text",
+                              "schema:name": "Text"
+                            }
+                          ]
+                        },
+                        {
+                          "@type": "schema:Property",
+                          "@id": "schema:url",
+                          "schema:name": "url",
+                          "dsv:isOptional": true,
+                          "dsv:multipleValuesAllowed": false,
+                          "dsv:expectedType": [
+                            {
+                              "@type": "schema:DataType",
+                              "@id": "schema:URL",
+                              "schema:name": "URL"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "@type": "schema:Property",
+              "@id": "schema:url",
+              "schema:name": "url",
+              "dsv:isOptional": false,
+              "dsv:multipleValuesAllowed": false,
+              "dsv:expectedType": [
+                {
+                  "@type": "schema:DataType",
+                  "@id": "schema:URL",
+                  "schema:name": "URL"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

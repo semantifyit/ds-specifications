@@ -1,0 +1,39 @@
+{
+  "@context": {
+    "ds": "http://vocab.sti2.at/ds/",
+    "schema": "http://schema.org/",
+    "schema:hasPart": {
+      "@container": "@list"
+    }
+  },
+  "@id": "https://semantify.it/list/br6C7jDF6",
+  "@type": "schema:DataSet",
+  "schema:name": "Test List for Verigraph",
+  "schema:description": "Just a list with a couple of DS to test the List-based verification on https://semantify.it/verigraph/",
+  "schema:author": {
+    "@type": "schema:Person",
+    "schema:name": "Omar Holzknecht",
+    "schema:memberOf": {
+      "@type": "schema:Organization",
+      "schema:name": "STI Innsbruck"
+    }
+  },
+  "schema:hasPart": [
+    {
+      "@id": "https://semantify.it/ds/duS34iq0M",
+      "@type": "ds:DomainSpecification"
+    },
+    {
+      "@id": "https://semantify.it/ds/7BSo3Kk2p",
+      "@type": "ds:DomainSpecification"
+    },
+    {
+      "@id": "https://semantify.it/ds/Sylxfnb4MkM",
+      "@type": "ds:DomainSpecification"
+    },
+    {
+      "@id": "https://semantify.it/ds/SJgQ9IuBX",
+      "@type": "ds:DomainSpecification"
+    }
+  ]
+}

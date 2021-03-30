@@ -1,0 +1,35 @@
+{
+  "$type": "RestrictedEnumeration",
+  "$enumeration": "PaymentMethod",
+  "name": "Payment Method",
+  "description": "A payment method is a standardized procedure for transferring the monetary amount for a purchase.",
+  "expectedEnumerationValues": [
+    {
+      "$type": "CustomEnumerationValue",
+      "$customEnumerationValue": "http://purl.org/goodrelations/v1#ByBankTransferInAdvance",
+      "name": "Bank Transfer In Advance"
+    },
+    {
+      "$type": "CustomEnumerationValue",
+      "$customEnumerationValue": "http://purl.org/goodrelations/v1#Cash",
+      "name": "Cash",
+      "description": "Nothing is better than Cash!"
+    },
+    {
+      "$type": "CustomEnumerationValue",
+      "$customEnumerationValue": "http://purl.org/goodrelations/v1#DirectDebit",
+      "name": "Direct Debit"
+    },
+    {
+      "$type": "CustomEnumerationValue",
+      "$customEnumerationValue": "http://purl.org/goodrelations/v1#GoogleCheckout",
+      "name": "Google Checkout"
+    },
+    {
+      "$type": "CustomEnumerationValue",
+      "$customEnumerationValue": "http://purl.org/goodrelations/v1#PayPal",
+      "name": "PayPal"
+    }
+  ]
+}
+

@@ -1,0 +1,6 @@
+{
+  "$type": "Enumeration",
+  "$enumeration": "DayOfWeek",
+  "name": "Day of the Week",
+  "description": "The day of the week."
+}
