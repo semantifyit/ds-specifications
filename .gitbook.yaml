@@ -2,3 +2,7 @@ root: ./
 
 structure:
   readme: README.md
+
+redirects:
+  domainspecifications: ./DomainSpecifications/DomainSpecifications.md
+  domainspecifications/ds-v5: ./domainspecifications/ds-v5/ds-v5.md
