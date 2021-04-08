@@ -1,0 +1,62 @@
+{
+  "validationResult": "Invalid",
+  "description": "The annotation is invalid.",
+  "errors": [
+    {
+      "@type": "AnnotationError",
+      "severity": "Error",
+      "errorCode": 306,
+      "name": "Non-conform range",
+      "description": "The annotation has a property ('thumbnailUrl') with a value type that is not conform to schema.org.",
+      "annotationPath": "$.schema:image/1.schema:thumbnailUrl/0"
+    },
+    {
+      "@type": "AnnotationError",
+      "severity": "Error",
+      "errorCode": 306,
+      "name": "Non-conform range",
+      "description": "The annotation has a property ('thumbnailUrl') with a value type that is not conform to schema.org.",
+      "annotationPath": "$.schema:image/2.schema:thumbnailUrl/0"
+    },
+    {
+      "@type": "AnnotationError",
+      "severity": "Error",
+      "errorCode": 306,
+      "name": "Non-conform range",
+      "description": "The annotation has a property ('thumbnailUrl') with a value type that is not conform to schema.org.",
+      "annotationPath": "$.schema:image/3.schema:thumbnailUrl/0"
+    },
+    {
+      "@type": "AnnotationError",
+      "severity": "Error",
+      "errorCode": 306,
+      "name": "Non-conform range",
+      "description": "The annotation has a property ('thumbnailUrl') with a value type that is not conform to schema.org.",
+      "annotationPath": "$.schema:image/4.schema:thumbnailUrl/0"
+    },
+    {
+      "@type": "AnnotationError",
+      "severity": "Error",
+      "errorCode": 306,
+      "name": "Non-conform range",
+      "description": "The annotation has a property ('thumbnailUrl') with a value type that is not conform to schema.org.",
+      "annotationPath": "$.schema:image/5.schema:thumbnailUrl/0"
+    },
+    {
+      "@type": "AnnotationError",
+      "severity": "Error",
+      "errorCode": 306,
+      "name": "Non-conform range",
+      "description": "The annotation has a property ('thumbnailUrl') with a value type that is not conform to schema.org.",
+      "annotationPath": "$.schema:image/6.schema:thumbnailUrl/0"
+    },
+    {
+      "@type": "AnnotationError",
+      "severity": "Error",
+      "errorCode": 307,
+      "name": "Unexpected string",
+      "description": "The annotation has a property ('mainContentOfPage') with a string as value, although a string is not explicitly allowed as range for this property according to schema.org.",
+      "annotationPath": "$.schema:mainContentOfPage/0"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
-# RDF-Vocabulary
+# DS-Vocabulary
 
-The [DS Vocabulary](ds-vocabulary.jsonld) is an RDF-Vocabulary that introduces terms that are needed to create RDF documents related to the concept of Domain Specifications, such as **Domain Specifications**, **Lists**, and **Verification Reports**.
+The [DS Vocabulary](DS-Vocab-V1/Examples/DS-Vocabulary.jsonld) is an RDF vocabulary that introduces terms that are needed to create RDF documents related to the concept of Domain Specifications, such as **Domain Specifications**, **Lists**, and **Verification Reports**.
 
 The vocabulary file is provided as JSON-LD, but of course it can be translated in any other RDF formats. The terms used to describe this vocabulary are the same used by Schema.org for their vocabulary.
 
@@ -10,7 +10,7 @@ The namespace for the vocabulary is http://vocab.sti2.at/ds/ and it should be ho
 
 ## Discussion
 
-As an overview about verification and the ds specc we have following Doc: https://docs.google.com/document/d/1UPVY57CffPQJezwvjCBHL4d3wngI05F0nHFIuBz_FZg/edit#
+As an overview about verification and the ds spec we have following Doc: https://docs.google.com/document/d/1UPVY57CffPQJezwvjCBHL4d3wngI05F0nHFIuBz_FZg/edit#
 
 ### Multi-language
 

@@ -1,0 +1,70 @@
+{
+  "verificationResult": "ValidWithWarnings",
+  "name": "Compliance Verification Report",
+  "description": "The Annotation is in compliance with the Domain Specification, but with Warnings",
+  "errors": [
+    {
+      "@type": "ComplianceError",
+      "severity": "Warning",
+      "errorCode": 502,
+      "name": "Non-conform property",
+      "description": "The annotation has a property ('birthDate') that is not specified by the domain specification.",
+      "dsPath": "$",
+      "annotationPath": "$"
+    },
+    {
+      "@type": "ComplianceError",
+      "severity": "Warning",
+      "errorCode": 502,
+      "name": "Non-conform property",
+      "description": "The annotation has a property ('birthPlace') that is not specified by the domain specification.",
+      "dsPath": "$",
+      "annotationPath": "$"
+    },
+    {
+      "@type": "ComplianceError",
+      "severity": "Warning",
+      "errorCode": 502,
+      "name": "Non-conform property",
+      "description": "The annotation has a property ('description') that is not specified by the domain specification.",
+      "dsPath": "$",
+      "annotationPath": "$"
+    },
+    {
+      "@type": "ComplianceError",
+      "severity": "Warning",
+      "errorCode": 502,
+      "name": "Non-conform property",
+      "description": "The annotation has a property ('gender') that is not specified by the domain specification.",
+      "dsPath": "$",
+      "annotationPath": "$"
+    },
+    {
+      "@type": "ComplianceError",
+      "severity": "Warning",
+      "errorCode": 502,
+      "name": "Non-conform property",
+      "description": "The annotation has a property ('homeLocation') that is not specified by the domain specification.",
+      "dsPath": "$",
+      "annotationPath": "$"
+    },
+    {
+      "@type": "ComplianceError",
+      "severity": "Warning",
+      "errorCode": 502,
+      "name": "Non-conform property",
+      "description": "The annotation has a property ('sameAs') that is not specified by the domain specification.",
+      "dsPath": "$",
+      "annotationPath": "$"
+    },
+    {
+      "@type": "ComplianceError",
+      "severity": "Warning",
+      "errorCode": 502,
+      "name": "Non-conform property",
+      "description": "The annotation has a property ('url') that is not specified by the domain specification.",
+      "dsPath": "$",
+      "annotationPath": "$"
+    }
+  ]
+}

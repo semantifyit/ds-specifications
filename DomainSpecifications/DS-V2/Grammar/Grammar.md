@@ -5,7 +5,7 @@ The grammar for DS-V2 is given in [BNF](https://en.wikipedia.org/wiki/Backus%E2%
 ## Content
 
 * Node-types of this grammar (below)
-* [The grammar and semantics of Domain Specifications](./DomainSpecification/DomanSpecification.md)
+* [The grammar and semantics of Domain Specifications](./DomainSpecification/Index.md)
   * [Examples for grammar nodes](./DomainSpecification/Examples)
   * [The grammar and semantics of Rules](./Rules/Rules.md)  
   * [The grammar and semantics of Numeric Patterns](./NumericPattern/NumericPattern.md)  
@@ -44,7 +44,6 @@ Rules have also their own types:
 *   NumberRule, applies only to numberic values accoarding to SDO data types (Number, Integer, Float)
 *   ComplexRule, applies as logical connector between rules/checks
 
-There are sub-classes for the Rules, see the "Meta_Rules.md" for details.
 
 
 

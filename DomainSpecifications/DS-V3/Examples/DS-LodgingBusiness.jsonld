@@ -1,0 +1,2141 @@
+{
+  "@context": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "schema": "http://schema.org/",
+    "sh:targetClass": {
+      "@id": "sh:targetClass",
+      "@type": "@id"
+    },
+    "sh:property": {
+      "@id": "sh:property",
+      "@type": "@id"
+    },
+    "sh:path": {
+      "@id": "sh:path",
+      "@type": "@id"
+    },
+    "sh:nodeKind": {
+      "@id": "sh:nodeKind",
+      "@type": "@id"
+    },
+    "sh:datatype": {
+      "@id": "sh:datatype",
+      "@type": "@id"
+    },
+    "sh:node": {
+      "@id": "sh:node",
+      "@type": "@id"
+    },
+    "sh:class": {
+      "@id": "sh:class",
+      "@type": "@id"
+    },
+    "sh:or": {
+      "@id": "sh:or",
+      "@type": "@id"
+    },
+    "sh:in": {
+      "@id": "sh:in",
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "_:RootNode",
+      "@type": [
+        "sh:NodeShape",
+        "schema:CreativeWork"
+      ],
+      "schema:name": "LodgingBusiness",
+      "schema:description": "LodgingBusiness Domain Specification is a pattern for annotating lodging related businesses, such as hotel, motel, bed and breakfast and hostel, and their facilities using schema.org vocabulary. The goal is to give a recommended standard for semantic annotation of the given domain.",
+      "schema:version": "1.0",
+      "schema:schemaVersion": "https://schema.org/version/3.2/",
+      "schema:author": "Oleksandra",
+      "schema:authorOrganisation": "STI Innsbruck",
+      "sh:targetClass": "schema:LodgingBusiness",
+      "sh:property": [
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:aggregateRating",
+          "sh:order": 0,
+          "sh:minCount": 1,
+          "sh:maxCount": 1,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:class": "schema:AggregateRating",
+                "sh:node": {
+                  "@type": "sh:NodeShape",
+                  "sh:property": [
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:bestRating",
+                      "sh:order": 0,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:double"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:ratingCount",
+                      "sh:order": 1,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:integer"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:ratingValue",
+                      "sh:order": 2,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:double"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:availableLanguage",
+          "sh:order": 1,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:datatype": "xsd:string"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:checkinTime",
+          "sh:order": 2,
+          "sh:minCount": 1,
+          "sh:maxCount": 1,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:datatype": "xsd:dateTime"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:checkoutTime",
+          "sh:order": 3,
+          "sh:minCount": 1,
+          "sh:maxCount": 1,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:datatype": "xsd:dateTime"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:contactPoint",
+          "sh:order": 4,
+          "sh:maxCount": 1,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:class": "schema:ContactPoint",
+                "sh:node": {
+                  "@type": "sh:NodeShape",
+                  "sh:property": [
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:contactType",
+                      "sh:order": 0,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:string"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:email",
+                      "sh:order": 1,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:string"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:faxNumber",
+                      "sh:order": 2,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:string"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:hoursAvailable",
+                      "sh:order": 3,
+                      "sh:minCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:class": "schema:OpeningHoursSpecification",
+                            "sh:node": {
+                              "@type": "sh:NodeShape",
+                              "sh:property": [
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:closes",
+                                  "sh:order": 0,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:time"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:dayOfWeek",
+                                  "sh:order": 1,
+                                  "sh:minCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:class": "schema:DayOfWeek",
+                                        "sh:in": {
+                                          "@list": [
+                                            "schema:Wednesday",
+                                            "schema:Sunday",
+                                            "schema:PublicHolidays",
+                                            "schema:Tuesday",
+                                            "schema:Monday",
+                                            "schema:Friday",
+                                            "schema:Saturday",
+                                            "schema:Thursday"
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:opens",
+                                  "sh:order": 2,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:time"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:name",
+                      "sh:order": 4,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:string"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:telephone",
+                      "sh:order": 5,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:string"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:url",
+                      "sh:order": 6,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:anyURI"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:containsPlace",
+          "sh:order": 5,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:class": "schema:Place",
+                "sh:node": {
+                  "@type": "sh:NodeShape",
+                  "sh:property": [
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:description",
+                      "sh:order": 0,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:string"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:name",
+                      "sh:order": 1,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:string"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:address",
+                      "sh:order": 2,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:class": "schema:PostalAddress",
+                            "sh:node": {
+                              "@type": "sh:NodeShape",
+                              "sh:property": [
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:addressCountry",
+                                  "sh:order": 0,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:addressLocality",
+                                  "sh:order": 1,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:addressRegion",
+                                  "sh:order": 2,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:postalCode",
+                                  "sh:order": 3,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:streetAddress",
+                                  "sh:order": 4,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "sh:class": "schema:Accommodation",
+                "sh:node": {
+                  "@type": "sh:NodeShape",
+                  "sh:property": [
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:description",
+                      "sh:order": 0,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:string"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:name",
+                      "sh:order": 1,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:string"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:address",
+                      "sh:order": 2,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:class": "schema:PostalAddress",
+                            "sh:node": {
+                              "@type": "sh:NodeShape",
+                              "sh:property": [
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:addressCountry",
+                                  "sh:order": 0,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:addressLocality",
+                                  "sh:order": 1,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:addressRegion",
+                                  "sh:order": 2,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:postalCode",
+                                  "sh:order": 3,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:streetAddress",
+                                  "sh:order": 4,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:currenciesAccepted",
+          "sh:order": 6,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:datatype": "xsd:string"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:department",
+          "sh:order": 7,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:class": "schema:Organization",
+                "sh:node": {
+                  "@type": "sh:NodeShape",
+                  "sh:property": [
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:address",
+                      "sh:order": 0,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:class": "schema:PostalAddress",
+                            "sh:node": {
+                              "@type": "sh:NodeShape",
+                              "sh:property": [
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:addressCountry",
+                                  "sh:order": 0,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:addressLocality",
+                                  "sh:order": 1,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:addressRegion",
+                                  "sh:order": 2,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:postalCode",
+                                  "sh:order": 3,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:streetAddress",
+                                  "sh:order": 4,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:name",
+                      "sh:order": 1,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:string"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:url",
+                      "sh:order": 2,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:anyURI"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:description",
+          "sh:order": 8,
+          "sh:minCount": 1,
+          "sh:maxCount": 1,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:datatype": "xsd:string"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:email",
+          "sh:order": 9,
+          "sh:minCount": 1,
+          "sh:maxCount": 1,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:datatype": "xsd:string"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:faxNumber",
+          "sh:order": 10,
+          "sh:maxCount": 1,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:datatype": "xsd:string"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:founder",
+          "sh:order": 11,
+          "sh:maxCount": 1,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:class": "schema:Person",
+                "sh:node": {
+                  "@type": "sh:NodeShape",
+                  "sh:property": [
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:name",
+                      "sh:order": 0,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:string"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:foundingDate",
+          "sh:order": 12,
+          "sh:maxCount": 1,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:datatype": "xsd:date"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:geo",
+          "sh:order": 13,
+          "sh:maxCount": 1,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:class": "schema:GeoCoordinates",
+                "sh:node": {
+                  "@type": "sh:NodeShape",
+                  "sh:property": [
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:latitude",
+                      "sh:order": 0,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:string"
+                          },
+                          {
+                            "sh:datatype": "xsd:double"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:longitude",
+                      "sh:order": 1,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:double"
+                          },
+                          {
+                            "sh:datatype": "xsd:string"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:hasMap",
+          "sh:order": 14,
+          "sh:maxCount": 1,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:datatype": "xsd:anyURI"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:image",
+          "sh:order": 15,
+          "sh:minCount": 1,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:datatype": "xsd:anyURI"
+              },
+              {
+                "sh:class": "schema:ImageObject",
+                "sh:node": {
+                  "@type": "sh:NodeShape",
+                  "sh:property": [
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:height",
+                      "sh:order": 0,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:class": "schema:QuantitativeValue",
+                            "sh:node": {
+                              "@type": "sh:NodeShape",
+                              "sh:property": [
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:value",
+                                  "sh:order": 0,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      },
+                                      {
+                                        "sh:datatype": "xsd:double"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:name",
+                      "sh:order": 1,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:string"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:url",
+                      "sh:order": 2,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:anyURI"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:width",
+                      "sh:order": 3,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:class": "schema:QuantitativeValue",
+                            "sh:node": {
+                              "@type": "sh:NodeShape",
+                              "sh:property": [
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:value",
+                                  "sh:order": 0,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      },
+                                      {
+                                        "sh:datatype": "xsd:double"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:location",
+          "sh:order": 16,
+          "sh:minCount": 1,
+          "sh:maxCount": 1,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:class": "schema:Place",
+                "sh:node": {
+                  "@type": "sh:NodeShape",
+                  "sh:property": [
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:address",
+                      "sh:order": 0,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:class": "schema:PostalAddress",
+                            "sh:node": {
+                              "@type": "sh:NodeShape",
+                              "sh:property": [
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:addressCountry",
+                                  "sh:order": 0,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:addressLocality",
+                                  "sh:order": 1,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:addressRegion",
+                                  "sh:order": 2,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:postalCode",
+                                  "sh:order": 3,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:streetAddress",
+                                  "sh:order": 4,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:name",
+                      "sh:order": 1,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:string"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:makesOffer",
+          "sh:order": 17,
+          "sh:minCount": 1,
+          "sh:maxCount": 1,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:class": "schema:Offer",
+                "sh:node": {
+                  "@type": "sh:NodeShape",
+                  "sh:property": [
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:availability",
+                      "sh:order": 0,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:class": "schema:ItemAvailability",
+                            "sh:in": {
+                              "@list": [
+                                "schema:SoldOut",
+                                "schema:PreOrder",
+                                "schema:OutOfStock",
+                                "schema:PreSale",
+                                "schema:InStock",
+                                "schema:LimitedAvailability",
+                                "schema:Discontinued",
+                                "schema:OnlineOnly",
+                                "schema:InStoreOnly"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:itemOffered",
+                      "sh:order": 1,
+                      "sh:minCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:class": "schema:Product",
+                            "sh:node": {
+                              "@type": "sh:NodeShape",
+                              "sh:property": [
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:description",
+                                  "sh:order": 0,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:image",
+                                  "sh:order": 1,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:anyURI"
+                                      },
+                                      {
+                                        "sh:class": "schema:ImageObject",
+                                        "sh:node": {
+                                          "@type": "sh:NodeShape",
+                                          "sh:property": [
+                                            {
+                                              "@type": "sh:PropertyShape",
+                                              "sh:path": "schema:caption",
+                                              "sh:order": 0,
+                                              "sh:minCount": 1,
+                                              "sh:maxCount": 1,
+                                              "sh:or": {
+                                                "@list": [
+                                                  {
+                                                    "sh:datatype": "xsd:string"
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            {
+                                              "@type": "sh:PropertyShape",
+                                              "sh:path": "schema:height",
+                                              "sh:order": 1,
+                                              "sh:minCount": 1,
+                                              "sh:maxCount": 1,
+                                              "sh:or": {
+                                                "@list": [
+                                                  {
+                                                    "sh:class": "schema:QuantitativeValue",
+                                                    "sh:node": {
+                                                      "@type": "sh:NodeShape",
+                                                      "sh:property": [
+                                                        {
+                                                          "@type": "sh:PropertyShape",
+                                                          "sh:path": "schema:value",
+                                                          "sh:order": 0,
+                                                          "sh:minCount": 1,
+                                                          "sh:maxCount": 1,
+                                                          "sh:or": {
+                                                            "@list": [
+                                                              {
+                                                                "sh:datatype": "xsd:string"
+                                                              },
+                                                              {
+                                                                "sh:datatype": "xsd:double"
+                                                              }
+                                                            ]
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            {
+                                              "@type": "sh:PropertyShape",
+                                              "sh:path": "schema:url",
+                                              "sh:order": 2,
+                                              "sh:minCount": 1,
+                                              "sh:maxCount": 1,
+                                              "sh:or": {
+                                                "@list": [
+                                                  {
+                                                    "sh:datatype": "xsd:anyURI"
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            {
+                                              "@type": "sh:PropertyShape",
+                                              "sh:path": "schema:width",
+                                              "sh:order": 3,
+                                              "sh:minCount": 1,
+                                              "sh:maxCount": 1,
+                                              "sh:or": {
+                                                "@list": [
+                                                  {
+                                                    "sh:class": "schema:QuantitativeValue",
+                                                    "sh:node": {
+                                                      "@type": "sh:NodeShape",
+                                                      "sh:property": [
+                                                        {
+                                                          "@type": "sh:PropertyShape",
+                                                          "sh:path": "schema:value",
+                                                          "sh:order": 0,
+                                                          "sh:minCount": 1,
+                                                          "sh:maxCount": 1,
+                                                          "sh:or": {
+                                                            "@list": [
+                                                              {
+                                                                "sh:datatype": "xsd:string"
+                                                              },
+                                                              {
+                                                                "sh:datatype": "xsd:double"
+                                                              }
+                                                            ]
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:name",
+                                  "sh:order": 2,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:url",
+                                  "sh:order": 3,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:anyURI"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "sh:class": "schema:Accommodation",
+                            "sh:node": {
+                              "@type": "sh:NodeShape",
+                              "sh:property": [
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:description",
+                                  "sh:order": 0,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:image",
+                                  "sh:order": 1,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:anyURI"
+                                      },
+                                      {
+                                        "sh:class": "schema:ImageObject",
+                                        "sh:node": {
+                                          "@type": "sh:NodeShape",
+                                          "sh:property": [
+                                            {
+                                              "@type": "sh:PropertyShape",
+                                              "sh:path": "schema:caption",
+                                              "sh:order": 0,
+                                              "sh:minCount": 1,
+                                              "sh:maxCount": 1,
+                                              "sh:or": {
+                                                "@list": [
+                                                  {
+                                                    "sh:datatype": "xsd:string"
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            {
+                                              "@type": "sh:PropertyShape",
+                                              "sh:path": "schema:height",
+                                              "sh:order": 1,
+                                              "sh:minCount": 1,
+                                              "sh:maxCount": 1,
+                                              "sh:or": {
+                                                "@list": [
+                                                  {
+                                                    "sh:class": "schema:QuantitativeValue",
+                                                    "sh:node": {
+                                                      "@type": "sh:NodeShape",
+                                                      "sh:property": [
+                                                        {
+                                                          "@type": "sh:PropertyShape",
+                                                          "sh:path": "schema:value",
+                                                          "sh:order": 0,
+                                                          "sh:minCount": 1,
+                                                          "sh:maxCount": 1,
+                                                          "sh:or": {
+                                                            "@list": [
+                                                              {
+                                                                "sh:datatype": "xsd:string"
+                                                              },
+                                                              {
+                                                                "sh:datatype": "xsd:double"
+                                                              }
+                                                            ]
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            {
+                                              "@type": "sh:PropertyShape",
+                                              "sh:path": "schema:url",
+                                              "sh:order": 2,
+                                              "sh:minCount": 1,
+                                              "sh:maxCount": 1,
+                                              "sh:or": {
+                                                "@list": [
+                                                  {
+                                                    "sh:datatype": "xsd:anyURI"
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            {
+                                              "@type": "sh:PropertyShape",
+                                              "sh:path": "schema:width",
+                                              "sh:order": 3,
+                                              "sh:minCount": 1,
+                                              "sh:maxCount": 1,
+                                              "sh:or": {
+                                                "@list": [
+                                                  {
+                                                    "sh:class": "schema:QuantitativeValue",
+                                                    "sh:node": {
+                                                      "@type": "sh:NodeShape",
+                                                      "sh:property": [
+                                                        {
+                                                          "@type": "sh:PropertyShape",
+                                                          "sh:path": "schema:value",
+                                                          "sh:order": 0,
+                                                          "sh:minCount": 1,
+                                                          "sh:maxCount": 1,
+                                                          "sh:or": {
+                                                            "@list": [
+                                                              {
+                                                                "sh:datatype": "xsd:string"
+                                                              },
+                                                              {
+                                                                "sh:datatype": "xsd:double"
+                                                              }
+                                                            ]
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:name",
+                                  "sh:order": 2,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:url",
+                                  "sh:order": 3,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:anyURI"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:name",
+                      "sh:order": 2,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:string"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:price",
+                      "sh:order": 3,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:string"
+                          },
+                          {
+                            "sh:datatype": "xsd:double"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:priceCurrency",
+                      "sh:order": 4,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:string"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:priceSpecification",
+                      "sh:order": 5,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:class": "schema:PriceSpecification",
+                            "sh:node": {
+                              "@type": "sh:NodeShape",
+                              "sh:property": [
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:description",
+                                  "sh:order": 0,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:maxPrice",
+                                  "sh:order": 1,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:double"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:minPrice",
+                                  "sh:order": 2,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:double"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:priceCurrency",
+                                  "sh:order": 3,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:name",
+          "sh:order": 18,
+          "sh:minCount": 1,
+          "sh:maxCount": 1,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:datatype": "xsd:string"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:openingHoursSpecification",
+          "sh:order": 19,
+          "sh:minCount": 1,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:class": "schema:OpeningHoursSpecification",
+                "sh:node": {
+                  "@type": "sh:NodeShape",
+                  "sh:property": [
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:closes",
+                      "sh:order": 0,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:time"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:dayOfWeek",
+                      "sh:order": 1,
+                      "sh:minCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:class": "schema:DayOfWeek",
+                            "sh:in": {
+                              "@list": [
+                                "schema:Wednesday",
+                                "schema:Sunday",
+                                "schema:PublicHolidays",
+                                "schema:Tuesday",
+                                "schema:Monday",
+                                "schema:Friday",
+                                "schema:Saturday",
+                                "schema:Thursday"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:opens",
+                      "sh:order": 2,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:time"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:paymentAccepted",
+          "sh:order": 20,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:datatype": "xsd:string"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:petsAllowed",
+          "sh:order": 21,
+          "sh:maxCount": 1,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:datatype": "xsd:string"
+              },
+              {
+                "sh:datatype": "xsd:boolean"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:photo",
+          "sh:order": 22,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:class": "schema:ImageObject",
+                "sh:node": {
+                  "@type": "sh:NodeShape",
+                  "sh:property": [
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:height",
+                      "sh:order": 0,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:class": "schema:QuantitativeValue",
+                            "sh:node": {
+                              "@type": "sh:NodeShape",
+                              "sh:property": [
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:value",
+                                  "sh:order": 0,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      },
+                                      {
+                                        "sh:datatype": "xsd:double"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:name",
+                      "sh:order": 1,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:string"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:url",
+                      "sh:order": 2,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:anyURI"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:width",
+                      "sh:order": 3,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:class": "schema:QuantitativeValue",
+                            "sh:node": {
+                              "@type": "sh:NodeShape",
+                              "sh:property": [
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:value",
+                                  "sh:order": 0,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      },
+                                      {
+                                        "sh:datatype": "xsd:double"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:priceRange",
+          "sh:order": 23,
+          "sh:minCount": 1,
+          "sh:maxCount": 1,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:datatype": "xsd:string"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:review",
+          "sh:order": 24,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:class": "schema:Review",
+                "sh:node": {
+                  "@type": "sh:NodeShape",
+                  "sh:property": [
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:author",
+                      "sh:order": 0,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:class": "schema:Organization",
+                            "sh:node": {
+                              "@type": "sh:NodeShape",
+                              "sh:property": [
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:name",
+                                  "sh:order": 0,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:url",
+                                  "sh:order": 1,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:anyURI"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "sh:class": "schema:Person",
+                            "sh:node": {
+                              "@type": "sh:NodeShape",
+                              "sh:property": [
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:name",
+                                  "sh:order": 0,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:string"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:datePublished",
+                      "sh:order": 1,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:date"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:name",
+                      "sh:order": 2,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:string"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:reviewBody",
+                      "sh:order": 3,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:string"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:reviewRating",
+                      "sh:order": 4,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:class": "schema:Rating",
+                            "sh:node": {
+                              "@type": "sh:NodeShape",
+                              "sh:property": [
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:bestRating",
+                                  "sh:order": 0,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:double"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "@type": "sh:PropertyShape",
+                                  "sh:path": "schema:ratingValue",
+                                  "sh:order": 1,
+                                  "sh:minCount": 1,
+                                  "sh:maxCount": 1,
+                                  "sh:or": {
+                                    "@list": [
+                                      {
+                                        "sh:datatype": "xsd:double"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:sameAs",
+          "sh:order": 25,
+          "sh:maxCount": 1,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:datatype": "xsd:anyURI"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:starRating",
+          "sh:order": 26,
+          "sh:minCount": 1,
+          "sh:maxCount": 1,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:class": "schema:Rating",
+                "sh:node": {
+                  "@type": "sh:NodeShape",
+                  "sh:property": [
+                    {
+                      "@type": "sh:PropertyShape",
+                      "sh:path": "schema:ratingValue",
+                      "sh:order": 0,
+                      "sh:minCount": 1,
+                      "sh:maxCount": 1,
+                      "sh:or": {
+                        "@list": [
+                          {
+                            "sh:datatype": "xsd:string"
+                          },
+                          {
+                            "sh:datatype": "xsd:double"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:telephone",
+          "sh:order": 27,
+          "sh:minCount": 1,
+          "sh:maxCount": 1,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:datatype": "xsd:string"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:path": "schema:url",
+          "sh:order": 28,
+          "sh:minCount": 1,
+          "sh:maxCount": 1,
+          "sh:or": {
+            "@list": [
+              {
+                "sh:datatype": "xsd:anyURI"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

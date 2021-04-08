@@ -1,8 +1,10 @@
-# Vocabularies
+# Vocabularies (WIP)
 
 ## Creating Vocabularies
 
 Tips and guidelines on how to create vocabularies.
+
+todo: add information at https://github.com/semantifyit/schema-org-adapter/blob/master/docu/dataModel.md
 
 ### Tips ###
 
