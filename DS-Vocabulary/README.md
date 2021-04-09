@@ -8,7 +8,7 @@ The namespace for the vocabulary is `http://vocab.sti2.at/ds/` and the vocabular
 
 ## DS-Vocabulary Versions
 
-* [DS-Vocab-V1](./DS-Vocab-V1/DS-Vocab-V1.md)
+* [DS-Vocab-V1](DS-Vocab-V1/README.md)
 
 ## Motivation (WIP)
 

@@ -2,10 +2,3 @@ root: ./
 
 structure:
   readme: README.md
-
-redirects:
-  domainspecifications: ./DomainSpecifications/DomainSpecifications.md
-  domainspecifications/ds-v5: ./domainspecifications/ds-v5/ds-v5.md
-  ds-vocabulary: ./ds-vocabulary/ds-vocabulary
-  lists: ./lists/lists.md
-  vocabularies: ./Vocabularies/Vocabularies

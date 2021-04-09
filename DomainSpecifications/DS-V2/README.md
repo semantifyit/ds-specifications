@@ -20,5 +20,5 @@ There are properties in the grammar, starting with the "$" symbol. Most of these
 
 ## Content:
 
-* [Examples](./Examples/Examples.md)
-* [Grammar](./Grammar/Grammar.md)
+* [Examples](Examples/README.md)
+* [Grammar](Grammar/README.md)

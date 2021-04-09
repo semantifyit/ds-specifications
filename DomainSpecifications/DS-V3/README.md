@@ -6,5 +6,5 @@ DS-V3 can be seen as the enhanced and SHACL version of DS-V1.
 
 ## Content:
 
-* [Examples](./Examples/Examples.md)
-* [Grammar](./Grammar/Grammar.md)
+* [Examples](Examples/README.md)
+* [Grammar](Grammar/README.md)

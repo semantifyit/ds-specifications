@@ -6,7 +6,7 @@ The file format for this DS version is JSON-LD. The namespace `"dsv": "http://on
 
 ## Content:
 
-* [Examples](./Examples/Examples.md)
-* [Grammar](./Grammar/Grammar.md)
+* [Examples](Examples/README.md)
+* [Grammar](Grammar/README.md)
 
 There is no further documentation on the verification algorithm, nor the resulting verification report. In short: The verification algorithm for this version consists of recursively checking every node of the tree-structured JSONLD annotation against the corresponding node in the DS. Every irregularity results in an error entry for the verification outcome, which is a simple JSON file for which no further specification is given.

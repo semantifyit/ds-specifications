@@ -5,11 +5,11 @@ The grammar for DS-V2 is given in [BNF](https://en.wikipedia.org/wiki/Backus%E2%
 ## Content
 
 * Node-types of this grammar (below)
-* [The grammar and semantics of Domain Specifications](./DomainSpecification/Index.md)
+* [The grammar and semantics of Domain Specifications](DomainSpecification/README.md)
   * [Examples for grammar nodes](./DomainSpecification/Examples)
-  * [The grammar and semantics of Rules](./Rules/Rules.md)  
-  * [The grammar and semantics of Numeric Patterns](./NumericPattern/NumericPattern.md)  
-* [The grammar and semantics of Verification Reports](./VerificationReport/VerificationReport.md)
+  * [The grammar and semantics of Rules](Rules/README.md)  
+  * [The grammar and semantics of Numeric Patterns](NumericPattern/README.md)  
+* [The grammar and semantics of Verification Reports](VerificationReport/README.md)
     * [The grammar and semantics of Errors](./VerificationReport/Error.md)
     * [List of Error Codes](./VerificationReport/ErrorCodes.md)
 
