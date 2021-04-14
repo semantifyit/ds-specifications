@@ -4,10 +4,10 @@ The grammar for DS-V3 consists of different node-types, that are used to constru
 
 ## Content
 
-* [The grammar and semantics of Domain Specifications](DomainSpecification/README.md)
+* [The grammar and semantics of Domain Specifications](./DomainSpecification/README.md)
     * [DS @context](./DomainSpecification/Context.md)
     * [DS Terms](./DomainSpecification/TermsDS.md)
-* [The grammar and semantics of Verification Reports](VerificationReport/README.md)
+* [The grammar and semantics of Verification Reports](./VerificationReport/README.md)
     * [Error List for the basic verification](./VerificationReport/Basic-Verification.md)
     * [Error List for the DS verification](./VerificationReport/DS-Verification.md)
     * [Error List for the DS-meta verification](./VerificationReport/DS-Meta-Verification.md)   
