@@ -60,30 +60,30 @@
       "rdfs:comment": "The outcome of the verification process.",
       "schema:domainIncludes": "ds:VerificationReport",
       "rdfs:label": "verification result",
-      "schema:rangeIncludes": "ds:VerificationResult"
+      "schema:rangeIncludes": "ds:VerificationValidity"
     },
     {
-      "@id": "ds:VerificationResult",
+      "@id": "ds:VerificationValidity",
       "@type": "rdf:Class",
       "rdfs:comment": "Enumeration for the possible verification outcomes.",
-      "rdfs:label": "VerificationResult",
+      "rdfs:label": "VerificationValidity",
       "rdfs:subClassOf": "schema:Enumeration"
     },
     {
       "@id": "ds:Valid",
-      "@type": "ds:VerificationResult",
+      "@type": "ds:VerificationValidity",
       "rdfs:comment": "The verification concluded in a valid outcome.",
       "rdfs:label": "Valid"
     },
     {
       "@id": "ds:Invalid",
-      "@type": "ds:VerificationResult",
+      "@type": "ds:VerificationValidity",
       "rdfs:comment": "The verification concluded in an invalid outcome.",
       "rdfs:label": "Invalid"
     },
     {
       "@id": "ds:ValidWithWarnings",
-      "@type": "ds:VerificationResult",
+      "@type": "ds:VerificationValidity",
       "rdfs:comment": "The verification concluded in a valid outcome, but with warnings.",
       "rdfs:label": "Valid with Warnings"
     },

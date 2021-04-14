@@ -12,11 +12,6 @@ Further ideas/comments can be found in the corresponding trello card (see links)
 
 Since we want to publish them as JSON-LD, we need a structure/vocabulary for it. If possible we should not introduce new terms. There is a guideline in this Wiki for us how to make/use vocabularies (see links).
 
-### Links
-
-* [Trello Card](https://trello.com/c/4AgBMDKt/1054-roadmap-ds-voc-redesign)
-* [Creating Vocabularies](../CreatingVocabularies.md)
-
 ### Discussion
 
 We may introduce new kind of lists in the future, would be good if we would not have to add a lot of stuff (infrastructure, specification) to make that possible. At the same time we want to easily identify which kind of "list" we are dealing with. Suggestion:
@@ -25,7 +20,7 @@ We may introduce new kind of lists in the future, would be good if we would not 
 
 We can have a single model for any list-type, distinguishing them by "itemType":
 
-```json
+```javascript
 {
     itemType: String, //we will have Enumerations for this e.g. "DomainSpecification", "Vocabulary"
     content: Object,  //the actual JSON-LD
