@@ -1,5 +1,7 @@
 # DS-Vocabulary
 
+(WIP)
+
 The DS Vocabulary is an RDF vocabulary that introduces terms that are needed to create RDF documents related to the concept of Domain Specifications, such as **Domain Specifications**, **Lists**, and **Verification Reports**.
 
 The vocabulary file is provided as JSON-LD, but of course it can be translated in any other RDF formats. The terms used to describe this vocabulary are the same used by Schema.org for their vocabulary.

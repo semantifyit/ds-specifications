@@ -1,7 +1,5 @@
-# DS-Vocab-V1 (WIP)
+# DS-Vocab-V1
 
-Hosts discussions, descriptions, and examples for the specifications related to DS (Domain Specifications). Those would be:
+(WIP)
 
-* Domain Specifications
-* Vocabularies
-* Lists
+The first version of the DS vocabulary.

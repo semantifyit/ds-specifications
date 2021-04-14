@@ -10,7 +10,7 @@ This specification version was created due to following reasons:
     * Specification for the verification outcome
 *   Easier to work with
 
-The new grammar is defined in JSON, which is easier to read AND work with than JSON-LD (At this time we had no practical use of DS in RDF-format, so it would be handier to strap off the JSON-LD layer and work only with JSON). However, the grammar is created having the possibility to translate a DS from JSON into JSON-LD, and vice versa. 
+The new grammar is defined in JSON, which is easier to read AND work with than JSON-LD (At this time we had no practical use of DS in RDF format, so it would be handier to strap off the JSON-LD layer and work only with JSON). However, the grammar is created having the possibility to translate a DS from JSON into JSON-LD, and vice versa. 
 
 For the semantic verification of values, "Rules" are introduced. We had only a conceptual version of this feature for a paper, but it never made it into the DS grammar. These rules should allow for **local** (tied to a single property of an object) and **global** (tied to multiple properties from an entity) semantic constraints.
 

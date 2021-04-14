@@ -1,10 +1,10 @@
 # DS-V1 - Grammar
 
-The grammar for DS-V1 is given below in [BNF](https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form). The grammar consists of 7 different node-types, that are used to construct a Domain Specification. A Domain Specification is tree-shaped JSON-LD, like the annotations it should represent.
+The grammar for DS-V1 is given below in [BNF](https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form). The grammar consists of 7 different node-types, that are used to construct a Domain Specification. A Domain Specification is a tree-shaped JSON-LD, like the annotations it should represent.
 
 ## Domain Specification Node
 
-The **Domain Specification Node** is the start-node (aka. root-node) for a Domain Specification. 
+The **Domain Specification Node** is the start node (aka. root-node) for a Domain Specification. 
 
 ![Syntax diagram](./Railroad-Images/DomainSpecification.JPG)
 

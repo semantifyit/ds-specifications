@@ -68,7 +68,7 @@
         * [Input-WIP](DomainSpecifications/DS-V7/Input-WIP/)
             * [Custom Targets](DomainSpecifications/DS-V7/Input-WIP/CustomTargets.md)
             * [Formalization of DS](DomainSpecifications/DS-V7/Input-WIP/FormalizationOfDS.md)
-* [SDO-Verification)](SDO-Verification/README.md)
+* [SDO-Verification](SDO-Verification/README.md)
 * [Lists](Lists/README.md)
     * [List-V1](Lists/List-V1/README.md)
 * [Vocabularies](Vocabularies/README.md)

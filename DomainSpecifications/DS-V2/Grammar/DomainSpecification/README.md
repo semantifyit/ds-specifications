@@ -1,6 +1,6 @@
 # Grammar and semantics of Domain Specifications
 
-The grammar for Domain Specifications in DS-V2 consists of following grammar nodes:
+The grammar for Domain Specifications in DS-V2 consists of the following grammar nodes:
 
 * [Domain Specification Node](./DomainSpecification.md)
 * [Restricted Class Node](./RestrictedClass.md)

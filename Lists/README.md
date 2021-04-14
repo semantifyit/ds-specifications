@@ -1,4 +1,6 @@
-# Lists (WIP)
+# Lists
+
+(WIP)
 
 Lists are collections of specific items that can be created and managed by users on semantify.it on an organisation-scope.
 These specific items can be (so far): Domain Specifications, or Vocabularies (semantify hosted).

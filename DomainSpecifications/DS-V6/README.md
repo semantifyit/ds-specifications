@@ -1,6 +1,6 @@
 # DS-V6
 
-This specification version never passed the draft-phase. It included proposals for improvements to not only the DS specification (including verification results), but also Lists, the verification process, and the DS vocabulary. 
+This specification version never passed the draft phase. It included proposals for improvements to not only the DS specification (including verification results), but also Lists, the verification process, and the DS vocabulary. 
 
 Following proposed improvements are the result of an analysis we did on the DS specification and its usage (verification on different data sources, e.g. annotations vs. knowledge graph).
 

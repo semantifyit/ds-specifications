@@ -4,9 +4,9 @@ This specification version is the same as DS-V3, but with improvements to the `@
 
 ## @Context changes
 
-This context introduces the `@container` keyword with the value `@list`. This results in a syntax for ranges of properties and possible values for enumeration to be easier to read because these containers dont need a `@list`-wrapper anymore:
+This context introduces the `@container` keyword with the value `@list`. This results in a syntax for ranges of properties and possible values for enumeration to be easier to read because these containers don't need a `@list`-wrapper anymore:
 
-With previous context:
+With the previous context:
 
 ```json
 {
@@ -36,7 +36,7 @@ With previous context:
 }
 ```
 
-with new context:
+with the new context:
 
 ```json
 {
