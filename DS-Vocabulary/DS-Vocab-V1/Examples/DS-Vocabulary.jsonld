@@ -96,7 +96,7 @@
       "schema:rangeIncludes": "ds:DomainSpecification"
     },
     {
-      "@id": "ds:errors",
+      "@id": "ds:error",
       "@type": "rdf:Property",
       "rdfs:comment": "todo the errors generated during the verification process",
       "rdfs:label": "errors",
