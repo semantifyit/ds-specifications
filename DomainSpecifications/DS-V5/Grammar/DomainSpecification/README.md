@@ -1,6 +1,6 @@
 # Grammar and semantics of Domain Specifications
 
-The grammar for Domain Specifications in DS-V3 consists of the following grammar nodes. They are explained through their differences to the DS-V1 grammar. DS-V3 can be seen as the enhanced and SHACL version of DS-V1.
+The grammar for Domain Specifications in DS-V5 consists of the following grammar nodes.
 
 * [Domain Specification Node](./DomainSpecification.md)
 * [Property Node](./Property.md)

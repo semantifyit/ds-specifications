@@ -19,4 +19,4 @@ Although the DS-Vocabulary file (for DS-related specifications) and the list spe
 * [Examples](Examples/README.md)
 * [Grammar](Grammar/README.md)
 * [@context of DS-V5](./Grammar/DomainSpecification/Context.md)
-* [Terms of DS](./Grammar/DomainSpecification/TermsDS.md)
+* [Terms of DS-V5](./Grammar/DomainSpecification/TermsDS.md)

@@ -1,6 +1,6 @@
 # Class Node
 
-A Class Node specifies the constraints for an enumeration. Note that this kind of node has similarities to an [Enumeration Node](./Enumeration.md).
+A Class Node specifies the constraints for a class. Note that this kind of node has similarities to an [Enumeration Node](./Enumeration.md).
 
 For `sh:class` arrays are allowed, these are supposed to represent multi-typed entities (MTE) and our verifier matches this MTEs only if the target entity has all the listed types (see the second example) or subtypes of the type(s) defined in `sh:class`.
 
