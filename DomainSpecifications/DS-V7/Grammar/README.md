@@ -1,6 +1,6 @@
 # DS-V7 - Grammar
 
-The grammar for DS-V7 consists of different node-types, that are used to construct Domain Specifications and Verification Reports.
+The grammar for **DS-V7** consists of different node-types, that are used to construct Domain Specifications and Verification Reports.
 
 ## Content
 

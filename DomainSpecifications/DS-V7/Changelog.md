@@ -1,6 +1,6 @@
 # DS-V7 Changelog
 
-In the following, the additions and changes of **DS-V7** in contrast to the previous used version of DS (**DS-V5**) are explained.
+In the following, the additions and changes of **DS-V7** in contrast to the previously used version of DS (**DS-V5**) are explained.
 
 ## 1. Changes
 
@@ -135,7 +135,7 @@ Example in DS node:
 
 #### 1.4.3 sh:shapesGraph
 
-We also adopt `sh:shapesGraph` into the DS specification (see [SHACL specification](https://www.w3.org/TR/shacl/#sh-shapes-graph)), which enables a method for entities to specify the Domain Specification(s) to which they comply. The range of this property is the `@id` of the said DS. Keep in mind that this term is not used in Domain Specifications, but in the data (any "Thing" can use the `sh:shapesGraph` property). Multiple `sh:shapesGraph` assertions are treated as conjunction (an instance MUST fit all DS defined on it).
+We also adopt `sh:shapesGraph` into the DS specification (see [SHACL specification](https://www.w3.org/TR/shacl/#sh-shapes-graph)), which enables a method for entities to specify the Domain Specification(s) to which they comply. The range of this property is the `@id` of the said DS. Keep in mind that this term is not used in Domain Specifications, but in the data (any "Thing" can use the `sh:shapesGraph` property). Multiple `sh:shapesGraph` assertions are treated as a conjunction (an instance MUST fit all DS defined on it).
 
 Example for a JSON-LD annotation:
 

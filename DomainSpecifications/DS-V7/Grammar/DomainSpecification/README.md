@@ -1,6 +1,6 @@
 # Grammar and semantics of Domain Specifications
 
-The grammar for Domain Specifications in DS-V7 consists of the following grammar nodes:
+The grammar for Domain Specifications in **DS-V7** consists of the following grammar nodes:
 
 * [Domain Specification Node](./DomainSpecification.md)
 * [Property Node](./Property.md)

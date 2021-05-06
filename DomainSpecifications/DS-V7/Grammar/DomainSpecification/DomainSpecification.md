@@ -139,7 +139,7 @@ In the following example, any entity that is a range of the property `schema:add
 
 See [SHACL specification](https://www.w3.org/TR/shacl/#sh-shapes-graph).
 
-`sh:shapesGraph` is a term used for data matching, but is not part of a Domain Specification. Instead, it CAN be used on data entities to specify the Domain Specification(s) to which they comply. The range of the property is the `@id` of the corresponding DS. Multiple `sh:shapesGraph` assertions are treated as conjunction (an instance MUST fit all DS defined on it).
+`sh:shapesGraph` is a term used for data matching, but is not part of a Domain Specification. Instead, it CAN be used on data entities to specify the Domain Specification(s) to which they comply. The range of the property is the `@id` of the corresponding DS. Multiple `sh:shapesGraph` assertions are treated as a conjunction (an instance MUST fit all DS defined on it).
 
 Example for a JSON-LD annotation:
 
