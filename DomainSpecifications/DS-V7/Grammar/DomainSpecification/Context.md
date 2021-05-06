@@ -1,6 +1,6 @@
 # Standard @Context
 
-In the past we have tried to use a standard `@context` for Domain Specifications that would work in all tools and use-cases. In **DS-V7** a minimal `@context` is provided, which (1) omits the explicit `@id` for specified terms and (2) omits the terms `sh:property` and `sh:node`. If a tool needs further changes to the @context, they should be done in a pre-process step for that tool (most tools only have to 'read' Domain Specifications).
+In the past, we have tried to use a standard `@context` for Domain Specifications that would work in all tools and use-cases. In **DS-V7** a minimal `@context` is provided, which (1) omits the explicit `@id` for specified terms and (2) omits the terms `sh:property` and `sh:node`. If a tool needs further changes to the @context, they should be done in a pre-processing step for that tool (most tools only have to 'read' Domain Specifications).
 
 Additionally, some new term entries are introduced. Keep in mind that external vocabularies could introduce vocabulary namespaces to the `@context`.
 

@@ -45,23 +45,23 @@ Property Nodes express the constraints for a given property (identified by its I
 
 See [SHACL specification](https://www.w3.org/TR/shacl/#core-components-property-pairs).
 
-The following property-pair constraints allow to compare the literal values of different properties (on the same level = properties of the same subject). It makes sense to define them at property level, rather than at range level.
+The following property-pair constraints allow comparing the literal values of different properties (on the same level = properties of the same subject). It makes sense to define them at the property level, rather than at the range level.
 
 ### 3.1.1. sh:equals
 
-Specifies the condition that the set of all value nodes is equal to the set of objects of the triples that have the focus node as subject and the value of sh:equals as predicate. (The property shape having `sh:equals` must have the same values as the property shape with the `sh:path` specified with `sh:equals`) | Non-conform sh:equals
+Specifies the condition that the set of all value nodes is equal to the set of objects of the triples that have the focus node as subject and the value of `sh:equals` as predicate. (The property shape having `sh:equals` must have the same values as the property shape with the `sh:path` specified with `sh:equals`).
 
 ### 3.1.2. sh:disjoint
 
-Specifies the condition that the set of value nodes is disjoint with the set of objects of the triples that have the focus node as subject and the value of `sh:disjoint` as predicate. (The property shape having `sh:disjoint` must NOT have the same values as the property shape with the `sh:path` specified with `sh:disjoint`) |Non-conform sh:disjoint
+Specifies the condition that the set of value nodes is disjoint with the set of objects of the triples that have the focus node as subject and the value of `sh:disjoint` as predicate. (The property shape having `sh:disjoint` must NOT have the same values as the property shape with the `sh:path` specified with `sh:disjoint`).
 
 ### 3.1.3. sh:lessThan
 
-Specifies the condition that each value node is smaller than all the objects of the triples that have the focus node as subject and the value of `sh:lessThan` as predicate. (The property shape having `sh:lessThan` must have the values that are less than the property shape with the `sh:path` specified with `sh:lessThan`). The comparison should be possible for all datatypes except boolean and URL.
+Specifies the condition that each value node is smaller than all the objects of the triples that have the focus node as subject and the value of `sh:lessThan` as predicate. (The property shape having `sh:lessThan` must have the values that are less than the property shape with the `sh:path` specified with `sh:lessThan`). The comparison should be possible for all data types except boolean and URL.
 
 ### 3.1.4. sh:lessThanOrEquals
 
-Specifies the condition that each value node is smaller than or equal to all the objects of the triples that have the focus node as subject and the value of `sh:lessThanOrEquals` as predicate. (like `sh:lessThan`, but equal values are also allowed). The comparison should be possible for all datatypes except boolean and URL.
+Specifies the condition that each value node is smaller than or equal to all the objects of the triples that have the focus node as subject and the value of `sh:lessThanOrEquals` as predicate. (like `sh:lessThan`, but equal values are also allowed). The comparison should be possible for all data types except boolean and URL.
 
 
 

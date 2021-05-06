@@ -5,7 +5,7 @@ Terms that can have multiple values will have their range type wrapped by an arr
 
 ## Meta Data describing Components
 
-Following components give additional non-validating/constraining information about the DS.
+The following components give additional non-validating/constraining information about the DS.
 
 **schema:name** - `[Language tagged String]` - The Name(s) of the DS.
 

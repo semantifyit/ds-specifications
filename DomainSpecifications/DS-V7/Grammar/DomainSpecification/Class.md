@@ -30,9 +30,8 @@ The `@id` of a Class Node is used to reference it in other parts of the Domain S
 | `@id` | true | *IRI* | The IRI of the Class Node, which is based on the DS IRI they are in |
 | `@type` | true | `"sh:NodeShape"` | The fixed type for a Class Node |
 | `sh:class` | true | [ *IRI* ] | The IRI(s) of the Class(es) that the entity must have | Non-conform range |
-| `sh:property` | false | List of **PropertyNode** | A list of property nodes that apply to the entity | Missing Property, Non-conform Property |
 | `sh:closed` | false | *Boolean* | Specifies if additional properties are allowed or not | Non-conform property |
-
+| `sh:property` | false | List of **PropertyNode** | A list of property nodes that apply to the entity | Missing Property, Non-conform Property |
 
 ## 3. Semantics
 
@@ -65,7 +64,7 @@ The terms `sh:property` and `sh:closed` are used in a Class Node to give further
 
 See [SHACL specification](https://www.w3.org/TR/shacl/#PropertyConstraintComponent).
 
-The term `sh:property` lists the property shapes that the target entity must comply. For every property there is a corresponding [Property Node](./Property.md) in this list.
+The term `sh:property` lists the property shapes that the target entity must comply with. For every property, there is a corresponding [Property Node](./Property.md) in this list.
 
 Example:
 
@@ -110,7 +109,7 @@ Example:
 
 ### 3.3. Use of Internal references
 
-In order to reference NodeShapes that are part of a DS, those NodeShapes need a IRI. It makes sense to give them the same BaseIRI as the DS in which they are in, with the addition of a **fragment id**, e.g. in the DS with the IRI `https://semantify.it/ds/OBbzsh4_B` there could be a NodeShape with the IRI `https://semantify.it/ds/OBbzsh4_B#DpruH`.
+In order to reference NodeShapes that are part of a DS, those NodeShapes need an IRI. It makes sense to give them the same BaseIRI as the DS in which they are in, with the addition of a **fragment id**, e.g. in the DS with the IRI `https://semantify.it/ds/OBbzsh4_B` there could be a NodeShape with the IRI `https://semantify.it/ds/OBbzsh4_B#DpruH`.
 
 Example Class Node (inner NodeShape):
 
@@ -144,10 +143,10 @@ Example Property node that references the previous example Class node:
 }
 ```
 
-In order to make the use of internal references more convenient, we introduce following rules:
+In order to make the use of internal references more convenient, we introduce the following rules:
 
-* Every NodeShape inside a DS receives a IRI, even if it hasn't been referenced yet.
+* Every NodeShape inside a DS receives an IRI, even if it hasn't been referenced yet.
 * The NodeShape that specifies the class node (the referenced NodeShape) contains `"@type": "sh:NodeShape"` and all the constraints needed.
 * The internal references contain only the `@id` property. They can not add additional constraints.
-* Only valid matches can be used as a reference for a range, for this the `sh:class` constraint of the target NodeShape is checked. If the target class of a NodeShape is `schema:Hotel`, but the property in question can not have that class as valid range, then that NodeShape can **not** be referenced.
+* Only valid matches can be used as a reference for a range, for this, the `sh:class` constraint of the target NodeShape is checked. If the target class of a NodeShape is `schema:Hotel`, but the property in question can not have that class as a valid range, then that NodeShape can **not** be referenced.
 * It is possible to create circular Domain Specifications.
