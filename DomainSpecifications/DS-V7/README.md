@@ -14,9 +14,9 @@ A detailed listing of all changes can be found in the [Changelog](Changelog.md).
 
 ## Content
 
-* [Standard @context](./Grammar/DomainSpecification/Context.md ) - The standard `@context` that is used for Domain Specifications and Verification Reports.
-* [Grammar](./Grammar/README.md ) - Formal specification of the components (node types, terms, etc.) of Domain Specifications and Verification Reports.
-* [List of Terms (DS)](./Grammar/DomainSpecification/TermsDS.md ) - A list of all terms that can be used in Domain Specifications.
-* [Changelog](Changelog.md ) - A detailed listing of all changes and additions of **DS-V7** in comparison to **DS-V5**.
-* [Developer Notes](DevNotes.md ) - Guidelines for developers building software around Domain Specifications.
-* [Examples](Examples/README.md ) - Example files for Domain Specifications and Verification Reports.
+* [Standard @context](./Grammar/DomainSpecification/Context.md) - The standard `@context` that is used for Domain Specifications and Verification Reports.
+* [Grammar](./Grammar/README.md) - Formal specification of the components (node types, terms, etc.) of Domain Specifications and Verification Reports.
+* [List of Terms (DS)](./Grammar/DomainSpecification/TermsDS.md) - A list of all terms that can be used in Domain Specifications.
+* [Changelog](Changelog.md) - A detailed listing of all changes and additions of **DS-V7** in comparison to **DS-V5**.
+* [Developer Notes](DevNotes.md) - Guidelines for developers building software around Domain Specifications.
+* [Examples](Examples/README.md) - Example files for Domain Specifications and Verification Reports.

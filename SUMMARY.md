@@ -15,6 +15,7 @@
                 * [DataType Node](DomainSpecifications/DS-V7/Grammar/DomainSpecification/DataType.md)
                 * [Enumeration Node](DomainSpecifications/DS-V7/Grammar/DomainSpecification/Enumeration.md)
             * [VerificationReport](DomainSpecifications/DS-V7/Grammar/VerificationReport/README.md)
+        * [DS-V7 - Examples](DomainSpecifications/DS-V7/Examples/README.md)
         * [Input-WIP](DomainSpecifications/DS-V7/Input-WIP/)
             * [Custom Targets](DomainSpecifications/DS-V7/Input-WIP/CustomTargets.md)
             * [Formalization of DS](DomainSpecifications/DS-V7/Input-WIP/FormalizationOfDS.md)

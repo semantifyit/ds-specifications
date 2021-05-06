@@ -39,8 +39,8 @@ If a DS uses other vocabularies besides schema.org, their namespaces are mention
       "schema:name": "Johns Company"
     }
   },
-  "schema:version": 1.02,
   "ds:version": "7.0",
+  "schema:version": 1.02,
   "schema:schemaVersion": "11.0",
   "ds:usedVocabulary": [
     "https://semantify.it/voc/KEl6e6F0U"
@@ -54,25 +54,25 @@ If a DS uses other vocabularies besides schema.org, their namespaces are mention
 
 ## 2. Key-value Table
 
-The following table lists all possible attributes (terms) that can be used by a DS Node. The order in the table reflects the recommended order of these terms within a DS Node (optional).
+The following table lists all possible terms that can be used by a DS Node. The order in the table reflects the recommended order of these terms within a DS Node (optional).
 
 | key | required | value type | description | related error |
 | :---: | :---: | :---: | :--- | :---: |
 | `@id` | true | *IRI* | The IRI of the DS. Should be a valid URL to get the DS |
 | `@type` | true | `"ds:DomainSpecification"` | The fixed type for a Domain Specification |
+| `ds:subDSOf` | false | *IRI* | The Super-DS of this DS. Constraints from the Super-DS are inherited |
 | `sh:targetClass` | false | List of *IRI* | The class(es) that the target entities for this Domain Specification must have (for DS matching)| |
 | `sh:targetObjectsOf` | false | *IRI* | The property whose entity values are targets for this Domain Specification (for DS matching)  | |
 | `sh:class` | false | List of *IRI* | The class(es) that the target entities for this Domain Specification must have (as a constraint for verification) | Non-conform @type |
-| `sh:property` | true | List of **PropertyNode** | A list of property nodes that apply to the target entity | Missing Property, Non-conform Property |
-| `sh:closed` | false | *Boolean* | Specifies if additional properties are allowed or not | Non-conform property |
 | `schema:name` | false | List of *Language tagged String* | The name of the Domain Specification |
 | `schema:description` | false | List of *Language tagged String* | The description of the Domain Specification |
 | `schema:author` | false | *Object* | A `schema:Person` object, that holds the name of the author and optionally their organisation |
-| `schema:schemaVersion` | true | *String* | The used schema.org version as string, e.g. `"11.0"` |
-| `ds:usedVocabulary` | false | List of *IRI* | The used external vocabularies (besides schema.org) for this DS. The values are IRIs of those vocabularies |
 | `ds:version` | true | *String* | The DS specification version used. This eases the handling of different DS versions for tools. The range of `ds:version` is a string that specifies the used version number with one decimal place, e.g. if the specification is titled "DS-V7", the value is `"7.0"`|
 | `schema:version` | false |*Float* | The version of this Domain Specification. Starts at `1.00`, small patches increase the decimal by 1 -> `1.01`, bigger patches/vocabulary version updates increase the integer by 1 -> `2.00`|
-| `ds:subDSOf` | false | *IRI* | The Super-DS of this DS. Constraints from the Super-DS are inherited |
+| `schema:schemaVersion` | true | *String* | The used schema.org version as string, e.g. `"11.0"` |
+| `ds:usedVocabulary` | false | List of *IRI* | The used external vocabularies (besides schema.org) for this DS. The values are IRIs of those vocabularies |
+| `sh:closed` | false | *Boolean* | Specifies if additional properties are allowed or not | Non-conform property |
+| `sh:property` | true | List of **PropertyNode** | A list of property nodes that apply to the target entity | Missing Property, Non-conform Property |
 
 
 ## 3. Semantics
@@ -190,7 +190,7 @@ Example:
 
 See [SHACL specification](https://www.w3.org/TR/shacl/#PropertyConstraintComponent).
 
-The mandatory term `sh:property` lists the property shapes that the target entity must comply with.
+The mandatory term `sh:property` lists the [Property Nodes](./Property.md) that the target entity must comply with.
 
 Example:
 
