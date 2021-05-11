@@ -169,6 +169,8 @@ Regarding the Error generation based on these property-pair constraints, tests w
 
 ### 3.4. Metadata
 
+Following terms represent metadata about the given property. These terms do not have any effects on the verification result; They have only informational character.
+
 #### 3.4.1. sh:order
 
 The term `sh:order` CAN be used to indicate a specific order for a list of properties. This can be used e.g. by a GUI to render the list of properties in the wished order. The value for this term must be an integer, starting with `0`.

@@ -5,9 +5,9 @@ The main purpose of Domain Specifications is to define a standard to which schem
 
 Since the concept of Domain Specifications has been enhanced multiple times, documentation for the different versions is provided:
 
-* [DS-V7](DS-V7/README.md) - Draft
+* [DS-V7](DS-V7/README.md) - Stable (latest in use)
 * [DS-V6](DS-V6/README.md) - Unused
-* [DS-V5](DS-V5/README.md) - Stable (latest in use)
+* [DS-V5](DS-V5/README.md) - Deprecated 
 * [DS-V4](DS-V4/README.md) - Deprecated
 * [DS-V3](DS-V3/README.md) - Deprecated
 * [DS-V2](DS-V2/README.md) - Deprecated

@@ -135,11 +135,9 @@ In the following example, any entity that is a range of the property `schema:add
 "sh:targetObjectsOf": "schema:address"
 ```
 
-#### 3.1.4. sh:shapesGraph
+#### 3.1.4. ds:compliesWith
 
-See [SHACL specification](https://www.w3.org/TR/shacl/#sh-shapes-graph).
-
-`sh:shapesGraph` is a term used for data matching, but is not part of a Domain Specification. Instead, it CAN be used on data entities to specify the Domain Specification(s) to which they comply. The range of the property is the `@id` of the corresponding DS. Multiple `sh:shapesGraph` assertions are treated as a conjunction (an instance MUST fit all DS defined on it).
+`ds:compliesWith` is a term used for data matching, but is not part of a Domain Specification. Instead, it CAN be used on data entities to specify the Domain Specification(s) to which they comply. The range of the property is the `@id` of the corresponding DS. Multiple `ds:compliesWith` assertions are treated as a conjunction (an instance MUST fit all DS defined on it).
 
 Example for a JSON-LD annotation:
 
@@ -147,10 +145,10 @@ Example for a JSON-LD annotation:
 {
   "@context": {
     "@vocab":"https://schema.org/",
-    "sh": "http://www.w3.org/ns/shacl#"
+    "ds": "http://vocab.sti2.at/ds/"
   },
   "@type": "Person",
-  "sh:shapesGraph": {
+  "ds:compliesWith": {
     "@id": "https://semantify.it/ds/-fYx5D34d"
   },
   "name": "Jane Doe",
@@ -334,7 +332,7 @@ Example:
 
 * The constraints defined in a Sub-DS MUST be as restrictive as the Super-DS or more restrictive. In order to be in compliance with a DS that has a Super-DS, a data instance MUST also be compliant to that Super-DS (instances that fit a Sub-DS MUST be a subset of those that fit its Super-DS).
 * A Sub-DS can introduce new constraints. This is also possible for already defined constraints, but they MUST be as restrictive as the Super-DS or more restrictive. This is a delicate challenge, e.g.
-  * Adding a new PropertyShape makes a Sub-DS more restrictive.
+  * Adding a new PropertyShape makes a Sub-DS more restrictive (if the Super-DS had `"sh:closed": false`).
   * Adding a new range to an inherited PropertyShape makes a Sub-DS less restrictive.
   * Adding a cardinality constraint (e.g. `sh:maxCount`) to an inherited PropertyShape makes a Sub-DS more restrictive.
   * Increasing the value of an inherited `sh:maxCount` constraint makes a Sub-DS less restrictive.

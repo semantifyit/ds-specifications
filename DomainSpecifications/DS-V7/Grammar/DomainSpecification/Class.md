@@ -23,13 +23,14 @@ The `@id` of a Class Node is used to reference it in other parts of the Domain S
   }
 }
 ```
+
 ## 2. Key-value Table
 
 The following table lists all possible terms that can be used by a Class Node. The order in the table reflects the recommended order of these terms within a Class Node (optional).
 
 | key | required | value type | description | related error |
 | :---: | :---: | :---: | :--- | :---: |
-| `@id` | true | *IRI* | The IRI of the Class Node, which is based on the DS IRI they are in |
+| `@id` | true | *IRI* | The IRI of the Class Node, which is based on the DS IRI it is in |
 | `@type` | true | `"sh:NodeShape"` | The fixed type for a Class Node |
 | `sh:class` | true | [ *IRI* ] | The IRI(s) of the Class(es) that the entity must have | Non-conform range |
 | `sh:closed` | false | *Boolean* | Specifies if additional properties are allowed or not | Non-conform property |

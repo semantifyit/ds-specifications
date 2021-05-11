@@ -133,9 +133,9 @@ Example in DS node:
 }
 ```
 
-#### 1.4.3 sh:shapesGraph
+#### 1.4.3 ds:compliesWith
 
-We also adopt `sh:shapesGraph` into the DS specification (see [SHACL specification](https://www.w3.org/TR/shacl/#sh-shapes-graph)), which enables a method for entities to specify the Domain Specification(s) to which they comply. The range of this property is the `@id` of the said DS. Keep in mind that this term is not used in Domain Specifications, but in the data (any "Thing" can use the `sh:shapesGraph` property). Multiple `sh:shapesGraph` assertions are treated as a conjunction (an instance MUST fit all DS defined on it).
+We also adopt `ds:compliesWith` into the DS specification (similar to `sh:shapesGraph`, see [SHACL specification](https://www.w3.org/TR/shacl/#sh-shapes-graph)), which enables a method for entities to specify the Domain Specification(s) to which they comply. The range of this property is the `@id` of the said DS. Keep in mind that this term is not used in Domain Specifications, but in the data (any "Thing" can use the `ds:compliesWith` property). Multiple `ds:compliesWith` assertions are treated as a conjunction (an instance MUST fit all DS defined on it).
 
 Example for a JSON-LD annotation:
 
@@ -143,10 +143,10 @@ Example for a JSON-LD annotation:
 {
   "@context": {
     "@vocab":"https://schema.org/",
-    "sh": "http://www.w3.org/ns/shacl#"
+    "ds": "http://vocab.sti2.at/ds/"
   },
   "@type": "Person",
-  "sh:shapesGraph": {
+  "ds:compliesWith": {
     "@id": "https://semantify.it/ds/-fYx5D34d"
   },
   "name": "Jane Doe",

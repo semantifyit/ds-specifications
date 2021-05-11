@@ -11,7 +11,3 @@ The grammar for Domain Specifications in **DS-V7** consists of the following gra
 There is also a standard `@context` that should be used by Domain Specifications:
 
 * [DS @context](./Context.md)
-
-A list with all terms used in Domain Specifications:
-
-* [DS Terms](./TermsDS.md)
