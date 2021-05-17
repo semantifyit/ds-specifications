@@ -12,11 +12,14 @@ Additionally, some new term entries are introduced. Keep in mind that external v
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "schema": "https://schema.org/",
     "sh": "http://www.w3.org/ns/shacl#",
-    "ds": "http://vocab.sti2.at/ds/",
+    "ds": "https://vocab.sti2.at/ds/",
     "sh:targetClass": {
       "@type": "@id"
     },
     "sh:targetObjectsOf": {
+      "@type": "@id"
+    },
+    "sh:targetSubjectsOf": {
       "@type": "@id"
     },
     "sh:path": {

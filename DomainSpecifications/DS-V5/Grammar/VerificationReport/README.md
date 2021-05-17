@@ -1,6 +1,6 @@
 # VerificationReport
 
-Verification Reports in DS-V3 are based on their corresponding concept in DS-V2. Verification Reports are given in JSON format and there are 3 different types of verification reports:
+Verification Reports are given in JSON format and there are 3 different types of verification reports:
 
 *   (Annotation Verification) General Verification of an Annotation based on following specifications:
     *   JSON

@@ -4,9 +4,9 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "owl": "http://www.w3.org/2002/07/owl#",
-    "schema": "http://schema.org/",
+    "schema": "https://schema.org/",
     "sh": "http://www.w3.org/ns/shacl#",
-    "ds": "http://vocab.sti2.at/ds/",
+    "ds": "https://vocab.sti2.at/ds/",
     "rdfs:subClassOf": {
       "@type": "@id"
     },

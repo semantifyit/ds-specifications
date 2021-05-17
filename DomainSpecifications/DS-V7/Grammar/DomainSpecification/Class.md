@@ -6,7 +6,7 @@ It is represented by an object with `"@type": "sh:NodeShape"` that is wrapped by
 
 The `@id` of a Class Node is used to reference it in other parts of the Domain Specification, and so reuse already defined constraints for a specific Class. Details below. 
 
-## 1. Example of a Class node
+## 1. Example
 
 ```json
 {

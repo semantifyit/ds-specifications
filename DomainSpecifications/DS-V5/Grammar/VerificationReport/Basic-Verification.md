@@ -16,7 +16,7 @@ Error codes regarding the basic verification reflect errors caused by underlying
 | 101 | Invalid JSON |Critical|	The input is not valid JSON. - string that can not be parsed to json
 | 102 | Empty JSON | Critical| The input is empty - null, empty object, "", undefined, []
 | 103 | No JSON Object |Critical	|The input is not a JSON object - input should be an JSON object, and not an array of annotations, or something else
-| 104 | 	Usage of undefined	| Error| 	Usage of undefined as value - Not valid in JSON
+| 104 | Usage of undefined	| Error| 	Usage of undefined as value - Not valid in JSON
 
 ## JSON-LD Error Codes (start with 2)
 

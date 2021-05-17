@@ -9,7 +9,7 @@ An Enumeration Node is represented by an object with `"@type": "sh:NodeShape"` t
 The `@id` of an Enumeration Node is used to reference it in other parts of the Domain Specification, and so reuse already defined constraints for a specific Enumeration. Details below.
 
 
-## 1. Example of an Enumeration node
+## 1. Example
 
 ```json
 {

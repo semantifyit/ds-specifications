@@ -2,12 +2,12 @@
 
 A Domain Specification is a JSON object that has 2 parts: a `@context` and a `@graph`.
 
-The `@graph` is an array that usually has 1 object. That object is seen as the root node of the Domain Specification (which is called the **DS node**, from a grammar point of view). It contains meta-information about the DS, along with data-matching conditions (`sh:targetClass` or `sh:targetObjectsOf`) and its properties (`sh:property`). It also contains an `@id` with an IRI identifying the DS, and in the best case, it should also be a valid URL that shows the content of the DS.
+The `@graph` is an array that usually has 1 object. That object is seen as the root node of the Domain Specification (which is called the **DS node**, from a grammar point of view). It contains meta-information about the DS, along with data-matching conditions (e.g. `sh:targetClass`, `sh:targetObjectsOf`, etc.) and its properties (`sh:property`). It also contains an `@id` with an IRI identifying the DS, and in the best case, it should also be a valid URL that shows the content of the DS.
 
 There is a standard `@context` for Domain Specifications (See [Context.md](./Context.md) for details).
 If a DS uses other vocabularies besides schema.org, their namespaces are mentioned in the `@context` and their IRIs (should also work as URL to get the vocabulary file) are explicitly listed with `ds:usedVocabulary`.
 
-## 1. Example of a DS node
+## 1. Example
 
 ```JSON
 {
@@ -62,7 +62,8 @@ The following table lists all possible terms that can be used by a DS Node. The 
 | `@type` | true | `"ds:DomainSpecification"` | The fixed type for a Domain Specification |
 | `ds:subDSOf` | false | *IRI* | The Super-DS of this DS. Constraints from the Super-DS are inherited |
 | `sh:targetClass` | false | List of *IRI* | The class(es) that the target entities for this Domain Specification must have (for DS matching)| |
-| `sh:targetObjectsOf` | false | *IRI* | The property whose entity values are targets for this Domain Specification (for DS matching)  | |
+| `sh:targetObjectsOf` | false | *IRI* | The property whose object entities are targets for this Domain Specification (for DS matching)  | |
+| `sh:targetSubjectsOf` | false | *IRI* | The property whose subject entities are targets for this Domain Specification (for DS matching)  | |
 | `sh:class` | false | List of *IRI* | The class(es) that the target entities for this Domain Specification must have (as a constraint for verification) | Non-conform @type |
 | `schema:name` | false | List of *Language tagged String* | The name of the Domain Specification |
 | `schema:description` | false | List of *Language tagged String* | The description of the Domain Specification |
@@ -135,7 +136,19 @@ In the following example, any entity that is a range of the property `schema:add
 "sh:targetObjectsOf": "schema:address"
 ```
 
-#### 3.1.4. ds:compliesWith
+#### 3.1.4. sh:targetSubjectsOf
+
+See [SHACL specification](https://www.w3.org/TR/shacl/#targetSubjectsOf).
+
+`sh:targetSubjectsOf` specifies the IRI of a property whose subjects are entities that are restricted by this Domain Specification. This property is used for data matching.
+
+In the following example, any entity that uses the property `schema:address` counts as a target for the Domain Specification:
+
+```JSON
+"sh:targetSubjectsOf": "schema:address"
+```
+
+#### 3.1.5. ds:compliesWith
 
 `ds:compliesWith` is a term used for data matching, but is not part of a Domain Specification. Instead, it CAN be used on data entities to specify the Domain Specification(s) to which they comply. The range of the property is the `@id` of the corresponding DS. Multiple `ds:compliesWith` assertions are treated as a conjunction (an instance MUST fit all DS defined on it).
 
@@ -145,7 +158,7 @@ Example for a JSON-LD annotation:
 {
   "@context": {
     "@vocab":"https://schema.org/",
-    "ds": "http://vocab.sti2.at/ds/"
+    "ds": "https://vocab.sti2.at/ds/"
   },
   "@type": "Person",
   "ds:compliesWith": {

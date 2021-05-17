@@ -9,5 +9,4 @@ The grammar for **DS-V7** consists of different node-types, that are used to con
 * [The grammar and semantics of Verification Reports](./VerificationReport/README.md)
     * [Error List for the basic verification](./VerificationReport/Basic-Verification.md)
     * [Error List for the DS verification](./VerificationReport/DS-Verification.md)
-    * [Error List for the DS-meta verification](./VerificationReport/DS-Meta-Verification.md)   
-    * [Error List and semantics for the schema.org verification](./VerificationReport/SDO-Verification.md)
+    * [Error List for the DS-meta verification](./VerificationReport/DS-Meta-Verification.md)
