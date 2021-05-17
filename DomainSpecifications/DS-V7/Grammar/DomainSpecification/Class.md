@@ -49,7 +49,7 @@ Examples:
 ```JSON
 "sh:class": [
   "schema:LodgingBusiness",
-  "schema:Restaurant
+  "schema:Restaurant"
 ]
 ```
 
