@@ -50,9 +50,9 @@ The following table lists all possible terms that can be used by a Data Type Nod
 | `sh:flag` | false |  _string_ | Optional regex flags for sh:pattern | Non-conform sh:pattern |
 | `sh:languageIn` | false | List of _Language-Tag_ |  The literal must use a language tag given in the list of language tags | Non-conform sh:languageIn |
 | `sh:uniqueLang` | false | _Boolean_ | The property must not use the same language tag more than one time | Non-conform sh:uniqueLang |
-| `ds:hasLanguage` | false | List of _Language-Tag_  | The property must use all language tags in the given list | Non-conform sh:uniqueLang |
+| `ds:hasLanguage` | false | List of _Language-Tag_  | The property must use all language tags in the given list | Non-conform ds:hasLanguage |
 | `sh:in` | false | same as constrained Data Type | Specifies the condition that each value node is a member of a provided list | Non-conform sh:in |
-| `sh:hasValue ` | false | same as constrained Data Type | Specifies the condition that at least one value node is equal to the given value | Non-conform sh:hasValue |
+| `sh:hasValue ` | false | List of _same as constrained Data Type_ | Specifies the condition that at least one value node is equal to the given value | Non-conform sh:hasValue |
 
 ## 3. Semantics
 

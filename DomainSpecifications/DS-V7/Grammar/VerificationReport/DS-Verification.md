@@ -2,8 +2,6 @@
 
 The following errors are generated during the compliance check of a schema.org annotation/RDF-Graph based on the constraints defined by a Domain Specification.
 
-TODO
-
 ## Error Codes for the DS verification (start with 5)
 
 | ErrorCode | Name | Severity | Description |
@@ -30,6 +28,7 @@ TODO
 | 534 | Non-conform sh:lessThanOrEquals | Error | Value of property is not smaller or equal than the value of the other property specified |
 | 535 | Non-conform sh:in | Error | Value of property does not match any value of the given list |
 | 536 | Non-conform sh:hasValue | Error | Value of property does not contain the given value |
+| 537 | Non-conform ds:hasLanguage | Error | Value of property does not use the given language |
 
 ## Semantics for Class Matching
 
