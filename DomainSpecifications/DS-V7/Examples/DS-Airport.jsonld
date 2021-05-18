@@ -1,0 +1,1385 @@
+{
+  "@context": {
+    "ds": "https://vocab.sti2.at/ds/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ds:subDSOf": {
+      "@type": "@id"
+    },
+    "ds:usedVocabulary": {
+      "@type": "@id"
+    },
+    "sh:targetClass": {
+      "@type": "@id"
+    },
+    "sh:targetObjectsOf": {
+      "@type": "@id"
+    },
+    "sh:targetSubjectsOf": {
+      "@type": "@id"
+    },
+    "sh:class": {
+      "@type": "@id"
+    },
+    "sh:path": {
+      "@type": "@id"
+    },
+    "sh:datatype": {
+      "@type": "@id"
+    },
+    "sh:equals": {
+      "@type": "@id"
+    },
+    "sh:disjoint": {
+      "@type": "@id"
+    },
+    "sh:lessThan": {
+      "@type": "@id"
+    },
+    "sh:lessThanOrEquals": {
+      "@type": "@id"
+    },
+    "sh:in": {
+      "@container": "@list"
+    },
+    "sh:languageIn": {
+      "@container": "@list"
+    },
+    "sh:or": {
+      "@container": "@list"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "https://semantify.it/ds/_1hRVOT8Q",
+      "@type": "ds:DomainSpecification",
+      "sh:targetClass": [
+        "schema:Airport"
+      ],
+      "sh:class": [
+        "schema:Airport"
+      ],
+      "schema:name": [
+        {
+          "@language": "en",
+          "@value": "Airport"
+        }
+      ],
+      "schema:description": [
+        {
+          "@language": "en",
+          "@value": "Airport Domain Specification is a domain-specific pattern for annotating airports using schema.org vocabulary. "
+        }
+      ],
+      "schema:author": {
+        "@type": "schema:Person",
+        "schema:name": "oleksandra",
+        "schema:memberOf": {
+          "@type": "schema:Organization",
+          "schema:name": "STI Innsbruck"
+        }
+      },
+      "ds:version": "7.0",
+      "schema:version": 1.18,
+      "schema:schemaVersion": "12.0",
+      "sh:closed": true,
+      "sh:property": [
+        {
+          "@type": "sh:PropertyShape",
+          "sh:order": 0,
+          "sh:path": "schema:identifier",
+          "sh:maxCount": 1,
+          "sh:or": [
+            {
+              "sh:datatype": "xsd:anyURI"
+            },
+            {
+              "sh:datatype": "xsd:string"
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:order": 1,
+          "sh:path": "schema:alternateName",
+          "sh:maxCount": 1,
+          "sh:or": [
+            {
+              "sh:datatype": "xsd:string"
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:order": 2,
+          "sh:path": "schema:name",
+          "sh:minCount": 1,
+          "sh:maxCount": 1,
+          "sh:or": [
+            {
+              "sh:datatype": "xsd:string"
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:order": 3,
+          "sh:path": "schema:icaoCode",
+          "sh:minCount": 1,
+          "sh:maxCount": 1,
+          "sh:or": [
+            {
+              "sh:datatype": "xsd:string"
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:order": 4,
+          "sh:path": "schema:address",
+          "sh:minCount": 1,
+          "sh:maxCount": 1,
+          "sh:or": [
+            {
+              "sh:node": {
+                "@id": "https://semantify.it/ds/_1hRVOT8Q#GbVXU",
+                "@type": "sh:NodeShape",
+                "sh:class": [
+                  "schema:PostalAddress"
+                ],
+                "sh:closed": true,
+                "sh:property": [
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 0,
+                    "sh:path": "schema:addressCountry",
+                    "sh:minCount": 1,
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:node": {
+                          "@id": "https://semantify.it/ds/_1hRVOT8Q#JQMBu",
+                          "@type": "sh:NodeShape",
+                          "sh:class": [
+                            "schema:Country"
+                          ],
+                          "sh:closed": true,
+                          "sh:property": [
+                            {
+                              "@type": "sh:PropertyShape",
+                              "sh:order": 0,
+                              "sh:path": "schema:name",
+                              "sh:minCount": 1,
+                              "sh:maxCount": 1,
+                              "sh:or": [
+                                {
+                                  "sh:datatype": "xsd:string"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "sh:datatype": "xsd:string"
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 1,
+                    "sh:path": "schema:addressRegion",
+                    "sh:minCount": 1,
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:string"
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 2,
+                    "sh:path": "schema:addressLocality",
+                    "sh:minCount": 1,
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:string"
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 3,
+                    "sh:path": "schema:postalCode",
+                    "sh:minCount": 1,
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:string"
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 4,
+                    "sh:path": "schema:streetAddress",
+                    "sh:minCount": 1,
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:string"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:order": 5,
+          "sh:path": "schema:description",
+          "sh:maxCount": 1,
+          "sh:or": [
+            {
+              "sh:datatype": "xsd:string"
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:order": 6,
+          "sh:path": "schema:openingHoursSpecification",
+          "sh:maxCount": 1,
+          "sh:or": [
+            {
+              "sh:node": {
+                "@id": "https://semantify.it/ds/_1hRVOT8Q#lLswj",
+                "@type": "sh:NodeShape",
+                "sh:class": [
+                  "schema:OpeningHoursSpecification"
+                ],
+                "sh:closed": true,
+                "sh:property": [
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 0,
+                    "sh:path": "schema:opens",
+                    "sh:minCount": 1,
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:time"
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 1,
+                    "sh:path": "schema:closes",
+                    "sh:minCount": 1,
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:time"
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 2,
+                    "sh:path": "schema:dayOfWeek",
+                    "sh:minCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:node": {
+                          "@id": "https://semantify.it/ds/_1hRVOT8Q#cpWKz",
+                          "@type": "sh:NodeShape",
+                          "sh:class": [
+                            "schema:DayOfWeek"
+                          ],
+                          "sh:in": [
+                            {
+                              "@id": "schema:Monday"
+                            },
+                            {
+                              "@id": "schema:Tuesday"
+                            },
+                            {
+                              "@id": "schema:Wednesday"
+                            },
+                            {
+                              "@id": "schema:Thursday"
+                            },
+                            {
+                              "@id": "schema:Friday"
+                            },
+                            {
+                              "@id": "schema:Saturday"
+                            },
+                            {
+                              "@id": "schema:Sunday"
+                            },
+                            {
+                              "@id": "schema:PublicHolidays"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 3,
+                    "sh:path": "schema:validFrom",
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:dateTime"
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 4,
+                    "sh:path": "schema:validThrough",
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:dateTime"
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 5,
+                    "sh:path": "schema:description",
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:string"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:order": 7,
+          "sh:path": "schema:geo",
+          "sh:maxCount": 1,
+          "sh:or": [
+            {
+              "sh:node": {
+                "@id": "https://semantify.it/ds/_1hRVOT8Q#rkgAn",
+                "@type": "sh:NodeShape",
+                "sh:class": [
+                  "schema:GeoCoordinates"
+                ],
+                "sh:closed": true,
+                "sh:property": [
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 0,
+                    "sh:path": "schema:longitude",
+                    "sh:minCount": 1,
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:string"
+                      },
+                      {
+                        "sh:datatype": "xsd:double"
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 1,
+                    "sh:path": "schema:latitude",
+                    "sh:minCount": 1,
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:string"
+                      },
+                      {
+                        "sh:datatype": "xsd:double"
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 2,
+                    "sh:path": "schema:elevation",
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:string"
+                      },
+                      {
+                        "sh:datatype": "xsd:double"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:order": 8,
+          "sh:path": "schema:image",
+          "sh:minCount": 1,
+          "sh:or": [
+            {
+              "sh:datatype": "xsd:anyURI"
+            },
+            {
+              "sh:node": {
+                "@id": "https://semantify.it/ds/_1hRVOT8Q#dfVQT",
+                "@type": "sh:NodeShape",
+                "sh:class": [
+                  "schema:ImageObject"
+                ],
+                "sh:closed": true,
+                "sh:property": [
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 0,
+                    "sh:path": "schema:identifier",
+                    "rdfs:comment": [
+                      {
+                        "@language": "en",
+                        "@value": "Additional or internal identifier for an image."
+                      }
+                    ],
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:anyURI"
+                      },
+                      {
+                        "sh:datatype": "xsd:string"
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 1,
+                    "sh:path": "schema:url",
+                    "rdfs:comment": [
+                      {
+                        "@language": "en",
+                        "@value": "The URL of an image related to the annotated web page."
+                      }
+                    ],
+                    "sh:minCount": 1,
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:anyURI"
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 2,
+                    "sh:path": "schema:caption",
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:string"
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 3,
+                    "sh:path": "schema:contentUrl",
+                    "rdfs:comment": [
+                      {
+                        "@language": "en",
+                        "@value": "URL that provides a directly retrievable instance of the ImageObject."
+                      }
+                    ],
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:anyURI"
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 4,
+                    "sh:path": "schema:height",
+                    "rdfs:comment": [
+                      {
+                        "@language": "en",
+                        "@value": "The height of an image in pixels."
+                      }
+                    ],
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:node": {
+                          "@id": "https://semantify.it/ds/_1hRVOT8Q#ohDUM",
+                          "@type": "sh:NodeShape",
+                          "sh:class": [
+                            "schema:QuantitativeValue"
+                          ],
+                          "sh:closed": true,
+                          "sh:property": [
+                            {
+                              "@type": "sh:PropertyShape",
+                              "sh:order": 0,
+                              "sh:path": "schema:value",
+                              "sh:minCount": 1,
+                              "sh:maxCount": 1,
+                              "sh:or": [
+                                {
+                                  "sh:datatype": "xsd:double"
+                                },
+                                {
+                                  "sh:datatype": "xsd:string"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 5,
+                    "sh:path": "schema:width",
+                    "rdfs:comment": [
+                      {
+                        "@language": "en",
+                        "@value": "The width of an image in pixels."
+                      }
+                    ],
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:node": {
+                          "@id": "https://semantify.it/ds/_1hRVOT8Q#SogmN",
+                          "@type": "sh:NodeShape",
+                          "sh:class": [
+                            "schema:QuantitativeValue"
+                          ],
+                          "sh:closed": true,
+                          "sh:property": [
+                            {
+                              "@type": "sh:PropertyShape",
+                              "sh:order": 0,
+                              "sh:path": "schema:value",
+                              "sh:minCount": 1,
+                              "sh:maxCount": 1,
+                              "sh:or": [
+                                {
+                                  "sh:datatype": "xsd:double"
+                                },
+                                {
+                                  "sh:datatype": "xsd:string"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 6,
+                    "sh:path": "schema:copyrightHolder",
+                    "rdfs:comment": [
+                      {
+                        "@language": "en",
+                        "@value": "Specifies the name of the image copyright owner, which can be a person or organization."
+                      }
+                    ],
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:node": {
+                          "@id": "https://semantify.it/ds/_1hRVOT8Q#HnLqw",
+                          "@type": "sh:NodeShape",
+                          "sh:class": [
+                            "schema:Organization"
+                          ],
+                          "sh:closed": true,
+                          "sh:property": [
+                            {
+                              "@type": "sh:PropertyShape",
+                              "sh:order": 0,
+                              "sh:path": "schema:name",
+                              "sh:minCount": 1,
+                              "sh:maxCount": 1,
+                              "sh:or": [
+                                {
+                                  "sh:datatype": "xsd:string"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "sh:node": {
+                          "@id": "https://semantify.it/ds/_1hRVOT8Q#UTgoS",
+                          "@type": "sh:NodeShape",
+                          "sh:class": [
+                            "schema:Person"
+                          ],
+                          "sh:closed": true,
+                          "sh:property": [
+                            {
+                              "@type": "sh:PropertyShape",
+                              "sh:order": 0,
+                              "sh:path": "schema:name",
+                              "sh:minCount": 1,
+                              "sh:maxCount": 1,
+                              "sh:or": [
+                                {
+                                  "sh:datatype": "xsd:string"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 7,
+                    "sh:path": "schema:copyrightYear",
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:double"
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 8,
+                    "sh:path": "schema:license",
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:anyURI"
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 9,
+                    "sh:path": "schema:uploadDate",
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:date"
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 10,
+                    "sh:path": "schema:contentSize",
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:string"
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 11,
+                    "sh:path": "schema:thumbnailUrl",
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:anyURI"
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 12,
+                    "sh:path": "schema:representativeOfPage",
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:boolean"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:order": 9,
+          "sh:path": "schema:telephone",
+          "sh:minCount": 1,
+          "sh:maxCount": 1,
+          "sh:or": [
+            {
+              "sh:datatype": "xsd:string"
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:order": 10,
+          "sh:path": "schema:url",
+          "sh:minCount": 1,
+          "sh:maxCount": 1,
+          "sh:or": [
+            {
+              "sh:datatype": "xsd:anyURI"
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:order": 11,
+          "sh:path": "schema:aggregateRating",
+          "sh:maxCount": 1,
+          "sh:or": [
+            {
+              "sh:node": {
+                "@id": "https://semantify.it/ds/_1hRVOT8Q#qJuVK",
+                "@type": "sh:NodeShape",
+                "sh:class": [
+                  "schema:AggregateRating"
+                ],
+                "sh:closed": true,
+                "sh:property": [
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 0,
+                    "sh:path": "schema:bestRating",
+                    "rdfs:comment": [
+                      {
+                        "@language": "en",
+                        "@value": "To estimate rating value, we need to know the highest possible rating value."
+                      }
+                    ],
+                    "sh:minCount": 1,
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:double"
+                      },
+                      {
+                        "sh:datatype": "xsd:string"
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 1,
+                    "sh:path": "schema:ratingCount",
+                    "rdfs:comment": [
+                      {
+                        "@language": "en",
+                        "@value": "This property is used to specify the total number of people who provided the rating for an item."
+                      }
+                    ],
+                    "sh:minCount": 1,
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:integer"
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 2,
+                    "sh:path": "schema:ratingValue",
+                    "rdfs:comment": [
+                      {
+                        "@language": "en",
+                        "@value": "This property is used to specify the actual rating value for an item."
+                      }
+                    ],
+                    "sh:minCount": 1,
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:double"
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 3,
+                    "sh:path": "schema:url",
+                    "rdfs:comment": [
+                      {
+                        "@language": "en",
+                        "@value": "This property is used to specify the resource from which the rating was obtained. "
+                      }
+                    ],
+                    "sh:minCount": 1,
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:anyURI"
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 4,
+                    "sh:path": "schema:description",
+                    "rdfs:comment": [
+                      {
+                        "@language": "en",
+                        "@value": "Property is used to provide a short description of where the rating value comes from or how it counts."
+                      }
+                    ],
+                    "sh:minCount": 1,
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:string"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:order": 12,
+          "sh:path": "schema:faxNumber",
+          "sh:maxCount": 1,
+          "sh:or": [
+            {
+              "sh:datatype": "xsd:string"
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:order": 13,
+          "sh:path": "schema:containsPlace",
+          "sh:or": [
+            {
+              "sh:node": {
+                "@id": "https://semantify.it/ds/_1hRVOT8Q#JmOgC",
+                "@type": "sh:NodeShape",
+                "sh:class": [
+                  "schema:Place"
+                ],
+                "sh:closed": true,
+                "sh:property": [
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 0,
+                    "sh:path": "schema:name",
+                    "sh:minCount": 1,
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:string"
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 1,
+                    "sh:path": "schema:description",
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:string"
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 2,
+                    "sh:path": "schema:url",
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:anyURI"
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 3,
+                    "sh:path": "schema:address",
+                    "sh:or": [
+                      {
+                        "sh:node": {
+                          "@id": "https://semantify.it/ds/_1hRVOT8Q#fnWeT",
+                          "@type": "sh:NodeShape",
+                          "sh:class": [
+                            "schema:PostalAddress"
+                          ],
+                          "sh:closed": true,
+                          "sh:property": [
+                            {
+                              "@type": "sh:PropertyShape",
+                              "sh:order": 0,
+                              "sh:path": "schema:addressCountry",
+                              "sh:minCount": 1,
+                              "sh:maxCount": 1,
+                              "sh:or": [
+                                {
+                                  "sh:node": {
+                                    "@id": "https://semantify.it/ds/_1hRVOT8Q#iXxLt",
+                                    "@type": "sh:NodeShape",
+                                    "sh:class": [
+                                      "schema:Country"
+                                    ],
+                                    "sh:closed": true,
+                                    "sh:property": [
+                                      {
+                                        "@type": "sh:PropertyShape",
+                                        "sh:order": 0,
+                                        "sh:path": "schema:name",
+                                        "sh:minCount": 1,
+                                        "sh:maxCount": 1,
+                                        "sh:or": [
+                                          {
+                                            "sh:datatype": "xsd:string"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "sh:datatype": "xsd:string"
+                                }
+                              ]
+                            },
+                            {
+                              "@type": "sh:PropertyShape",
+                              "sh:order": 1,
+                              "sh:path": "schema:addressRegion",
+                              "sh:minCount": 1,
+                              "sh:maxCount": 1,
+                              "sh:or": [
+                                {
+                                  "sh:datatype": "xsd:string"
+                                }
+                              ]
+                            },
+                            {
+                              "@type": "sh:PropertyShape",
+                              "sh:order": 2,
+                              "sh:path": "schema:addressLocality",
+                              "sh:minCount": 1,
+                              "sh:maxCount": 1,
+                              "sh:or": [
+                                {
+                                  "sh:datatype": "xsd:string"
+                                }
+                              ]
+                            },
+                            {
+                              "@type": "sh:PropertyShape",
+                              "sh:order": 3,
+                              "sh:path": "schema:postalCode",
+                              "sh:minCount": 1,
+                              "sh:maxCount": 1,
+                              "sh:or": [
+                                {
+                                  "sh:datatype": "xsd:string"
+                                }
+                              ]
+                            },
+                            {
+                              "@type": "sh:PropertyShape",
+                              "sh:order": 4,
+                              "sh:path": "schema:streetAddress",
+                              "sh:minCount": 1,
+                              "sh:maxCount": 1,
+                              "sh:or": [
+                                {
+                                  "sh:datatype": "xsd:string"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 4,
+                    "sh:path": "schema:image",
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:anyURI"
+                      },
+                      {
+                        "sh:node": {
+                          "@id": "https://semantify.it/ds/_1hRVOT8Q#wJyPI",
+                          "@type": "sh:NodeShape",
+                          "sh:class": [
+                            "schema:ImageObject"
+                          ],
+                          "sh:closed": true,
+                          "sh:property": [
+                            {
+                              "@type": "sh:PropertyShape",
+                              "sh:order": 0,
+                              "sh:path": "schema:identifier",
+                              "rdfs:comment": [
+                                {
+                                  "@language": "en",
+                                  "@value": "Additional or internal identifier for an image."
+                                }
+                              ],
+                              "sh:or": [
+                                {
+                                  "sh:datatype": "xsd:anyURI"
+                                },
+                                {
+                                  "sh:datatype": "xsd:string"
+                                }
+                              ]
+                            },
+                            {
+                              "@type": "sh:PropertyShape",
+                              "sh:order": 1,
+                              "sh:path": "schema:url",
+                              "rdfs:comment": [
+                                {
+                                  "@language": "en",
+                                  "@value": "The URL of an image related to the annotated web page."
+                                }
+                              ],
+                              "sh:minCount": 1,
+                              "sh:maxCount": 1,
+                              "sh:or": [
+                                {
+                                  "sh:datatype": "xsd:anyURI"
+                                }
+                              ]
+                            },
+                            {
+                              "@type": "sh:PropertyShape",
+                              "sh:order": 2,
+                              "sh:path": "schema:caption",
+                              "sh:maxCount": 1,
+                              "sh:or": [
+                                {
+                                  "sh:datatype": "xsd:string"
+                                }
+                              ]
+                            },
+                            {
+                              "@type": "sh:PropertyShape",
+                              "sh:order": 3,
+                              "sh:path": "schema:contentUrl",
+                              "rdfs:comment": [
+                                {
+                                  "@language": "en",
+                                  "@value": "URL that provides a directly retrievable instance of the ImageObject."
+                                }
+                              ],
+                              "sh:maxCount": 1,
+                              "sh:or": [
+                                {
+                                  "sh:datatype": "xsd:anyURI"
+                                }
+                              ]
+                            },
+                            {
+                              "@type": "sh:PropertyShape",
+                              "sh:order": 4,
+                              "sh:path": "schema:height",
+                              "rdfs:comment": [
+                                {
+                                  "@language": "en",
+                                  "@value": "The height of an image in pixels."
+                                }
+                              ],
+                              "sh:maxCount": 1,
+                              "sh:or": [
+                                {
+                                  "sh:node": {
+                                    "@id": "https://semantify.it/ds/_1hRVOT8Q#Lmtzg",
+                                    "@type": "sh:NodeShape",
+                                    "sh:class": [
+                                      "schema:QuantitativeValue"
+                                    ],
+                                    "sh:closed": true,
+                                    "sh:property": [
+                                      {
+                                        "@type": "sh:PropertyShape",
+                                        "sh:order": 0,
+                                        "sh:path": "schema:value",
+                                        "sh:minCount": 1,
+                                        "sh:maxCount": 1,
+                                        "sh:or": [
+                                          {
+                                            "sh:datatype": "xsd:double"
+                                          },
+                                          {
+                                            "sh:datatype": "xsd:string"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "@type": "sh:PropertyShape",
+                              "sh:order": 5,
+                              "sh:path": "schema:width",
+                              "rdfs:comment": [
+                                {
+                                  "@language": "en",
+                                  "@value": "The width of an image in pixels."
+                                }
+                              ],
+                              "sh:maxCount": 1,
+                              "sh:or": [
+                                {
+                                  "sh:node": {
+                                    "@id": "https://semantify.it/ds/_1hRVOT8Q#SsFED",
+                                    "@type": "sh:NodeShape",
+                                    "sh:class": [
+                                      "schema:QuantitativeValue"
+                                    ],
+                                    "sh:closed": true,
+                                    "sh:property": [
+                                      {
+                                        "@type": "sh:PropertyShape",
+                                        "sh:order": 0,
+                                        "sh:path": "schema:value",
+                                        "sh:minCount": 1,
+                                        "sh:maxCount": 1,
+                                        "sh:or": [
+                                          {
+                                            "sh:datatype": "xsd:double"
+                                          },
+                                          {
+                                            "sh:datatype": "xsd:string"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "@type": "sh:PropertyShape",
+                              "sh:order": 6,
+                              "sh:path": "schema:copyrightHolder",
+                              "rdfs:comment": [
+                                {
+                                  "@language": "en",
+                                  "@value": "Specifies the name of the image copyright owner, which can be a person or organization."
+                                }
+                              ],
+                              "sh:maxCount": 1,
+                              "sh:or": [
+                                {
+                                  "sh:node": {
+                                    "@id": "https://semantify.it/ds/_1hRVOT8Q#sXZwe",
+                                    "@type": "sh:NodeShape",
+                                    "sh:class": [
+                                      "schema:Organization"
+                                    ],
+                                    "sh:closed": true,
+                                    "sh:property": [
+                                      {
+                                        "@type": "sh:PropertyShape",
+                                        "sh:order": 0,
+                                        "sh:path": "schema:name",
+                                        "sh:minCount": 1,
+                                        "sh:maxCount": 1,
+                                        "sh:or": [
+                                          {
+                                            "sh:datatype": "xsd:string"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "sh:node": {
+                                    "@id": "https://semantify.it/ds/_1hRVOT8Q#HwCUV",
+                                    "@type": "sh:NodeShape",
+                                    "sh:class": [
+                                      "schema:Person"
+                                    ],
+                                    "sh:closed": true,
+                                    "sh:property": [
+                                      {
+                                        "@type": "sh:PropertyShape",
+                                        "sh:order": 0,
+                                        "sh:path": "schema:name",
+                                        "sh:minCount": 1,
+                                        "sh:maxCount": 1,
+                                        "sh:or": [
+                                          {
+                                            "sh:datatype": "xsd:string"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "@type": "sh:PropertyShape",
+                              "sh:order": 7,
+                              "sh:path": "schema:copyrightYear",
+                              "sh:maxCount": 1,
+                              "sh:or": [
+                                {
+                                  "sh:datatype": "xsd:double"
+                                }
+                              ]
+                            },
+                            {
+                              "@type": "sh:PropertyShape",
+                              "sh:order": 8,
+                              "sh:path": "schema:license",
+                              "sh:maxCount": 1,
+                              "sh:or": [
+                                {
+                                  "sh:datatype": "xsd:anyURI"
+                                }
+                              ]
+                            },
+                            {
+                              "@type": "sh:PropertyShape",
+                              "sh:order": 9,
+                              "sh:path": "schema:uploadDate",
+                              "sh:maxCount": 1,
+                              "sh:or": [
+                                {
+                                  "sh:datatype": "xsd:date"
+                                }
+                              ]
+                            },
+                            {
+                              "@type": "sh:PropertyShape",
+                              "sh:order": 10,
+                              "sh:path": "schema:contentSize",
+                              "sh:maxCount": 1,
+                              "sh:or": [
+                                {
+                                  "sh:datatype": "xsd:string"
+                                }
+                              ]
+                            },
+                            {
+                              "@type": "sh:PropertyShape",
+                              "sh:order": 11,
+                              "sh:path": "schema:thumbnailUrl",
+                              "sh:maxCount": 1,
+                              "sh:or": [
+                                {
+                                  "sh:datatype": "xsd:anyURI"
+                                }
+                              ]
+                            },
+                            {
+                              "@type": "sh:PropertyShape",
+                              "sh:order": 12,
+                              "sh:path": "schema:representativeOfPage",
+                              "sh:maxCount": 1,
+                              "sh:or": [
+                                {
+                                  "sh:datatype": "xsd:boolean"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "sh:PropertyShape",
+                    "sh:order": 5,
+                    "sh:path": "schema:telephone",
+                    "sh:maxCount": 1,
+                    "sh:or": [
+                      {
+                        "sh:datatype": "xsd:string"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:order": 14,
+          "sh:path": "schema:mainEntityOfPage",
+          "sh:maxCount": 1,
+          "sh:or": [
+            {
+              "sh:datatype": "xsd:anyURI"
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:order": 15,
+          "sh:path": "schema:hasMap",
+          "sh:maxCount": 1,
+          "sh:or": [
+            {
+              "sh:datatype": "xsd:anyURI"
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:order": 16,
+          "sh:path": "schema:sameAs",
+          "sh:or": [
+            {
+              "sh:datatype": "xsd:anyURI"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

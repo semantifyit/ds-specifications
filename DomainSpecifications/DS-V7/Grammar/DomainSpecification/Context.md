@@ -7,12 +7,18 @@ Additionally, some new term entries are introduced. Keep in mind that external v
 ```json
 {
   "@context": {
+    "ds": "https://vocab.sti2.at/ds/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
     "schema": "https://schema.org/",
     "sh": "http://www.w3.org/ns/shacl#",
-    "ds": "https://vocab.sti2.at/ds/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ds:subDSOf": {
+      "@type": "@id"
+    },
+    "ds:usedVocabulary": {
+      "@type": "@id"
+    },
     "sh:targetClass": {
       "@type": "@id"
     },
@@ -22,41 +28,35 @@ Additionally, some new term entries are introduced. Keep in mind that external v
     "sh:targetSubjectsOf": {
       "@type": "@id"
     },
+    "sh:class": {
+      "@type": "@id"
+    },
     "sh:path": {
       "@type": "@id"
     },
     "sh:datatype": {
       "@type": "@id"
     },
-    "sh:class": {
+    "sh:equals": {
       "@type": "@id"
     },
-    "sh:or": {
-      "@container": "@list"
+    "sh:disjoint": {
+      "@type": "@id"
+    },
+    "sh:lessThan": {
+      "@type": "@id"
+    },
+    "sh:lessThanOrEquals": {
+      "@type": "@id"
     },
     "sh:in": {
       "@container": "@list"
     },
     "sh:languageIn": {
-       "@container":"@list"
+      "@container": "@list"
     },
-    "sh:equals": {
-       "@type": "@id"
-    },
-    "sh:disjoint": {
-       "@type": "@id"
-    },
-    "sh:lessThan": {
-       "@type": "@id"
-    },
-    "sh:lessThanOrEquals": {
-       "@type": "@id"
-    },
-    "ds:usedVocabulary": {
-      "@type": "@id"
-    },
-    "ds:subDSOf": {
-      "@type": "@id"
+    "sh:or": {
+      "@container": "@list"
     }
   }
 }

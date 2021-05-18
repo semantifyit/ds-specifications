@@ -7,7 +7,7 @@ The following errors are generated during the compliance check of a schema.org a
 | ErrorCode | Name | Severity | Description |
 | :---: | :---: | :---: | :--- |
 | 500 | Generic compliance verification error | Error |Can be used as super-type for any error regarding the compliance verification |
-| 501 | Non-conform target @type | Critical | Annotation has a @type not specified by the DS - Applies to the @type of the root object |
+| 501 | Non-conform target @type | Error | Annotation has a @type not specified by the DS - Applies to the @type of the root object |
 | 502 | Non-conform property | Warning | Annotation has a property that is not specified by the DS |
 | 503 | Missing property | Error | Annotation has a missing property that is defined as required by the DS |
 | 504 | Non-conform cardinality | Error | Annotation has a property with a cardinality (amount of values), that is non-conform to the DS |
@@ -32,32 +32,17 @@ The following errors are generated during the compliance check of a schema.org a
 
 ## Semantics for Class Matching
 
-Regarding the matching of sh:targetClass/sh:class and the @type of an entity:
+Regarding the matching of `sh:targetClass` / `sh:class` and the `@type` of the verified entity:
 
-|                 | Domain Specification      | Annotation                             | Match |
+|                 | Domain Specification      | Data                             | Match |
 |-----------------|---------------------------|----------------------------------------|-------|
 |                 | sh:targetClass / sh:class | @type                                  |       |
 | exact match     | LodgingBusiness           | LodgingBusiness                        | yes   |
-| additional type | LodgingBusiness           | LodgingBusiness, Product               | no    |
+| additional type | LodgingBusiness           | LodgingBusiness, Product               | yes   |
 | sub-type        | LodgingBusiness           | Motel                                  | yes   |
 | no relation     | LodgingBusiness           | CreativeWork                           | no    |
 | exact match     | LodgingBusiness, Product  | LodgingBusiness, Product               | yes   |
-| additional type | LodgingBusiness, Product  | LodgingBusiness, Product, CreativeWork | no    |
-| sub-type        | LodgingBusiness, Product  | Hotel, Product                         | yes   |
-| not all types   | LodgingBusiness, Product  | LodgingBusiness                        | no    |
-| no relation     | LodgingBusiness, Product  | CreativeWork                           | no    |
-
-Following matching is being considered:
-
-|                 | Domain Specification      | Annotation                             | Match |
-|-----------------|---------------------------|----------------------------------------|-------|
-|                 | sh:targetClass / sh:class | @type                                  |       |
-| exact match     | LodgingBusiness           | LodgingBusiness                        | yes   |
-| additional type | LodgingBusiness           | LodgingBusiness, Product               | no -> **yes**    |
-| sub-type        | LodgingBusiness           | Motel                                  | yes   |
-| no relation     | LodgingBusiness           | CreativeWork                           | no    |
-| exact match     | LodgingBusiness, Product  | LodgingBusiness, Product               | yes   |
-| additional type | LodgingBusiness, Product  | LodgingBusiness, Product, CreativeWork | no -> **yes**    |
+| additional type | LodgingBusiness, Product  | LodgingBusiness, Product, CreativeWork | yes   |
 | sub-type        | LodgingBusiness, Product  | Hotel, Product                         | yes   |
 | not all types   | LodgingBusiness, Product  | LodgingBusiness                        | no    |
 | no relation     | LodgingBusiness, Product  | CreativeWork                           | no    |

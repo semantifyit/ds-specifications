@@ -107,7 +107,7 @@ Examples:
 
 See [SHACL specification](https://www.w3.org/TR/shacl/#ClassConstraintComponent).
 
-A DS node can include `sh:class` specifying the class(es) that the verified entity **MUST** match. The difference to `sh:targetClass` is that if the `sh:class` constraint is not fulfilled a corresponding error is produced during the verification. Domain Specifications use [custom semantics for class matching](./../VerificationReport/DS-Verification.md).
+A DS node can include `sh:class` specifying the class(es) that the verified entity **SHOULD** match. The difference to `sh:targetClass` is that if the `sh:class` constraint is not fulfilled a corresponding error is produced during the verification. Domain Specifications use [custom semantics for class matching](./../VerificationReport/DS-Verification.md).
 
 Examples:
 

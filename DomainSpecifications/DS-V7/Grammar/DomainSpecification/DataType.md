@@ -44,13 +44,13 @@ The following table lists all possible terms that can be used by a Data Type Nod
 | `sh:minInclusive` | false | same as constrained Data Type | The minimum inclusive value that the value must have | Non-conform sh:minInclusive |
 | `sh:maxExclusive` | false | same as constrained Data Type |  The maximum exclusive value that the value must have | Non-conform sh:maxExclusive |
 | `sh:maxInclusive` | false | same as constrained Data Type |  The maximum inclusive value that the value must have | Non-conform sh:maxInclusive |
-| `sh:maxLength` | false |  _Integer_ | The maximum allowed string length of a literal (String or URL) |Non-conform sh:maxLength |
 | `sh:minLength` | false |  _Integer_ | The minimum allowed string length of a literal (String or URL) | Non-conform sh:minLength |
+| `sh:maxLength` | false |  _Integer_ | The maximum allowed string length of a literal (String or URL) |Non-conform sh:maxLength |
 | `sh:pattern` | false |  List of _Regex_ |  A regular expression that the literal must match (String or URL) | Non-conform sh:pattern |
 | `sh:flag` | false |  _string_ | Optional regex flags for sh:pattern | Non-conform sh:pattern |
 | `sh:languageIn` | false | List of _Language-Tag_ |  The literal must use a language tag given in the list of language tags | Non-conform sh:languageIn |
-| `sh:uniqueLang` | false | _Boolean_ | The property must not use the same language tag more than one time | Non-conform sh:uniqueLang |
 | `ds:hasLanguage` | false | List of _Language-Tag_  | The property must use all language tags in the given list | Non-conform ds:hasLanguage |
+| `sh:uniqueLang` | false | _Boolean_ | The property must not use the same language tag more than one time | Non-conform sh:uniqueLang |
 | `sh:in` | false | same as constrained Data Type | Specifies the condition that each value node is a member of a provided list | Non-conform sh:in |
 | `sh:hasValue ` | false | List of _same as constrained Data Type_ | Specifies the condition that at least one value node is equal to the given value | Non-conform sh:hasValue |
 
