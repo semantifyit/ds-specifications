@@ -215,6 +215,20 @@ Example in DS node:
 }
 ```
 
+#### 1.5.1. Update schema:version
+
+The value type for `schema:version` is changed from double to string. This is done to be more consistent with other version terms (`schema:schemaVersion` and `ds:version`) and to allow further versioning options (e.g. `"1.0.4-beta"`).
+
+Example in DS node:
+
+```json
+{
+  "@type": "ds:DomainSpecification",
+  "schema:version": "1.04",
+  ...
+}
+```
+
 ### 1.6. Move sh:class into sh:node
 
 Currently, a property range that defines a certain class has the terms `sh:class` and `sh:node`, where `sh:node` contains a `sh:NodeShape` with `sh:property` defining the properties of that class. We chose this structure to simplify the definition of a "standard class" (the range must have the specified class, but its properties are not constrained, therefore we simply omitted `sh:node`).
@@ -326,7 +340,7 @@ Example in DS node:
   "sh:class": ["schema:SkiResort"],
   "ds:version": "7.0",
   "schema:schemaVersion": "12.0",
-  "schema:version": 1.06,
+  "schema:version": "1.06",
   ...
 }
 ```

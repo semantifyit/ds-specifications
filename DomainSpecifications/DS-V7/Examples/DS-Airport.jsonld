@@ -83,7 +83,7 @@
         }
       },
       "ds:version": "7.0",
-      "schema:version": 1.18,
+      "schema:version": "1.18",
       "schema:schemaVersion": "12.0",
       "sh:closed": true,
       "sh:property": [

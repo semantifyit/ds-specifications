@@ -40,7 +40,7 @@ If a DS uses other vocabularies besides schema.org, their namespaces are mention
     }
   },
   "ds:version": "7.0",
-  "schema:version": 1.02,
+  "schema:version": "1.02",
   "schema:schemaVersion": "11.0",
   "ds:usedVocabulary": [
     "https://semantify.it/voc/KEl6e6F0U"
@@ -69,7 +69,7 @@ The following table lists all possible terms that can be used by a DS Node. The 
 | `schema:description` | false | List of *Language tagged String* | The description of the Domain Specification |
 | `schema:author` | false | *Object* | A `schema:Person` object, that holds the name of the author and optionally their organisation |
 | `ds:version` | true | *String* | The DS specification version used. This eases the handling of different DS versions for tools. The range of `ds:version` is a string that specifies the used version number with one decimal place, e.g. if the specification is titled "DS-V7", the value is `"7.0"`|
-| `schema:version` | false |*Float* | The version of this Domain Specification. Starts at `1.00`, small patches increase the decimal by 1 -> `1.01`, bigger patches/vocabulary version updates increase the integer by 1 -> `2.00`|
+| `schema:version` | false |*String* | The version of this Domain Specification instance. |
 | `schema:schemaVersion` | true | *String* | The used schema.org version as string, e.g. `"11.0"` |
 | `ds:usedVocabulary` | false | List of *IRI* | The used external vocabularies (besides schema.org) for this DS. The values are IRIs of those vocabularies |
 | `sh:closed` | false | *Boolean* | Specifies if additional properties are allowed or not | Non-conform property |
@@ -260,7 +260,7 @@ Example:
 
 #### 3.4.2. schema:version
 
-The term `schema:version` specifies the version of the DS itself. The value is a float number that should be increased every time the content of the DS is changed. The value starts at `1.00`, small patches increase the decimal place, e.g. `1.00` -> `1.01`, bigger patches/vocabulary version updates increase the integer place, e.g. `1.00` -> `2.00`.
+The term `schema:version` specifies the version of the DS itself. The value type for this term is a string. In semantify.it this string represents a float number that should be increased every time the content of the DS is changed. The value starts at `1.00`, small patches increase the decimal place, e.g. `1.00` -> `1.01`, bigger patches/vocabulary version updates increase the integer place, e.g. `1.00` -> `2.00`.
 
 Example:
 
