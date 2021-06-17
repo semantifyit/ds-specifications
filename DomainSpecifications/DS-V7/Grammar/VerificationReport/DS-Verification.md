@@ -8,7 +8,7 @@ The following errors are generated during the compliance check of a schema.org a
 | :---: | :---: | :---: | :--- |
 | 500 | Generic compliance verification error | Error |Can be used as super-type for any error regarding the compliance verification |
 | 501 | Non-conform target @type | Error | Annotation has a @type not specified by the DS - Applies to the @type of the root object |
-| 502 | Non-conform property | Warning | Annotation has a property that is not specified by the DS |
+| 502 | Non-conform property | Warning or Error | Annotation has a property that is not specified by the DS. The occurrence and severity of this error depends on the use of `sh:closed`: false -> no error. true -> error. not used -> warning |
 | 503 | Missing property | Error | Annotation has a missing property that is defined as required by the DS |
 | 504 | Non-conform cardinality | Error | Annotation has a property with a cardinality (amount of values), that is non-conform to the DS |
 | 505 | Non-conform range | Error | Annotation has a property with a  @type/datatype that is non-conform to the DS |
