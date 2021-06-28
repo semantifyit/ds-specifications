@@ -463,7 +463,7 @@ Addition to the standard `@context`:
   * Increasing the value of an inherited `sh:maxCount` constraint makes a Sub-DS less restrictive.
   * Increasing the value of an inherited `sh:minCount` constraint makes a Sub-DS more restrictive.
   * The `sh:targetClass` of a Sub-DS MUST be the same or a sub-class of the `sh:targetClass` of its Super-DS.
-  * Adding additional target classes (MTE) would make a Sub-DS invalid (due to our semantics of `sh:targetClass`).
+  * Adding additional target classes (MTE) would make a Sub-DS more restrictive.
 
 #### 2.5.3. Implications for the implementation
 
