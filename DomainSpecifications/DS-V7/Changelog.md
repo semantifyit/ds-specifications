@@ -456,8 +456,8 @@ Addition to the standard `@context`:
 #### 2.5.2 Semantics
 
 * The constraints defined in a Sub-DS MUST be as restrictive as the Super-DS or more restrictive. In order to be in compliance with a DS that has a Super-DS, a data instance MUST also be compliant to that Super-DS (instances that fit a Sub-DS MUST be a subset of those that fit its Super-DS).
-* A Sub-DS can introduce new constraints. This is also possible for already defined constraints, but they MUST be as restrictive as the Super-DS or more restrictive. This is a delicate challenge, e.g.
-  * Adding a new PropertyShape makes a Sub-DS more restrictive.
+* A Sub-DS can introduce new constraints. This is also possible for already defined constraints, but they MUST be as restrictive as the Super-DS or more restrictive. At the same time the new restrictions must also fit the Super-DS. This is a delicate challenge, e.g.
+  * Adding a new PropertyShape makes a Sub-DS more restrictive, but the Super-DS must NOT have `sh:closed true`, in order to allow the Sub-DS to introduce new properties. 
   * Adding a new range to an inherited PropertyShape makes a Sub-DS less restrictive.
   * Adding a cardinality constraint (e.g. `sh:maxCount`) to an inherited PropertyShape makes a Sub-DS more restrictive.
   * Increasing the value of an inherited `sh:maxCount` constraint makes a Sub-DS less restrictive.
