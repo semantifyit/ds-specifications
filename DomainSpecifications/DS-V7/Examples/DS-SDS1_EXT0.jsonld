@@ -1,0 +1,121 @@
+{
+  "@context": {
+    "ds": "https://vocab.sti2.at/ds/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ds:subDSOf": {
+      "@type": "@id"
+    },
+    "ds:usedVocabulary": {
+      "@type": "@id"
+    },
+    "sh:targetClass": {
+      "@type": "@id"
+    },
+    "sh:targetObjectsOf": {
+      "@type": "@id"
+    },
+    "sh:targetSubjectsOf": {
+      "@type": "@id"
+    },
+    "sh:class": {
+      "@type": "@id"
+    },
+    "sh:path": {
+      "@type": "@id"
+    },
+    "sh:datatype": {
+      "@type": "@id"
+    },
+    "sh:equals": {
+      "@type": "@id"
+    },
+    "sh:disjoint": {
+      "@type": "@id"
+    },
+    "sh:lessThan": {
+      "@type": "@id"
+    },
+    "sh:lessThanOrEquals": {
+      "@type": "@id"
+    },
+    "sh:in": {
+      "@container": "@list"
+    },
+    "sh:languageIn": {
+      "@container": "@list"
+    },
+    "sh:or": {
+      "@container": "@list"
+    },
+    "odta": "https://odta.io/voc/"
+  },
+  "@graph": [
+    {
+      "@id": "https://semantify.it/ds/yFV-LM7MP",
+      "@type": "ds:DomainSpecification",
+      "sh:targetClass": [
+        "odta:Trail"
+      ],
+      "sh:class": [
+        "odta:Trail"
+      ],
+      "schema:name": [
+        {
+          "@language": "en",
+          "@value": "poptest_sds1_ext0"
+        }
+      ],
+      "schema:description": [
+        {
+          "@language": "en",
+          "@value": "test"
+        }
+      ],
+      "schema:author": {
+        "@type": "schema:Person",
+        "schema:name": "omar",
+        "schema:memberOf": {
+          "@type": "schema:Organization",
+          "schema:name": "STI Innsbruck"
+        }
+      },
+      "ds:version": "7.0",
+      "schema:version": "2.01",
+      "schema:schemaVersion": "12.0",
+      "ds:usedVocabulary": [
+        "https://semantify.it/voc/XJL_jFySh"
+      ],
+      "sh:closed": true,
+      "sh:property": [
+        {
+          "@type": "sh:PropertyShape",
+          "sh:order": 0,
+          "sh:path": "odta:typeOfTrail",
+          "sh:minCount": 1,
+          "sh:maxCount": 1,
+          "sh:or": [
+            {
+              "sh:datatype": "xsd:string"
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:order": 1,
+          "sh:path": "schema:name",
+          "sh:minCount": 1,
+          "sh:maxCount": 1,
+          "sh:or": [
+            {
+              "sh:datatype": "xsd:string"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

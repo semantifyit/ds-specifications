@@ -1,0 +1,190 @@
+{
+  "@context": {
+    "ds": "https://vocab.sti2.at/ds/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ds:subDSOf": {
+      "@type": "@id"
+    },
+    "ds:usedVocabulary": {
+      "@type": "@id"
+    },
+    "sh:targetClass": {
+      "@type": "@id"
+    },
+    "sh:targetObjectsOf": {
+      "@type": "@id"
+    },
+    "sh:targetSubjectsOf": {
+      "@type": "@id"
+    },
+    "sh:class": {
+      "@type": "@id"
+    },
+    "sh:path": {
+      "@type": "@id"
+    },
+    "sh:datatype": {
+      "@type": "@id"
+    },
+    "sh:equals": {
+      "@type": "@id"
+    },
+    "sh:disjoint": {
+      "@type": "@id"
+    },
+    "sh:lessThan": {
+      "@type": "@id"
+    },
+    "sh:lessThanOrEquals": {
+      "@type": "@id"
+    },
+    "sh:in": {
+      "@container": "@list"
+    },
+    "sh:languageIn": {
+      "@container": "@list"
+    },
+    "sh:or": {
+      "@container": "@list"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "https://semantify.it/ds/8gmtfiLfm",
+      "@type": "ds:DomainSpecification",
+      "ds:subDSOf": "https://semantify.it/ds/kfU7mM0Xy",
+      "sh:targetClass": [
+        "schema:CreativeWork"
+      ],
+      "sh:class": [
+        "schema:CreativeWork"
+      ],
+      "schema:name": [
+        {
+          "@language": "en",
+          "@value": "poptest_sds1"
+        }
+      ],
+      "schema:description": [
+        {
+          "@language": "en",
+          "@value": "test"
+        }
+      ],
+      "schema:author": {
+        "@type": "schema:Person",
+        "schema:name": "omar",
+        "schema:memberOf": {
+          "@type": "schema:Organization",
+          "schema:name": "STI Innsbruck"
+        }
+      },
+      "ds:version": "7.0",
+      "schema:version": "1.01",
+      "schema:schemaVersion": "12.0",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "@type": "sh:PropertyShape",
+          "sh:order": 0,
+          "sh:path": "schema:discussionUrl",
+          "rdfs:comment": [
+            {
+              "@language": "en",
+              "@value": "overriden by DS0"
+            }
+          ],
+          "sh:minCount": 1,
+          "sh:maxCount": 8,
+          "sh:or": [
+            {
+              "sh:datatype": "xsd:anyURI"
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:order": 1,
+          "sh:path": "schema:creditText",
+          "rdfs:comment": [
+            {
+              "@language": "en",
+              "@value": "Overrides SDS2"
+            }
+          ],
+          "sh:minCount": 1,
+          "sh:maxCount": 1,
+          "sh:or": [
+            {
+              "sh:datatype": "xsd:string",
+              "sh:minLength": 10,
+              "sh:maxLength": 20
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:order": 2,
+          "sh:path": "schema:contentLocation",
+          "rdfs:comment": [
+            {
+              "@language": "en",
+              "@value": "SDS1_EXT0"
+            }
+          ],
+          "sh:minCount": 1,
+          "sh:maxCount": 1,
+          "sh:or": [
+            {
+              "sh:node": {
+                "@id": "https://semantify.it/ds/yFV-LM7MP"
+              }
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:order": 3,
+          "sh:path": "schema:copyrightYear",
+          "rdfs:comment": [
+            {
+              "@language": "en",
+              "@value": "own property"
+            }
+          ],
+          "sh:minCount": 1,
+          "sh:maxCount": 1,
+          "sh:or": [
+            {
+              "sh:datatype": "xsd:double"
+            }
+          ]
+        },
+        {
+          "@type": "sh:PropertyShape",
+          "sh:order": 4,
+          "sh:path": "schema:mainEntity",
+          "rdfs:comment": [
+            {
+              "@language": "en",
+              "@value": "SDS1_EXT1"
+            }
+          ],
+          "sh:minCount": 1,
+          "sh:maxCount": 1,
+          "sh:or": [
+            {
+              "sh:node": {
+                "@id": "https://semantify.it/ds/xjcTeHvfL"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
