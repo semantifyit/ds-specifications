@@ -67,27 +67,19 @@ recommended order of these terms within a DS Node (optional).
 | `@id` | true | *IRI* | The IRI of the DS. Should be a valid URL to get the DS |
 | `@type` | true | `"ds:DomainSpecification"` | The fixed type for a Domain Specification |
 | `ds:subDSOf` | false | *IRI* | The Super-DS of this DS. Constraints from the Super-DS are inherited |
-| `sh:targetClass` | false | List of *
-IRI* | The class(es) that the target entities for this Domain Specification must have (for DS matching)| |
-| `sh:targetObjectsOf` | false | *
-IRI* | The property whose object entities are targets for this Domain Specification (for DS matching)  | |
-| `sh:targetSubjectsOf` | false | *
-IRI* | The property whose subject entities are targets for this Domain Specification (for DS matching)  | |
-| `sh:class` | false | List of *
-IRI* | The class(es) that the target entities for this Domain Specification must have (as a constraint for verification) | Non-conform @type |
+| `sh:targetClass` | false | List of *IRI* | The class(es) that the target entities for this Domain Specification must have (for DS matching)| |
+| `sh:targetObjectsOf` | false | *IRI* | The property whose object entities are targets for this Domain Specification (for DS matching)  | |
+| `sh:targetSubjectsOf` | false | *IRI* | The property whose subject entities are targets for this Domain Specification (for DS matching)  | |
+| `sh:class` | false | List of *IRI* | The class(es) that the target entities for this Domain Specification must have (as a constraint for verification) | Non-conform @type |
 | `schema:name` | false | List of *Language tagged String* | The name of the Domain Specification |
 | `schema:description` | false | List of *Language tagged String* | The description of the Domain Specification |
-| `schema:author` | false | *
-Object* | A `schema:Person` object, that holds the name of the author and optionally their organisation |
-| `ds:version` | true | *
-String* | The DS specification version used. This eases the handling of different DS versions for tools. The range of `ds:version` is a string that specifies the used version number with one decimal place, e.g. if the specification is titled "DS-V7", the value is `"7.0"`|
+| `schema:author` | false | *Object* | A `schema:Person` object, that holds the name of the author and optionally their organisation |
+| `ds:version` | true | *String* | The DS specification version used. This eases the handling of different DS versions for tools. The range of `ds:version` is a string that specifies the used version number with one decimal place, e.g. if the specification is titled "DS-V7", the value is `"7.0"`|
 | `schema:version` | false |*String* | The version of this Domain Specification instance. |
 | `schema:schemaVersion` | true | *String* | The used schema.org version as string, e.g. `"11.0"` |
-| `ds:usedVocabulary` | false | List of *
-IRI* | The used external vocabularies (besides schema.org) for this DS. The values are IRIs of those vocabularies |
+| `ds:usedVocabulary` | false | List of *IRI* | The used external vocabularies (besides schema.org) for this DS. The values are IRIs of those vocabularies |
 | `sh:closed` | false | *Boolean* | Specifies if additional properties are allowed or not | Non-conform property |
-| `sh:property` | true | List of **
-PropertyNode** | A list of property nodes that apply to the target entity | Missing Property, Non-conform Property |
+| `sh:property` | true | List of **PropertyNode** | A list of property nodes that apply to the target entity | Missing Property, Non-conform Property |
 
 ## 3. Semantics
 
