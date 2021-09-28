@@ -55,6 +55,6 @@ There is a `@type` for an Error Entry Node, which is `ds:Error`. There are sever
 
 `ds:dsPath` and `ds:dataPath` represent pointers to the source of the found error in the DS and/or the data, respectively. The following semantics can be changed based on the verification use case and available data formats.
 
-`ds:dsPath` has a string as value. The path in the DS where an error was found (meta verification) or where the constraint for a found error was specified (compliance verification). The path value is a JSON-Path-like construct that points to a specific part within the Domain Specification.
+`ds:dsPath` has a string as value. The path in the DS where an error was found (meta verification) or where the constraint for a found error was specified (compliance verification). The path value is a JSON-Path-like construct that points to a specific part within the Domain Specification. For DS-V7, the used DS-Path syntax is presented in [a dedicated document](./../DsPath/README.md).
 
 `ds:dataPath` has a string as value. The path in the given data where an error was found (compliance verification and schema.org verification). The path value is a JSON-Path-like construct that points to a specific part within the given data.

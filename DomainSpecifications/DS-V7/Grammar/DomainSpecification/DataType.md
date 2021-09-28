@@ -62,7 +62,7 @@ The following table shows the mapping between **schema.org** and **XSD** data ty
 
 | schema.org | XSD |
 | :---: | :---: |
-| `schema:Text` | `xsd:string` or `rdf:langString` |
+| `schema:Text` | `xsd:string` or `rdf:langString` or `rdf:HTML` |
 | `schema:Boolean` | `xsd:boolean` |
 | `schema:Date` | `xsd:date` |
 | `schema:DateTime` | `xsd:dateTime` |
@@ -71,6 +71,8 @@ The following table shows the mapping between **schema.org** and **XSD** data ty
 | `schema:Integer` | `xsd:integer` |
 | `schema:Float` | `xsd:float` |
 | `schema:URL` | `xsd:anyURI` |
+
+#### 3.1.1. rdf:langString
 
 In **DS-V7** a new datatype is introduced: `rdf:langString`
 
@@ -96,6 +98,31 @@ Example in a Property node. The value for description MUST be a language tagged 
   ]
 }
 ```
+
+#### 3.1.2. rdf:HTML
+
+As a further addition, the datatype `rdf:HTML` is introduced (see the [official specification](https://www.w3.org/TR/rdf11-concepts/#dfn-rdf-html)). The purpose of this datatype in the DS specification is to express that a literal contains HTML code. Further, `rdf:HTML` is expected to have a language tag (which is not the case in the original specification). Therefore, `rdf:HTML` is handled the same way as `rdf:langString` in regard of verification and possible language-related constraints.
+
+```json
+{
+  "@type": "sh:PropertyShape",
+  "sh:path": "schema:abstract",
+  "sh:or": [
+    {
+      "sh:datatype": "rdf:HTML",
+      "sh:languageIn": [
+        "en",
+        "de"
+      ],
+      "ds:hasLanguage": [
+        "en"
+      ]
+    }
+  ]
+}
+```
+
+
 
 ### 3.2. Advanced Constraints
 

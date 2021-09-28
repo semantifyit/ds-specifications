@@ -24,6 +24,10 @@ A detailed listing of patches for this specification version can be found below 
 
 ## Patches
 
+* **[2021-09-28]**
+  * rdf:HTML as introduced as a new datatype. Added chapter 3.1.2. and adapted mapping-table in chapter 3.1. in [Grammar/DomainSpecification/DataType](./Grammar/DomainSpecification/DataType.md).
+  * The DS-Path Syntax is introduced at [Grammar/DsPath/README.md](./Grammar/DsPath/README.md). This syntax can be used for the verification report or for any application that needs pointer to a specific node of a DS.
+
 * **[2021-07-07]** 
   * Removed chapter 3.3. about internal references from [Grammar/DomainSpecification/Class](./Grammar/DomainSpecification/Class.md).
   * All changes and details regarding internal and external references, Super-DS, and the resolving of these relations (population) have been added to chapter 3.5. of [Grammar/DomainSpecification/DomainSpecification](./Grammar/DomainSpecification/DomainSpecification.md).

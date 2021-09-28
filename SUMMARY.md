@@ -17,6 +17,7 @@
                 * [Verification Report Node](DomainSpecifications/DS-V7/Grammar/VerificationReport/VerificationReport.md)
                 * [Error Entry Node](DomainSpecifications/DS-V7/Grammar/VerificationReport/ErrorEntry.md)
                 * [Error List for the domain-specific verification](DomainSpecifications/DS-V7/Grammar/VerificationReport/DS-Verification.md)
+            * [DS-Path](DomainSpecifications/DS-V7/Grammar/DsPath/README.md)
         * [DS-V7 - Examples](DomainSpecifications/DS-V7/Examples/README.md)
     * [DS-V6](DomainSpecifications/DS-V6/README.md)
     * [DS-V5](DomainSpecifications/DS-V5/README.md)
