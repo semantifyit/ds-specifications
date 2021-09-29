@@ -448,7 +448,9 @@ Note that the `@id` of NodeShapes within a Domain Specification have the same Ba
         ...
         "sh:or": [
           {
-            "@id": "https://semantify.it/ds/rsFn_FabM#1D5bj"
+            "sh:node": {
+              "@id": "https://semantify.it/ds/rsFn_FabM#1D5bj"
+            }
           }
         ]
       }
@@ -487,7 +489,9 @@ In the following DS the `schema:address` Property Shape defines another Domain S
         ...
         "sh:or": [
           {
-            "@id": "https://semantify.it/ds/rsDL46Kfs"
+            "sh:node": {
+              "@id": "https://semantify.it/ds/rsDL46Kfs"
+            }
           }
         ]
       }
