@@ -6,6 +6,10 @@
     "schema": "https://schema.org/",
     "sh": "http://www.w3.org/ns/shacl#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ds:propertyDisplayOrder": {
+      "@container": "@list",
+      "@type": "@id"
+    },
     "ds:subDSOf": {
       "@type": "@id"
     },
@@ -87,10 +91,15 @@
       "schema:version": "1",
       "schema:schemaVersion": "12.0",
       "sh:closed": true,
+      "ds:propertyDisplayOrder": [
+        "schema:description",
+        "schema:name",
+        "schema:containedInPlace",
+        "schema:alternateName"
+      ],
       "sh:property": [
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 0,
           "sh:path": "schema:containedInPlace",
           "rdfs:comment": [
             {
@@ -110,7 +119,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 1,
           "sh:path": "schema:description",
           "rdfs:comment": [
             {
@@ -129,7 +137,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 2,
           "sh:path": "schema:alternateName",
           "rdfs:comment": [
             {

@@ -6,6 +6,10 @@
     "schema": "https://schema.org/",
     "sh": "http://www.w3.org/ns/shacl#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ds:propertyDisplayOrder": {
+      "@container": "@list",
+      "@type": "@id"
+    },
     "ds:subDSOf": {
       "@type": "@id"
     },
@@ -87,10 +91,24 @@
       "schema:version": "1",
       "schema:schemaVersion": "12.0",
       "sh:closed": true,
+      "ds:propertyDisplayOrder": [
+        "schema:creditText",
+        "schema:keywords",
+        "schema:locationCreated",
+        "schema:dateCreated",
+        "schema:discussionUrl",
+        "schema:contentLocation",
+        "schema:copyrightYear",
+        "schema:mainEntity",
+        "schema:about",
+        "schema:accountablePerson",
+        "schema:copyrightHolder",
+        "schema:creator",
+        "schema:citation"
+      ],
       "sh:property": [
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 0,
           "sh:path": "schema:about",
           "rdfs:comment": [
             {
@@ -109,7 +127,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 1,
           "sh:path": "schema:accountablePerson",
           "rdfs:comment": [
             {
@@ -128,7 +145,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 2,
           "sh:path": "schema:copyrightHolder",
           "rdfs:comment": [
             {
@@ -147,7 +163,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 3,
           "sh:path": "schema:creator",
           "rdfs:comment": [
             {
@@ -166,7 +181,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 4,
           "sh:path": "schema:citation",
           "rdfs:comment": [
             {
@@ -183,7 +197,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 5,
           "sh:path": "schema:dateCreated",
           "rdfs:comment": [
             {
@@ -201,7 +214,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 6,
           "sh:path": "schema:discussionUrl",
           "rdfs:comment": [
             {
@@ -226,10 +238,13 @@
         "schema:Person"
       ],
       "sh:closed": true,
+      "ds:propertyDisplayOrder": [
+        "schema:name",
+        "schema:worksFor"
+      ],
       "sh:property": [
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 0,
           "sh:path": "schema:name",
           "sh:minCount": 1,
           "sh:maxCount": 1,
@@ -241,7 +256,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 1,
           "sh:path": "schema:worksFor",
           "sh:minCount": 1,
           "sh:or": [
@@ -253,10 +267,13 @@
                   "schema:Organization"
                 ],
                 "sh:closed": true,
+                "ds:propertyDisplayOrder": [
+                  "schema:name",
+                  "schema:legalName"
+                ],
                 "sh:property": [
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 0,
                     "sh:path": "schema:name",
                     "sh:minCount": 1,
                     "sh:maxCount": 1,
@@ -268,7 +285,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 1,
                     "sh:path": "schema:legalName",
                     "sh:minCount": 1,
                     "sh:maxCount": 1,
@@ -292,10 +308,13 @@
         "schema:Organization"
       ],
       "sh:closed": true,
+      "ds:propertyDisplayOrder": [
+        "schema:name",
+        "schema:legalName"
+      ],
       "sh:property": [
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 0,
           "sh:path": "schema:name",
           "sh:minCount": 1,
           "sh:maxCount": 1,
@@ -307,7 +326,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 1,
           "sh:path": "schema:legalName",
           "sh:minCount": 1,
           "sh:maxCount": 1,

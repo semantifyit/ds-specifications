@@ -6,6 +6,10 @@
     "schema": "https://schema.org/",
     "sh": "http://www.w3.org/ns/shacl#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ds:propertyDisplayOrder": {
+      "@container": "@list",
+      "@type": "@id"
+    },
     "ds:subDSOf": {
       "@type": "@id"
     },
@@ -87,10 +91,19 @@
       "schema:version": "1.01",
       "schema:schemaVersion": "12.0",
       "sh:closed": false,
+      "ds:propertyDisplayOrder": [
+        "schema:creditText",
+        "schema:keywords",
+        "schema:locationCreated",
+        "schema:dateCreated",
+        "schema:discussionUrl",
+        "schema:contentLocation",
+        "schema:copyrightYear",
+        "schema:mainEntity"
+      ],
       "sh:property": [
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 0,
           "sh:path": "schema:discussionUrl",
           "rdfs:comment": [
             {
@@ -108,7 +121,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 1,
           "sh:path": "schema:creditText",
           "rdfs:comment": [
             {
@@ -128,7 +140,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 2,
           "sh:path": "schema:contentLocation",
           "rdfs:comment": [
             {
@@ -148,7 +159,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 3,
           "sh:path": "schema:copyrightYear",
           "rdfs:comment": [
             {
@@ -166,7 +176,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 4,
           "sh:path": "schema:mainEntity",
           "rdfs:comment": [
             {

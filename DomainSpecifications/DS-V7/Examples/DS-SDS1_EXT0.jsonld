@@ -6,6 +6,10 @@
     "schema": "https://schema.org/",
     "sh": "http://www.w3.org/ns/shacl#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ds:propertyDisplayOrder": {
+      "@container": "@list",
+      "@type": "@id"
+    },
     "ds:subDSOf": {
       "@type": "@id"
     },
@@ -90,10 +94,13 @@
         "https://semantify.it/voc/XJL_jFySh"
       ],
       "sh:closed": true,
+      "ds:propertyDisplayOrder": [
+        "odta:typeOfTrail",
+        "schema:name"
+      ],
       "sh:property": [
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 0,
           "sh:path": "odta:typeOfTrail",
           "sh:minCount": 1,
           "sh:maxCount": 1,
@@ -105,7 +112,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 1,
           "sh:path": "schema:name",
           "sh:minCount": 1,
           "sh:maxCount": 1,

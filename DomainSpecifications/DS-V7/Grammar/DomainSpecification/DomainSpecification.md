@@ -51,6 +51,13 @@ as URL to get the vocabulary file) are explicitly listed with `ds:usedVocabulary
     "https://semantify.it/voc/KEl6e6F0U"
   ],
   "sh:closed": false,
+  "ds:propertyDisplayOrder": [
+    "schema:name",
+    "schema:description",
+    "schema:address",
+    "schema:url",
+    "schema:image"
+  ],
   "sh:property": [
     ...
   ]
@@ -79,6 +86,7 @@ recommended order of these terms within a DS Node (optional).
 | `schema:schemaVersion` | true | *String* | The used schema.org version as string, e.g. `"11.0"` |
 | `ds:usedVocabulary` | false | List of *IRI* | The used external vocabularies (besides schema.org) for this DS. The values are IRIs of those vocabularies |
 | `sh:closed` | false | *Boolean* | Specifies if additional properties are allowed or not | Non-conform property |
+| `ds:propertyDisplayOrder` | false | List of **IRI** | A list of property IRIs that reflect the order of the properties for this DS, including those inherited from its Super-DS. If this property is used, it replaces the order given by `sh:order` of the property nodes in question. | |
 | `sh:property` | true | List of **PropertyNode** | A list of property nodes that apply to the target entity | Missing Property, Non-conform Property |
 
 ## 3. Semantics
@@ -362,7 +370,7 @@ Example:
 
 The term `ds:subDSOf` specifies that the Domain Specification is a Sub-DS of the referenced DS (by its `@id` - the range
 type is fixed in the standard `@context`). A Sub-DS inherits all the constraints from its Super-DS. A Domain
-Specification can have only one Super-DS but could have multiple Sub-DS.
+Specification can have only one Super-DS, but could have multiple Sub-DS.
 
 Example:
 
@@ -406,6 +414,38 @@ Tools presenting Domain Specifications should show/link the Super-DS in a promin
 constraints of a DS and its Super-DS (and recursively their Super-DS). For the verification the total resulting
 constraints are important. All these tools that read a DS assume that the `ds:subDSOf` link is valid (that the target DS
 exists and that the semantic rules are followed).
+
+#### 3.5.1.1. ds:propertyDisplayOrder
+
+`ds:propertyDisplayOrder` is used in the root node of a DS to provide a list of property IRIs that reflect the order of the properties for this DS, including those inherited from its Super-DS (this is important to display the populated version of the DS). If this property is used, it replaces the order given by `sh:order` (which is deprecated now) of the property nodes in question. Both terms can coexist (but it is recommended to use `ds:propertyDisplayOrder` instead of `sh:order`), e.g. `sh:order` is taken for the property order for the unpopulated version, and `ds:propertyDisplayOrder` is taken for the populated version.
+
+To be correct and complete, the list in `ds:propertyDisplayOrder` must contain all properties of the Sub-DS and all properties inherited from the Super-DS. It is up to the implementation to handle invalid lists, but as a recommendation: If there are missing or additional properties, those can be skipped or rather displayed at the end of the list.
+
+For convenience, following entry is included in the standard `@context`:
+
+```json
+"ds:propertyDisplayOrder": {
+  "@container": "@list",
+  "@type": "@id"
+}
+```
+
+The following example contains 4 property IRIs defining their order when resolving the population of the DS with its Super-DS (defined with `ds:subDSOf`). Imagine that the Super-DS provides the properties `schema:address` and `schema:name`, and the DS provides the properties `schema:description` and `schema:location`.
+
+```json
+{
+  "@type": "ds:DomainSpecification",
+  "ds:subDSOf": "https://semantify.it/ds/fBhz5h78s",
+  ...
+  "ds:propertyDisplayOrder": [
+    "schema:name",
+    "schema:description",
+    "schema:address",
+    "schema:location"
+  ],
+  ...
+}
+```
 
 #### 3.5.2. Internal and external references
 

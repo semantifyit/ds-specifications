@@ -6,6 +6,10 @@
     "schema": "https://schema.org/",
     "sh": "http://www.w3.org/ns/shacl#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ds:propertyDisplayOrder": {
+      "@container": "@list",
+      "@type": "@id"
+    },
     "ds:subDSOf": {
       "@type": "@id"
     },
@@ -94,10 +98,24 @@
         "https://semantify.it/voc/IaiA2RES_"
       ],
       "sh:closed": true,
+      "ds:propertyDisplayOrder": [
+        "schema:creditText",
+        "schema:keywords",
+        "schema:locationCreated",
+        "schema:dateCreated",
+        "schema:discussionUrl",
+        "schema:contentLocation",
+        "schema:copyrightYear",
+        "schema:mainEntity",
+        "schema:about",
+        "schema:accountablePerson",
+        "schema:copyrightHolder",
+        "schema:creator",
+        "schema:citation"
+      ],
       "sh:property": [
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 0,
           "sh:path": "schema:creditText",
           "rdfs:comment": [
             {
@@ -117,7 +135,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 1,
           "sh:path": "schema:keywords",
           "rdfs:comment": [
             {
@@ -137,7 +154,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 2,
           "sh:path": "schema:locationCreated",
           "rdfs:comment": [
             {
@@ -157,7 +173,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 3,
           "sh:path": "schema:dateCreated",
           "rdfs:comment": [
             {
@@ -175,7 +190,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 4,
           "sh:path": "schema:discussionUrl",
           "rdfs:comment": [
             {
@@ -193,7 +207,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 5,
           "sh:path": "schema:contentLocation",
           "rdfs:comment": [
             {
@@ -213,7 +226,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 6,
           "sh:path": "schema:copyrightYear",
           "rdfs:comment": [
             {
@@ -231,7 +243,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 7,
           "sh:path": "schema:mainEntity",
           "rdfs:comment": [
             {
@@ -251,7 +262,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 8,
           "sh:path": "schema:about",
           "rdfs:comment": [
             {
@@ -270,7 +280,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 9,
           "sh:path": "schema:accountablePerson",
           "rdfs:comment": [
             {
@@ -289,7 +298,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 10,
           "sh:path": "schema:copyrightHolder",
           "rdfs:comment": [
             {
@@ -308,7 +316,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 11,
           "sh:path": "schema:creator",
           "rdfs:comment": [
             {
@@ -327,7 +334,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 12,
           "sh:path": "schema:citation",
           "rdfs:comment": [
             {
@@ -351,10 +357,13 @@
         "schema:Person"
       ],
       "sh:closed": true,
+      "ds:propertyDisplayOrder": [
+        "schema:name",
+        "schema:worksFor"
+      ],
       "sh:property": [
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 0,
           "sh:path": "schema:name",
           "sh:minCount": 1,
           "sh:maxCount": 1,
@@ -366,7 +375,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 1,
           "sh:path": "schema:worksFor",
           "sh:minCount": 1,
           "sh:or": [
@@ -378,10 +386,13 @@
                   "schema:Organization"
                 ],
                 "sh:closed": true,
+                "ds:propertyDisplayOrder": [
+                  "schema:name",
+                  "schema:legalName"
+                ],
                 "sh:property": [
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 0,
                     "sh:path": "schema:name",
                     "sh:minCount": 1,
                     "sh:maxCount": 1,
@@ -393,7 +404,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 1,
                     "sh:path": "schema:legalName",
                     "sh:minCount": 1,
                     "sh:maxCount": 1,
@@ -417,10 +427,13 @@
         "schema:Organization"
       ],
       "sh:closed": true,
+      "ds:propertyDisplayOrder": [
+        "schema:name",
+        "schema:legalName"
+      ],
       "sh:property": [
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 0,
           "sh:path": "schema:name",
           "sh:minCount": 1,
           "sh:maxCount": 1,
@@ -432,7 +445,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 1,
           "sh:path": "schema:legalName",
           "sh:minCount": 1,
           "sh:maxCount": 1,
@@ -451,10 +463,14 @@
         "schema:Place"
       ],
       "sh:closed": true,
+      "ds:propertyDisplayOrder": [
+        "schema:address",
+        "schema:branchCode",
+        "schema:geoContains"
+      ],
       "sh:property": [
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 0,
           "sh:path": "schema:address",
           "sh:minCount": 1,
           "sh:or": [
@@ -466,10 +482,14 @@
                   "schema:PostalAddress"
                 ],
                 "sh:closed": true,
+                "ds:propertyDisplayOrder": [
+                  "schema:addressCountry",
+                  "schema:addressRegion",
+                  "schema:addressLocality"
+                ],
                 "sh:property": [
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 0,
                     "sh:path": "schema:addressCountry",
                     "sh:minCount": 1,
                     "sh:maxCount": 1,
@@ -481,7 +501,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 1,
                     "sh:path": "schema:addressRegion",
                     "sh:minCount": 1,
                     "sh:maxCount": 1,
@@ -493,7 +512,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 2,
                     "sh:path": "schema:addressLocality",
                     "sh:minCount": 1,
                     "sh:maxCount": 1,
@@ -510,7 +528,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 1,
           "sh:path": "schema:branchCode",
           "sh:minCount": 1,
           "sh:or": [
@@ -521,7 +538,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 2,
           "sh:path": "schema:geoContains",
           "rdfs:comment": [
             {
@@ -540,10 +556,12 @@
                   "odta:PointOfInterest"
                 ],
                 "sh:closed": true,
+                "ds:propertyDisplayOrder": [
+                  "schema:name"
+                ],
                 "sh:property": [
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 0,
                     "sh:path": "schema:name",
                     "sh:minCount": 1,
                     "sh:maxCount": 1,
@@ -567,10 +585,13 @@
         "odta:Trail"
       ],
       "sh:closed": true,
+      "ds:propertyDisplayOrder": [
+        "odta:typeOfTrail",
+        "schema:name"
+      ],
       "sh:property": [
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 0,
           "sh:path": "odta:typeOfTrail",
           "sh:minCount": 1,
           "sh:maxCount": 1,
@@ -582,7 +603,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 1,
           "sh:path": "schema:name",
           "sh:minCount": 1,
           "sh:maxCount": 1,
@@ -601,10 +621,15 @@
         "schema:PlaceOfWorship"
       ],
       "sh:closed": true,
+      "ds:propertyDisplayOrder": [
+        "schema:description",
+        "schema:name",
+        "schema:containedInPlace",
+        "schema:alternateName"
+      ],
       "sh:property": [
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 0,
           "sh:path": "schema:description",
           "rdfs:comment": [
             {
@@ -623,7 +648,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 1,
           "sh:path": "schema:name",
           "rdfs:comment": [
             {
@@ -641,7 +665,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 2,
           "sh:path": "schema:containedInPlace",
           "rdfs:comment": [
             {
@@ -661,7 +684,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 3,
           "sh:path": "schema:alternateName",
           "rdfs:comment": [
             {
@@ -686,10 +708,14 @@
         "ex:Tiger"
       ],
       "sh:closed": true,
+      "ds:propertyDisplayOrder": [
+        "ex:numberOfLegs",
+        "schema:name",
+        "ex:animalLivingEnvironment"
+      ],
       "sh:property": [
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 0,
           "sh:path": "ex:numberOfLegs",
           "sh:minCount": 1,
           "sh:maxCount": 1,
@@ -701,7 +727,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 1,
           "sh:path": "schema:name",
           "sh:minCount": 1,
           "sh:maxCount": 1,
@@ -713,14 +738,13 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 2,
           "sh:path": "ex:animalLivingEnvironment",
           "sh:minCount": 1,
           "sh:maxCount": 1,
           "sh:or": [
             {
               "sh:node": {
-                "@id": "https://semantify.it/ds/gsaTefLCP#luRth",
+                "@id": "https://semantify.it/ds/gsaTefLCP#JjHzh",
                 "@type": "sh:NodeShape",
                 "sh:class": [
                   "ex:AnimalLivingEnvironment"

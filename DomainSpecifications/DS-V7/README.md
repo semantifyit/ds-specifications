@@ -24,8 +24,12 @@ A detailed listing of patches for this specification version can be found below 
 
 ## Patches
 
+* **[2021-10-18]**
+  * `ds:propertyDisplayOrder` is introduced as a new property for the DS root node and Class nodes. It replaces `sh:order` in property nodes, which is deprecated now. Details at [Grammar/DomainSpecification/DomainSpecification](./Grammar/DomainSpecification/DomainSpecification.md). A corresponding entry in the standard `@context` is added. 
+  * [Examples](Examples/README.md) have been updated to use the new property instead of `sh:order`.
+
 * **[2021-09-28]**
-  * rdf:HTML as introduced as a new datatype. Added chapter 3.1.2. and adapted mapping-table in chapter 3.1. in [Grammar/DomainSpecification/DataType](./Grammar/DomainSpecification/DataType.md).
+  * `rdf:HTML` as introduced as a new datatype. Added chapter 3.1.2. and adapted mapping-table in chapter 3.1. in [Grammar/DomainSpecification/DataType](./Grammar/DomainSpecification/DataType.md).
   * The DS-Path Syntax is introduced at [Grammar/DsPath/README.md](./Grammar/DsPath/README.md). This syntax can be used for the verification report or for any application that needs pointer to a specific node of a DS.
 
 * **[2021-07-07]** 

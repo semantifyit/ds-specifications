@@ -17,6 +17,11 @@ The `@id` of a Class Node is used to reference it in other parts of the Domain S
       "schema:Airport"
     ],
     "sh:closed": true,
+    "ds:propertyDisplayOrder": [
+      "schema:name",
+      "schema:description",
+      "schema:url"
+    ],
     "sh:property": [
       ...
     ]
@@ -34,6 +39,7 @@ The following table lists all possible terms that can be used by a Class Node. T
 | `@type` | true | `"sh:NodeShape"` | The fixed type for a Class Node |
 | `sh:class` | true | [ *IRI* ] | The IRI(s) of the Class(es) that the entity must have | Non-conform range |
 | `sh:closed` | false | *Boolean* | Specifies if additional properties are allowed or not | Non-conform property |
+| `ds:propertyDisplayOrder` | false | List of **IRI** | A list of property IRIs that reflect the order of the properties for this Class. If this property is used, it replaces the order given by `sh:order` of the property nodes in question. | |
 | `sh:property` | false | List of **PropertyNode** | A list of property nodes that apply to the entity | Missing Property, Non-conform Property |
 
 ## 3. Semantics
@@ -109,3 +115,7 @@ Example:
 ```json
 "sh:closed": true
 ```
+
+#### 3.2.3. ds:propertyDisplayOrder
+
+The term `ds:propertyDisplayOrder` provides a list of property IRIs that reflect a wished order of the properties for display purposes. Details about this term can be found in [DomainSpecification.md](./DomainSpecification.md).

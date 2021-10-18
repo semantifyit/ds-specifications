@@ -7,7 +7,6 @@ Property Nodes express the constraints for a given property (identified by its I
 ```JSON
 {
   "@type": "sh:PropertyShape",
-  "sh:order": 12,
   "sh:path": "schema:address",
   "rdfs:comment": [
     {
@@ -30,7 +29,7 @@ The following table lists all possible terms that can be used by a Property Node
 | key | required | value type | description | related error |
 | :---: | :---: | :---: | :--- | :---: |
 | `@type` | true | `sh:PropertyShape` | The fixed type for a Property Node |
-| `sh:order` | false | _Integer_ | The position of this property in comparison with other properties for the same Subject (only representation purpose) |
+| `sh:order` | false | _Integer_ | The position of this property in comparison with other properties for the same Subject (only representation purpose) - deprecated in favor of `ds:propertyDisplayOrder` |
 | `sh:path` | true | _IRI_ | The IRI of the property that is restricted by this node |
 | `rdfs:comment` | false | List of *Language tagged String* |  The Description/Justification for this Property and/or its ranges |
 | `sh:minCount` | false | _Integer_ | The minimum cardinality (amount of values) for the property | Missing Property, Non-conform cardinality |
@@ -171,7 +170,9 @@ Regarding the Error generation based on these property-pair constraints, tests w
 
 Following terms represent metadata about the given property. These terms do not have any effects on the verification result; They have only informational character.
 
-#### 3.4.1. sh:order
+#### 3.4.1. sh:order (**deprecated**)
+
+This term is **deprecated** in favor of `ds:propertyDisplayOrder`. Details can be found in [DomainSpecification.md](./DomainSpecification.md).
 
 The term `sh:order` CAN be used to indicate a specific order for a list of properties. This can be used e.g. by a GUI to render the list of properties in the wished order. The value for this term must be an integer, starting with `0`.
 

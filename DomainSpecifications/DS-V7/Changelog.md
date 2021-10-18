@@ -321,6 +321,10 @@ Verification Report:
 
 Additionally, the `@context` entry for the DS vocabulary is changed to `https`, resulting in `"ds": "https://vocab.sti2.at/ds/"`.
 
+### 1.10. sh:order becomes deprecated
+
+The term `sh:order` becomes deprecated and is replaced by `ds:propertyDisplayOrder`. ds:propertyDisplayOrder provides a list of property IRIs that reflect the wished display order for the properties of the current Class/DS Node. More details are found in [DomainSpecification.md](./Grammar/DomainSpecification/DomainSpecification.md).
+
 ## 2. Additions
 
 ### 2.1. ds:version
@@ -470,6 +474,10 @@ Addition to the standard `@context`:
 The most challenging part of this new term is to ensure the consistency between hierarchical DS when creating/editing/deleting Domain Specifications. Tools must aid users to not take actions that result in an invalid `ds:subDSOf` definition.
 
 Tools presenting Domain Specifications should show/link the Super-DS in a prominent way, and/or show the total resulting constraints of a DS and its Super-DS (and recursively their Super-DS). For the verification the total resulting constraints are important. All these tools that read a DS assume that the `ds:subDSOf` link is valid (that the target DS exists and that the semantic rules are followed).
+
+#### 2.5.4. ds:propertyDisplayOrder
+
+The new term `ds:propertyDisplayOrder` is introduced to replace `sh:order` and to provide means to include property terms inherited from the Super-DS. In general, it is recommended to use `ds:propertyDisplayOrder`, the term `sh:order` becomes deprecated. Details about this new property can be found in [DomainSpecification.md](./Grammar/DomainSpecification/DomainSpecification.md).
 
 ### 2.6. Use of references
 

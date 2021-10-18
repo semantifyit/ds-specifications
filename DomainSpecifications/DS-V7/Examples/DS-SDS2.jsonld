@@ -6,6 +6,10 @@
     "schema": "https://schema.org/",
     "sh": "http://www.w3.org/ns/shacl#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ds:propertyDisplayOrder": {
+      "@container": "@list",
+      "@type": "@id"
+    },
     "ds:subDSOf": {
       "@type": "@id"
     },
@@ -90,10 +94,15 @@
         "https://semantify.it/voc/PKXZ0czqy"
       ],
       "sh:closed": false,
+      "ds:propertyDisplayOrder": [
+        "schema:creditText",
+        "schema:keywords",
+        "schema:locationCreated",
+        "schema:dateCreated"
+      ],
       "sh:property": [
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 0,
           "sh:path": "schema:creditText",
           "rdfs:comment": [
             {
@@ -110,7 +119,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 1,
           "sh:path": "schema:keywords",
           "rdfs:comment": [
             {
@@ -130,7 +138,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 2,
           "sh:path": "schema:locationCreated",
           "rdfs:comment": [
             {
@@ -150,7 +157,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 3,
           "sh:path": "schema:dateCreated",
           "rdfs:comment": [
             {
@@ -178,10 +184,14 @@
         "schema:Place"
       ],
       "sh:closed": true,
+      "ds:propertyDisplayOrder": [
+        "schema:address",
+        "schema:branchCode",
+        "schema:geoContains"
+      ],
       "sh:property": [
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 0,
           "sh:path": "schema:address",
           "sh:minCount": 1,
           "sh:or": [
@@ -193,10 +203,14 @@
                   "schema:PostalAddress"
                 ],
                 "sh:closed": true,
+                "ds:propertyDisplayOrder": [
+                  "schema:addressCountry",
+                  "schema:addressRegion",
+                  "schema:addressLocality"
+                ],
                 "sh:property": [
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 0,
                     "sh:path": "schema:addressCountry",
                     "sh:minCount": 1,
                     "sh:maxCount": 1,
@@ -208,7 +222,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 1,
                     "sh:path": "schema:addressRegion",
                     "sh:minCount": 1,
                     "sh:maxCount": 1,
@@ -220,7 +233,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 2,
                     "sh:path": "schema:addressLocality",
                     "sh:minCount": 1,
                     "sh:maxCount": 1,
@@ -237,7 +249,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 1,
           "sh:path": "schema:branchCode",
           "sh:minCount": 1,
           "sh:or": [
@@ -248,7 +259,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 2,
           "sh:path": "schema:geoContains",
           "rdfs:comment": [
             {
@@ -267,10 +277,12 @@
                   "odta:PointOfInterest"
                 ],
                 "sh:closed": true,
+                "ds:propertyDisplayOrder": [
+                  "schema:name"
+                ],
                 "sh:property": [
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 0,
                     "sh:path": "schema:name",
                     "sh:minCount": 1,
                     "sh:maxCount": 1,

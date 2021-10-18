@@ -6,6 +6,10 @@
     "schema": "https://schema.org/",
     "sh": "http://www.w3.org/ns/shacl#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ds:propertyDisplayOrder": {
+      "@container": "@list",
+      "@type": "@id"
+    },
     "ds:subDSOf": {
       "@type": "@id"
     },
@@ -90,10 +94,14 @@
         "https://semantify.it/voc/IaiA2RES_"
       ],
       "sh:closed": true,
+      "ds:propertyDisplayOrder": [
+        "ex:numberOfLegs",
+        "schema:name",
+        "ex:animalLivingEnvironment"
+      ],
       "sh:property": [
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 0,
           "sh:path": "ex:numberOfLegs",
           "sh:minCount": 1,
           "sh:maxCount": 1,
@@ -105,7 +113,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 1,
           "sh:path": "schema:name",
           "sh:minCount": 1,
           "sh:maxCount": 1,
@@ -117,14 +124,13 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 2,
           "sh:path": "ex:animalLivingEnvironment",
           "sh:minCount": 1,
           "sh:maxCount": 1,
           "sh:or": [
             {
               "sh:node": {
-                "@id": "https://semantify.it/ds/gsaTefLCP#NtiSE",
+                "@id": "https://semantify.it/ds/gsaTefLCP#jYpRi",
                 "@type": "sh:NodeShape",
                 "sh:class": [
                   "ex:AnimalLivingEnvironment"

@@ -6,6 +6,10 @@
     "schema": "https://schema.org/",
     "sh": "http://www.w3.org/ns/shacl#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ds:propertyDisplayOrder": {
+      "@container": "@list",
+      "@type": "@id"
+    },
     "ds:subDSOf": {
       "@type": "@id"
     },
@@ -76,20 +80,38 @@
       ],
       "schema:author": {
         "@type": "schema:Person",
-        "schema:name": "oleksandra",
+        "schema:name": "elias",
         "schema:memberOf": {
           "@type": "schema:Organization",
           "schema:name": "STI Innsbruck"
         }
       },
       "ds:version": "7.0",
-      "schema:version": "1.18",
+      "schema:version": "1.19",
       "schema:schemaVersion": "12.0",
       "sh:closed": true,
+      "ds:propertyDisplayOrder": [
+        "schema:identifier",
+        "schema:alternateName",
+        "schema:name",
+        "schema:icaoCode",
+        "schema:address",
+        "schema:description",
+        "schema:openingHoursSpecification",
+        "schema:geo",
+        "schema:image",
+        "schema:telephone",
+        "schema:url",
+        "schema:aggregateRating",
+        "schema:faxNumber",
+        "schema:containsPlace",
+        "schema:mainEntityOfPage",
+        "schema:hasMap",
+        "schema:sameAs"
+      ],
       "sh:property": [
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 0,
           "sh:path": "schema:identifier",
           "sh:maxCount": 1,
           "sh:or": [
@@ -103,7 +125,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 1,
           "sh:path": "schema:alternateName",
           "sh:maxCount": 1,
           "sh:or": [
@@ -114,7 +135,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 2,
           "sh:path": "schema:name",
           "sh:minCount": 1,
           "sh:maxCount": 1,
@@ -126,7 +146,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 3,
           "sh:path": "schema:icaoCode",
           "sh:minCount": 1,
           "sh:maxCount": 1,
@@ -138,39 +157,46 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 4,
           "sh:path": "schema:address",
           "sh:minCount": 1,
           "sh:maxCount": 1,
           "sh:or": [
             {
               "sh:node": {
-                "@id": "https://semantify.it/ds/_1hRVOT8Q#GbVXU",
+                "@id": "https://semantify.it/ds/_1hRVOT8Q#cPYNm",
                 "@type": "sh:NodeShape",
                 "sh:class": [
                   "schema:PostalAddress"
                 ],
                 "sh:closed": true,
+                "ds:propertyDisplayOrder": [
+                  "schema:addressCountry",
+                  "schema:addressRegion",
+                  "schema:addressLocality",
+                  "schema:postalCode",
+                  "schema:streetAddress"
+                ],
                 "sh:property": [
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 0,
                     "sh:path": "schema:addressCountry",
                     "sh:minCount": 1,
                     "sh:maxCount": 1,
                     "sh:or": [
                       {
                         "sh:node": {
-                          "@id": "https://semantify.it/ds/_1hRVOT8Q#JQMBu",
+                          "@id": "https://semantify.it/ds/_1hRVOT8Q#MEVbG",
                           "@type": "sh:NodeShape",
                           "sh:class": [
                             "schema:Country"
                           ],
                           "sh:closed": true,
+                          "ds:propertyDisplayOrder": [
+                            "schema:name"
+                          ],
                           "sh:property": [
                             {
                               "@type": "sh:PropertyShape",
-                              "sh:order": 0,
                               "sh:path": "schema:name",
                               "sh:minCount": 1,
                               "sh:maxCount": 1,
@@ -190,7 +216,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 1,
                     "sh:path": "schema:addressRegion",
                     "sh:minCount": 1,
                     "sh:maxCount": 1,
@@ -202,7 +227,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 2,
                     "sh:path": "schema:addressLocality",
                     "sh:minCount": 1,
                     "sh:maxCount": 1,
@@ -214,7 +238,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 3,
                     "sh:path": "schema:postalCode",
                     "sh:minCount": 1,
                     "sh:maxCount": 1,
@@ -226,7 +249,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 4,
                     "sh:path": "schema:streetAddress",
                     "sh:minCount": 1,
                     "sh:maxCount": 1,
@@ -243,7 +265,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 5,
           "sh:path": "schema:description",
           "sh:maxCount": 1,
           "sh:or": [
@@ -254,22 +275,29 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 6,
           "sh:path": "schema:openingHoursSpecification",
+          "sh:minCount": 1,
           "sh:maxCount": 1,
           "sh:or": [
             {
               "sh:node": {
-                "@id": "https://semantify.it/ds/_1hRVOT8Q#lLswj",
+                "@id": "https://semantify.it/ds/_1hRVOT8Q#gEANS",
                 "@type": "sh:NodeShape",
                 "sh:class": [
                   "schema:OpeningHoursSpecification"
                 ],
                 "sh:closed": true,
+                "ds:propertyDisplayOrder": [
+                  "schema:opens",
+                  "schema:closes",
+                  "schema:dayOfWeek",
+                  "schema:validFrom",
+                  "schema:validThrough",
+                  "schema:description"
+                ],
                 "sh:property": [
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 0,
                     "sh:path": "schema:opens",
                     "sh:minCount": 1,
                     "sh:maxCount": 1,
@@ -281,7 +309,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 1,
                     "sh:path": "schema:closes",
                     "sh:minCount": 1,
                     "sh:maxCount": 1,
@@ -293,13 +320,12 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 2,
                     "sh:path": "schema:dayOfWeek",
                     "sh:minCount": 1,
                     "sh:or": [
                       {
                         "sh:node": {
-                          "@id": "https://semantify.it/ds/_1hRVOT8Q#cpWKz",
+                          "@id": "https://semantify.it/ds/_1hRVOT8Q#IJebi",
                           "@type": "sh:NodeShape",
                           "sh:class": [
                             "schema:DayOfWeek"
@@ -336,7 +362,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 3,
                     "sh:path": "schema:validFrom",
                     "sh:maxCount": 1,
                     "sh:or": [
@@ -347,7 +372,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 4,
                     "sh:path": "schema:validThrough",
                     "sh:maxCount": 1,
                     "sh:or": [
@@ -358,7 +382,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 5,
                     "sh:path": "schema:description",
                     "sh:maxCount": 1,
                     "sh:or": [
@@ -374,22 +397,25 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 7,
           "sh:path": "schema:geo",
           "sh:maxCount": 1,
           "sh:or": [
             {
               "sh:node": {
-                "@id": "https://semantify.it/ds/_1hRVOT8Q#rkgAn",
+                "@id": "https://semantify.it/ds/_1hRVOT8Q#xExsc",
                 "@type": "sh:NodeShape",
                 "sh:class": [
                   "schema:GeoCoordinates"
                 ],
                 "sh:closed": true,
+                "ds:propertyDisplayOrder": [
+                  "schema:longitude",
+                  "schema:latitude",
+                  "schema:elevation"
+                ],
                 "sh:property": [
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 0,
                     "sh:path": "schema:longitude",
                     "sh:minCount": 1,
                     "sh:maxCount": 1,
@@ -404,7 +430,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 1,
                     "sh:path": "schema:latitude",
                     "sh:minCount": 1,
                     "sh:maxCount": 1,
@@ -419,7 +444,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 2,
                     "sh:path": "schema:elevation",
                     "sh:maxCount": 1,
                     "sh:or": [
@@ -438,7 +462,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 8,
           "sh:path": "schema:image",
           "sh:minCount": 1,
           "sh:or": [
@@ -447,16 +470,30 @@
             },
             {
               "sh:node": {
-                "@id": "https://semantify.it/ds/_1hRVOT8Q#dfVQT",
+                "@id": "https://semantify.it/ds/_1hRVOT8Q#XYSnX",
                 "@type": "sh:NodeShape",
                 "sh:class": [
                   "schema:ImageObject"
                 ],
                 "sh:closed": true,
+                "ds:propertyDisplayOrder": [
+                  "schema:identifier",
+                  "schema:url",
+                  "schema:caption",
+                  "schema:contentUrl",
+                  "schema:height",
+                  "schema:width",
+                  "schema:copyrightHolder",
+                  "schema:copyrightYear",
+                  "schema:license",
+                  "schema:uploadDate",
+                  "schema:contentSize",
+                  "schema:thumbnailUrl",
+                  "schema:representativeOfPage"
+                ],
                 "sh:property": [
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 0,
                     "sh:path": "schema:identifier",
                     "rdfs:comment": [
                       {
@@ -464,6 +501,7 @@
                         "@value": "Additional or internal identifier for an image."
                       }
                     ],
+                    "sh:minCount": 0,
                     "sh:or": [
                       {
                         "sh:datatype": "xsd:anyURI"
@@ -475,7 +513,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 1,
                     "sh:path": "schema:url",
                     "rdfs:comment": [
                       {
@@ -493,7 +530,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 2,
                     "sh:path": "schema:caption",
                     "sh:maxCount": 1,
                     "sh:or": [
@@ -504,7 +540,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 3,
                     "sh:path": "schema:contentUrl",
                     "rdfs:comment": [
                       {
@@ -512,6 +547,7 @@
                         "@value": "URL that provides a directly retrievable instance of the ImageObject."
                       }
                     ],
+                    "sh:minCount": 0,
                     "sh:maxCount": 1,
                     "sh:or": [
                       {
@@ -521,7 +557,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 4,
                     "sh:path": "schema:height",
                     "rdfs:comment": [
                       {
@@ -529,20 +564,23 @@
                         "@value": "The height of an image in pixels."
                       }
                     ],
+                    "sh:minCount": 0,
                     "sh:maxCount": 1,
                     "sh:or": [
                       {
                         "sh:node": {
-                          "@id": "https://semantify.it/ds/_1hRVOT8Q#ohDUM",
+                          "@id": "https://semantify.it/ds/_1hRVOT8Q#OPFay",
                           "@type": "sh:NodeShape",
                           "sh:class": [
                             "schema:QuantitativeValue"
                           ],
                           "sh:closed": true,
+                          "ds:propertyDisplayOrder": [
+                            "schema:value"
+                          ],
                           "sh:property": [
                             {
                               "@type": "sh:PropertyShape",
-                              "sh:order": 0,
                               "sh:path": "schema:value",
                               "sh:minCount": 1,
                               "sh:maxCount": 1,
@@ -562,7 +600,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 5,
                     "sh:path": "schema:width",
                     "rdfs:comment": [
                       {
@@ -570,20 +607,23 @@
                         "@value": "The width of an image in pixels."
                       }
                     ],
+                    "sh:minCount": 0,
                     "sh:maxCount": 1,
                     "sh:or": [
                       {
                         "sh:node": {
-                          "@id": "https://semantify.it/ds/_1hRVOT8Q#SogmN",
+                          "@id": "https://semantify.it/ds/_1hRVOT8Q#GEzDu",
                           "@type": "sh:NodeShape",
                           "sh:class": [
                             "schema:QuantitativeValue"
                           ],
                           "sh:closed": true,
+                          "ds:propertyDisplayOrder": [
+                            "schema:value"
+                          ],
                           "sh:property": [
                             {
                               "@type": "sh:PropertyShape",
-                              "sh:order": 0,
                               "sh:path": "schema:value",
                               "sh:minCount": 1,
                               "sh:maxCount": 1,
@@ -603,7 +643,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 6,
                     "sh:path": "schema:copyrightHolder",
                     "rdfs:comment": [
                       {
@@ -611,20 +650,23 @@
                         "@value": "Specifies the name of the image copyright owner, which can be a person or organization."
                       }
                     ],
+                    "sh:minCount": 0,
                     "sh:maxCount": 1,
                     "sh:or": [
                       {
                         "sh:node": {
-                          "@id": "https://semantify.it/ds/_1hRVOT8Q#HnLqw",
+                          "@id": "https://semantify.it/ds/_1hRVOT8Q#gKWYc",
                           "@type": "sh:NodeShape",
                           "sh:class": [
                             "schema:Organization"
                           ],
                           "sh:closed": true,
+                          "ds:propertyDisplayOrder": [
+                            "schema:name"
+                          ],
                           "sh:property": [
                             {
                               "@type": "sh:PropertyShape",
-                              "sh:order": 0,
                               "sh:path": "schema:name",
                               "sh:minCount": 1,
                               "sh:maxCount": 1,
@@ -639,16 +681,18 @@
                       },
                       {
                         "sh:node": {
-                          "@id": "https://semantify.it/ds/_1hRVOT8Q#UTgoS",
+                          "@id": "https://semantify.it/ds/_1hRVOT8Q#AoiLc",
                           "@type": "sh:NodeShape",
                           "sh:class": [
                             "schema:Person"
                           ],
                           "sh:closed": true,
+                          "ds:propertyDisplayOrder": [
+                            "schema:name"
+                          ],
                           "sh:property": [
                             {
                               "@type": "sh:PropertyShape",
-                              "sh:order": 0,
                               "sh:path": "schema:name",
                               "sh:minCount": 1,
                               "sh:maxCount": 1,
@@ -665,7 +709,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 7,
                     "sh:path": "schema:copyrightYear",
                     "sh:maxCount": 1,
                     "sh:or": [
@@ -676,7 +719,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 8,
                     "sh:path": "schema:license",
                     "sh:maxCount": 1,
                     "sh:or": [
@@ -687,7 +729,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 9,
                     "sh:path": "schema:uploadDate",
                     "sh:maxCount": 1,
                     "sh:or": [
@@ -698,8 +739,8 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 10,
                     "sh:path": "schema:contentSize",
+                    "sh:minCount": 0,
                     "sh:maxCount": 1,
                     "sh:or": [
                       {
@@ -709,8 +750,8 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 11,
                     "sh:path": "schema:thumbnailUrl",
+                    "sh:minCount": 0,
                     "sh:maxCount": 1,
                     "sh:or": [
                       {
@@ -720,8 +761,8 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 12,
                     "sh:path": "schema:representativeOfPage",
+                    "sh:minCount": 0,
                     "sh:maxCount": 1,
                     "sh:or": [
                       {
@@ -736,7 +777,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 9,
           "sh:path": "schema:telephone",
           "sh:minCount": 1,
           "sh:maxCount": 1,
@@ -748,7 +788,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 10,
           "sh:path": "schema:url",
           "sh:minCount": 1,
           "sh:maxCount": 1,
@@ -760,22 +799,27 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 11,
           "sh:path": "schema:aggregateRating",
           "sh:maxCount": 1,
           "sh:or": [
             {
               "sh:node": {
-                "@id": "https://semantify.it/ds/_1hRVOT8Q#qJuVK",
+                "@id": "https://semantify.it/ds/_1hRVOT8Q#yysyf",
                 "@type": "sh:NodeShape",
                 "sh:class": [
                   "schema:AggregateRating"
                 ],
                 "sh:closed": true,
+                "ds:propertyDisplayOrder": [
+                  "schema:bestRating",
+                  "schema:ratingCount",
+                  "schema:ratingValue",
+                  "schema:url",
+                  "schema:description"
+                ],
                 "sh:property": [
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 0,
                     "sh:path": "schema:bestRating",
                     "rdfs:comment": [
                       {
@@ -796,7 +840,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 1,
                     "sh:path": "schema:ratingCount",
                     "rdfs:comment": [
                       {
@@ -814,7 +857,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 2,
                     "sh:path": "schema:ratingValue",
                     "rdfs:comment": [
                       {
@@ -832,7 +874,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 3,
                     "sh:path": "schema:url",
                     "rdfs:comment": [
                       {
@@ -850,7 +891,6 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 4,
                     "sh:path": "schema:description",
                     "rdfs:comment": [
                       {
@@ -873,7 +913,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 12,
           "sh:path": "schema:faxNumber",
           "sh:maxCount": 1,
           "sh:or": [
@@ -884,21 +923,27 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 13,
           "sh:path": "schema:containsPlace",
           "sh:or": [
             {
               "sh:node": {
-                "@id": "https://semantify.it/ds/_1hRVOT8Q#JmOgC",
+                "@id": "https://semantify.it/ds/_1hRVOT8Q#eDLsW",
                 "@type": "sh:NodeShape",
                 "sh:class": [
                   "schema:Place"
                 ],
                 "sh:closed": true,
+                "ds:propertyDisplayOrder": [
+                  "schema:name",
+                  "schema:description",
+                  "schema:url",
+                  "schema:address",
+                  "schema:image",
+                  "schema:telephone"
+                ],
                 "sh:property": [
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 0,
                     "sh:path": "schema:name",
                     "sh:minCount": 1,
                     "sh:maxCount": 1,
@@ -910,8 +955,8 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 1,
                     "sh:path": "schema:description",
+                    "sh:minCount": 0,
                     "sh:maxCount": 1,
                     "sh:or": [
                       {
@@ -921,8 +966,8 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 2,
                     "sh:path": "schema:url",
+                    "sh:minCount": 0,
                     "sh:maxCount": 1,
                     "sh:or": [
                       {
@@ -932,37 +977,45 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 3,
                     "sh:path": "schema:address",
+                    "sh:minCount": 0,
                     "sh:or": [
                       {
                         "sh:node": {
-                          "@id": "https://semantify.it/ds/_1hRVOT8Q#fnWeT",
+                          "@id": "https://semantify.it/ds/_1hRVOT8Q#diDHl",
                           "@type": "sh:NodeShape",
                           "sh:class": [
                             "schema:PostalAddress"
                           ],
                           "sh:closed": true,
+                          "ds:propertyDisplayOrder": [
+                            "schema:addressCountry",
+                            "schema:addressRegion",
+                            "schema:addressLocality",
+                            "schema:postalCode",
+                            "schema:streetAddress"
+                          ],
                           "sh:property": [
                             {
                               "@type": "sh:PropertyShape",
-                              "sh:order": 0,
                               "sh:path": "schema:addressCountry",
                               "sh:minCount": 1,
                               "sh:maxCount": 1,
                               "sh:or": [
                                 {
                                   "sh:node": {
-                                    "@id": "https://semantify.it/ds/_1hRVOT8Q#iXxLt",
+                                    "@id": "https://semantify.it/ds/_1hRVOT8Q#HQWHY",
                                     "@type": "sh:NodeShape",
                                     "sh:class": [
                                       "schema:Country"
                                     ],
                                     "sh:closed": true,
+                                    "ds:propertyDisplayOrder": [
+                                      "schema:name"
+                                    ],
                                     "sh:property": [
                                       {
                                         "@type": "sh:PropertyShape",
-                                        "sh:order": 0,
                                         "sh:path": "schema:name",
                                         "sh:minCount": 1,
                                         "sh:maxCount": 1,
@@ -982,7 +1035,6 @@
                             },
                             {
                               "@type": "sh:PropertyShape",
-                              "sh:order": 1,
                               "sh:path": "schema:addressRegion",
                               "sh:minCount": 1,
                               "sh:maxCount": 1,
@@ -994,7 +1046,6 @@
                             },
                             {
                               "@type": "sh:PropertyShape",
-                              "sh:order": 2,
                               "sh:path": "schema:addressLocality",
                               "sh:minCount": 1,
                               "sh:maxCount": 1,
@@ -1006,7 +1057,6 @@
                             },
                             {
                               "@type": "sh:PropertyShape",
-                              "sh:order": 3,
                               "sh:path": "schema:postalCode",
                               "sh:minCount": 1,
                               "sh:maxCount": 1,
@@ -1018,7 +1068,6 @@
                             },
                             {
                               "@type": "sh:PropertyShape",
-                              "sh:order": 4,
                               "sh:path": "schema:streetAddress",
                               "sh:minCount": 1,
                               "sh:maxCount": 1,
@@ -1035,8 +1084,8 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 4,
                     "sh:path": "schema:image",
+                    "sh:minCount": 0,
                     "sh:maxCount": 1,
                     "sh:or": [
                       {
@@ -1044,16 +1093,30 @@
                       },
                       {
                         "sh:node": {
-                          "@id": "https://semantify.it/ds/_1hRVOT8Q#wJyPI",
+                          "@id": "https://semantify.it/ds/_1hRVOT8Q#oVxbK",
                           "@type": "sh:NodeShape",
                           "sh:class": [
                             "schema:ImageObject"
                           ],
                           "sh:closed": true,
+                          "ds:propertyDisplayOrder": [
+                            "schema:identifier",
+                            "schema:url",
+                            "schema:caption",
+                            "schema:contentUrl",
+                            "schema:height",
+                            "schema:width",
+                            "schema:copyrightHolder",
+                            "schema:copyrightYear",
+                            "schema:license",
+                            "schema:uploadDate",
+                            "schema:contentSize",
+                            "schema:thumbnailUrl",
+                            "schema:representativeOfPage"
+                          ],
                           "sh:property": [
                             {
                               "@type": "sh:PropertyShape",
-                              "sh:order": 0,
                               "sh:path": "schema:identifier",
                               "rdfs:comment": [
                                 {
@@ -1061,6 +1124,7 @@
                                   "@value": "Additional or internal identifier for an image."
                                 }
                               ],
+                              "sh:minCount": 0,
                               "sh:or": [
                                 {
                                   "sh:datatype": "xsd:anyURI"
@@ -1072,7 +1136,6 @@
                             },
                             {
                               "@type": "sh:PropertyShape",
-                              "sh:order": 1,
                               "sh:path": "schema:url",
                               "rdfs:comment": [
                                 {
@@ -1090,7 +1153,6 @@
                             },
                             {
                               "@type": "sh:PropertyShape",
-                              "sh:order": 2,
                               "sh:path": "schema:caption",
                               "sh:maxCount": 1,
                               "sh:or": [
@@ -1101,7 +1163,6 @@
                             },
                             {
                               "@type": "sh:PropertyShape",
-                              "sh:order": 3,
                               "sh:path": "schema:contentUrl",
                               "rdfs:comment": [
                                 {
@@ -1109,6 +1170,7 @@
                                   "@value": "URL that provides a directly retrievable instance of the ImageObject."
                                 }
                               ],
+                              "sh:minCount": 0,
                               "sh:maxCount": 1,
                               "sh:or": [
                                 {
@@ -1118,7 +1180,6 @@
                             },
                             {
                               "@type": "sh:PropertyShape",
-                              "sh:order": 4,
                               "sh:path": "schema:height",
                               "rdfs:comment": [
                                 {
@@ -1126,20 +1187,23 @@
                                   "@value": "The height of an image in pixels."
                                 }
                               ],
+                              "sh:minCount": 0,
                               "sh:maxCount": 1,
                               "sh:or": [
                                 {
                                   "sh:node": {
-                                    "@id": "https://semantify.it/ds/_1hRVOT8Q#Lmtzg",
+                                    "@id": "https://semantify.it/ds/_1hRVOT8Q#CiDbs",
                                     "@type": "sh:NodeShape",
                                     "sh:class": [
                                       "schema:QuantitativeValue"
                                     ],
                                     "sh:closed": true,
+                                    "ds:propertyDisplayOrder": [
+                                      "schema:value"
+                                    ],
                                     "sh:property": [
                                       {
                                         "@type": "sh:PropertyShape",
-                                        "sh:order": 0,
                                         "sh:path": "schema:value",
                                         "sh:minCount": 1,
                                         "sh:maxCount": 1,
@@ -1159,7 +1223,6 @@
                             },
                             {
                               "@type": "sh:PropertyShape",
-                              "sh:order": 5,
                               "sh:path": "schema:width",
                               "rdfs:comment": [
                                 {
@@ -1167,20 +1230,23 @@
                                   "@value": "The width of an image in pixels."
                                 }
                               ],
+                              "sh:minCount": 0,
                               "sh:maxCount": 1,
                               "sh:or": [
                                 {
                                   "sh:node": {
-                                    "@id": "https://semantify.it/ds/_1hRVOT8Q#SsFED",
+                                    "@id": "https://semantify.it/ds/_1hRVOT8Q#uBAMy",
                                     "@type": "sh:NodeShape",
                                     "sh:class": [
                                       "schema:QuantitativeValue"
                                     ],
                                     "sh:closed": true,
+                                    "ds:propertyDisplayOrder": [
+                                      "schema:value"
+                                    ],
                                     "sh:property": [
                                       {
                                         "@type": "sh:PropertyShape",
-                                        "sh:order": 0,
                                         "sh:path": "schema:value",
                                         "sh:minCount": 1,
                                         "sh:maxCount": 1,
@@ -1200,7 +1266,6 @@
                             },
                             {
                               "@type": "sh:PropertyShape",
-                              "sh:order": 6,
                               "sh:path": "schema:copyrightHolder",
                               "rdfs:comment": [
                                 {
@@ -1208,20 +1273,23 @@
                                   "@value": "Specifies the name of the image copyright owner, which can be a person or organization."
                                 }
                               ],
+                              "sh:minCount": 0,
                               "sh:maxCount": 1,
                               "sh:or": [
                                 {
                                   "sh:node": {
-                                    "@id": "https://semantify.it/ds/_1hRVOT8Q#sXZwe",
+                                    "@id": "https://semantify.it/ds/_1hRVOT8Q#RmXmo",
                                     "@type": "sh:NodeShape",
                                     "sh:class": [
                                       "schema:Organization"
                                     ],
                                     "sh:closed": true,
+                                    "ds:propertyDisplayOrder": [
+                                      "schema:name"
+                                    ],
                                     "sh:property": [
                                       {
                                         "@type": "sh:PropertyShape",
-                                        "sh:order": 0,
                                         "sh:path": "schema:name",
                                         "sh:minCount": 1,
                                         "sh:maxCount": 1,
@@ -1236,16 +1304,18 @@
                                 },
                                 {
                                   "sh:node": {
-                                    "@id": "https://semantify.it/ds/_1hRVOT8Q#HwCUV",
+                                    "@id": "https://semantify.it/ds/_1hRVOT8Q#cjgTO",
                                     "@type": "sh:NodeShape",
                                     "sh:class": [
                                       "schema:Person"
                                     ],
                                     "sh:closed": true,
+                                    "ds:propertyDisplayOrder": [
+                                      "schema:name"
+                                    ],
                                     "sh:property": [
                                       {
                                         "@type": "sh:PropertyShape",
-                                        "sh:order": 0,
                                         "sh:path": "schema:name",
                                         "sh:minCount": 1,
                                         "sh:maxCount": 1,
@@ -1262,7 +1332,6 @@
                             },
                             {
                               "@type": "sh:PropertyShape",
-                              "sh:order": 7,
                               "sh:path": "schema:copyrightYear",
                               "sh:maxCount": 1,
                               "sh:or": [
@@ -1273,7 +1342,6 @@
                             },
                             {
                               "@type": "sh:PropertyShape",
-                              "sh:order": 8,
                               "sh:path": "schema:license",
                               "sh:maxCount": 1,
                               "sh:or": [
@@ -1284,7 +1352,6 @@
                             },
                             {
                               "@type": "sh:PropertyShape",
-                              "sh:order": 9,
                               "sh:path": "schema:uploadDate",
                               "sh:maxCount": 1,
                               "sh:or": [
@@ -1295,8 +1362,8 @@
                             },
                             {
                               "@type": "sh:PropertyShape",
-                              "sh:order": 10,
                               "sh:path": "schema:contentSize",
+                              "sh:minCount": 0,
                               "sh:maxCount": 1,
                               "sh:or": [
                                 {
@@ -1306,8 +1373,8 @@
                             },
                             {
                               "@type": "sh:PropertyShape",
-                              "sh:order": 11,
                               "sh:path": "schema:thumbnailUrl",
+                              "sh:minCount": 0,
                               "sh:maxCount": 1,
                               "sh:or": [
                                 {
@@ -1317,8 +1384,8 @@
                             },
                             {
                               "@type": "sh:PropertyShape",
-                              "sh:order": 12,
                               "sh:path": "schema:representativeOfPage",
+                              "sh:minCount": 0,
                               "sh:maxCount": 1,
                               "sh:or": [
                                 {
@@ -1333,8 +1400,8 @@
                   },
                   {
                     "@type": "sh:PropertyShape",
-                    "sh:order": 5,
                     "sh:path": "schema:telephone",
+                    "sh:minCount": 0,
                     "sh:maxCount": 1,
                     "sh:or": [
                       {
@@ -1349,7 +1416,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 14,
           "sh:path": "schema:mainEntityOfPage",
           "sh:maxCount": 1,
           "sh:or": [
@@ -1360,7 +1426,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 15,
           "sh:path": "schema:hasMap",
           "sh:maxCount": 1,
           "sh:or": [
@@ -1371,7 +1436,6 @@
         },
         {
           "@type": "sh:PropertyShape",
-          "sh:order": 16,
           "sh:path": "schema:sameAs",
           "sh:or": [
             {
