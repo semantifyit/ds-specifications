@@ -84,3 +84,4 @@ The use of the following libraries can ease your life as a developer when you wo
 * [SDO Adapter](https://www.npmjs.com/package/schema-org-adapter) - A library created by semantify.it to handle vocabulary data (like the schema.org vocabulary). This library offers an API that abstracts the whole vocabulary handling and reasoning.
 * [JSON-LD](https://www.npmjs.com/package/jsonld) - This library is an implementation of the [JSON-LD specification](https://json-ld.org/spec/latest/) in JavaScript.
 * [Nano Id](https://www.npmjs.com/package/nanoid) - Helps to create random IDs for IRIs.
+* [DS Utilities](https://github.com/semantifyit/ds-utilities) - A library created by semantify.it to handle the structure of Domain Specifications 
