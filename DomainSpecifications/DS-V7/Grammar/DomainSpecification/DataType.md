@@ -20,8 +20,8 @@ Domain Specifications make use of the [W3C XML Schema Definition Language (XSD) 
 {
   "sh:datatype": "xsd:string",
   "sh:defaultValue": "Innsbruck",
-  "sh:minLength": "3",
-  "sh:maxLength": "40",
+  "sh:minLength": 3,
+  "sh:maxLength": 40,
   "sh:in": [
     "Innsbruck",
     "Salzburg",
@@ -236,7 +236,7 @@ Example:
 ```JSON
 {
   "sh:datatype": "xsd:string",
-  "sh:minLength": "4"
+  "sh:minLength": 4
 }
 ```
 
@@ -255,7 +255,7 @@ Example:
 ```JSON
 {
   "sh:datatype": "xsd:anyURI",
-  "sh:minLength": "128"
+  "sh:maxLength": 128
 }
 ```
 
