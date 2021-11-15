@@ -32,7 +32,13 @@ The following errors are generated during the compliance check of a schema.org a
 
 ## Semantics for Class Matching
 
-Regarding the matching of `sh:targetClass` / `sh:class` and the `@type` of the verified entity:
+In the following our understanding of the class-subclass relationship is explained.This relationship is important to determine valid matches for `sh:targetClass` / `sh:class` and `ds:subDSOf`. 
+
+A set of classes 'SubDS' is a **valid match** for another set of classes 'SuperDS' if all elements in 'SuperDS' are also present in a set that contains all elements from 'SubDS' along with all their superclasses:
+
+`classes(SuperDS) ⊆ superclasses(classes(SubDS))`
+
+The following table gives examples for this.
 
 |                 | Domain Specification      | Data                             | Match |
 |-----------------|---------------------------|----------------------------------------|-------|
@@ -44,5 +50,6 @@ Regarding the matching of `sh:targetClass` / `sh:class` and the `@type` of the v
 | exact match     | LodgingBusiness, Product  | LodgingBusiness, Product               | yes   |
 | additional type | LodgingBusiness, Product  | LodgingBusiness, Product, CreativeWork | yes   |
 | sub-type        | LodgingBusiness, Product  | Hotel, Product                         | yes   |
+| sub-type | Organization, Place  | Restaurant                         | yes   |
 | not all types   | LodgingBusiness, Product  | LodgingBusiness                        | no    |
 | no relation     | LodgingBusiness, Product  | CreativeWork                           | no    |
