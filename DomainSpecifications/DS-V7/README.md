@@ -36,3 +36,10 @@ A detailed listing of patches for this specification version can be found below 
   * Removed chapter 3.3. about internal references from [Grammar/DomainSpecification/Class](./Grammar/DomainSpecification/Class.md).
   * All changes and details regarding internal and external references, Super-DS, and the resolving of these relations (population) have been added to chapter 3.5. of [Grammar/DomainSpecification/DomainSpecification](./Grammar/DomainSpecification/DomainSpecification.md).
   * Examples for the population process have been added to [Examples](Examples/README.md).
+
+* **[2022-01-07]**
+  * Added `rdfs:label` and `rdfs:comment` as options for all DS grammar node types to be able to express metadata, except for the DomainSpecification-node, since it already has `schema:name` and `schema:description` for this purpose. The corresponding grammar node pages have been updated.
+    * [Grammar/DomainSpecification/Class](./Grammar/DomainSpecification/Class.md).
+    * [Grammar/DomainSpecification/Enumeration](./Grammar/DomainSpecification/Enumeration.md).
+    * [Grammar/DomainSpecification/DataType](./Grammar/DomainSpecification/DataType.md).
+    * [Grammar/DomainSpecification/Property](./Grammar/DomainSpecification/Property.md).

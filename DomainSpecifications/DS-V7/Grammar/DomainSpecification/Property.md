@@ -8,6 +8,16 @@ Property Nodes express the constraints for a given property (identified by its I
 {
   "@type": "sh:PropertyShape",
   "sh:path": "schema:address",
+  "rdfs:label": [
+    {
+      "@language": "en",
+      "@value": "Postal address"
+    },
+    {
+      "@language": "de",
+      "@value": "Adresse"
+    }
+  ],
   "rdfs:comment": [
     {
       "@language": "en",
@@ -31,7 +41,8 @@ The following table lists all possible terms that can be used by a Property Node
 | `@type` | true | `sh:PropertyShape` | The fixed type for a Property Node |
 | `sh:order` | false | _Integer_ | The position of this property in comparison with other properties for the same Subject (only representation purpose) - deprecated in favor of `ds:propertyDisplayOrder` |
 | `sh:path` | true | _IRI_ | The IRI of the property that is restricted by this node |
-| `rdfs:comment` | false | List of *Language tagged String* |  The Description/Justification for this Property and/or its ranges |
+| `rdfs:label` | false | List of *Language tagged String* |  The label for this Property |
+| `rdfs:comment` | false | List of *Language tagged String* |  The description/justification for this Property and/or its ranges |
 | `sh:minCount` | false | _Integer_ | The minimum cardinality (amount of values) for the property | Missing Property, Non-conform cardinality |
 | `sh:maxCount` | false | _Integer_ | The maximum cardinality (amount of values) for the property | Non-conform cardinality |
 | `sh:equals`  | false | List of _IRI_  | The property must have the same values as the property specified in `sh:equals` | Non-conform sh:equals |
@@ -195,7 +206,7 @@ Example:
 
 #### 3.4.2. rdfs:comment
 
-The term `rdfs:comment` CAN be used to describe and/or justify the property and its expected value types. The value for this term is a language-tagged string.
+The term `rdfs:comment` CAN be used to describe and/or justify the property and its expected value types (in different languages). The value for this term is a language-tagged string. The standard description for a property term is usually provided by its vocabulary itself, `rdfs:comment` can be used to overwrite that standard description.
 
 Example:
 
@@ -214,6 +225,30 @@ Example:
       "sh:datatype": "xsd:string"
     }
   ]
+}
+```
+
+#### 3.4.3. rdfs:label
+
+The term `rdfs:label` CAN be used to give the property a label (in different languages). The value for this term is a language-tagged string. The standard label for a property term is usually provided by its vocabulary itself, `rdfs:label` can be used to overwrite that standard label.
+
+Example:
+
+```JSON
+{
+  "@type": "sh:PropertyShape",
+  "sh:path": "schema:postalAddress",
+  "rdfs:label": [
+    {
+      "@language": "en",
+      "@value":"Postal address"
+    },
+    {
+      "@language": "de",
+      "@value": "Wohnaddresse"
+    }
+  ],
+  ...
 }
 ```
 

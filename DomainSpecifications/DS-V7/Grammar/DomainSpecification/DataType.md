@@ -19,9 +19,39 @@ Domain Specifications make use of the [W3C XML Schema Definition Language (XSD) 
 ```json
 {
   "sh:datatype": "xsd:string",
+  "rdfs:label": [
+    {
+      "@language": "en",
+      "@value": "Text"
+    }
+  ],
+  "rdfs:comment": [
+    {
+      "@language": "en",
+      "@value": "A string specifying the name of a Person. Must have between 2 and 20 characters."
+    }
+  ],
+  "sh:minLength": 2,
+  "sh:maxLength": 20
+}
+```
+
+```json
+{
+  "sh:datatype": "xsd:string",
+  "rdfs:label": [
+    {
+      "@language": "en",
+      "@value": "Austrian city name"
+    }
+  ],
+  "rdfs:comment": [
+    {
+      "@language": "en",
+      "@value": "The name of a major city in Austria. The default value is 'Innsbruck'."
+    }
+  ],
   "sh:defaultValue": "Innsbruck",
-  "sh:minLength": 3,
-  "sh:maxLength": 40,
   "sh:in": [
     "Innsbruck",
     "Salzburg",
@@ -38,6 +68,8 @@ The following table lists all possible terms that can be used by a Data Type Nod
 | key | required | value type | description |  related error |
 | :---: | :---: | :---: | :--- | :---: |
 | `sh:datatype` | true | _IRI_ | The XSD-IRI representing the datatype the value must have. Below are the mapping functions between schema.org data types and XSD data types | Non-conform range |
+| `rdfs:label` | false | List of *Language tagged String* |  The label for this datatype |
+| `rdfs:comment` | false | List of *Language tagged String* |  The description for this datatype |
 | `sh:defaultValue` | false | _Literal_ | The standard value for this DataType (must be of the respective datatype). This is only a representational key-property (non-validating) |
 | `ds:defaultLanguage` | false | _Language-Tag_ | The standard language tag for this DataType (must be a language-tagged string). This is only a representational key-property (non-validating) |
 | `sh:minExclusive` | false | same as constrained Data Type | The minimum exclusive value that the value must have |  Non-conform sh:minExclusive |
@@ -121,8 +153,6 @@ As a further addition, the datatype `rdf:HTML` is introduced (see the [official 
   ]
 }
 ```
-
-
 
 ### 3.2. Advanced Constraints
 
@@ -426,5 +456,48 @@ The default language must be a valid [language tag](https://tools.ietf.org/html/
   "sh:datatype": "rdf:langString",
   "sh:defaultValue": "Vienna",
   "ds:defaultLanguage": "en"
+}
+```
+
+#### 3.3.3. rdfs:label
+
+The term `rdfs:label` CAN be used to give the datatype a label (in different languages). The value for this term is a language-tagged string. The standard label for a datatype term is usually defined by its vocabulary itself, `rdfs:label` can be used to overwrite that standard label.
+
+Example:
+
+```JSON
+{
+  "sh:datatype": "xsd:dateTime",
+  "rdfs:label": [
+    {
+      "@language": "en",
+      "@value": "ISO-8601 DateTime"
+    }
+  ]
+}
+```
+
+#### 3.3.4. rdfs:comment
+
+The term `rdfs:comment` CAN be used to describe the datatype (in different languages). The value for this term is a language-tagged string. The standard description for a datatype term is usually provided by its vocabulary itself, `rdfs:comment` can be used to overwrite that standard description (e.g. to explain further constraints on the datatype).
+
+Example:
+
+```JSON
+{
+  "sh:datatype": "xsd:string",
+  "rdfs:comment": [
+    {
+      "@language": "en",
+      "@value": "The name of a major city in Austria. The default value is 'Innsbruck'."
+    }
+  ],
+  "sh:defaultValue": "Innsbruck",
+  "sh:in": [
+    "Innsbruck",
+    "Salzburg",
+    "Vienna",
+    "Linz"
+  ]
 }
 ```

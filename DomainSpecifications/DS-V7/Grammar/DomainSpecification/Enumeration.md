@@ -19,9 +19,41 @@ The `@id` of an Enumeration Node is used to reference it in other parts of the D
     "sh:class": [
       "schema:DayOfWeek"
     ],
+    "rdfs:label": [
+      {
+        "@language": "en",
+        "@value": "Day of the Week"
+      },
+      {
+        "@language": "de",
+        "@value": "Wochentag"
+      }
+    ],
+    "rdfs:comment": [
+      {
+        "@language": "en",
+        "@value": "A day of the week. Choose one of the provided Day-instances."
+      }
+    ],
     "sh:in": [
       {
-        "@id": "schema:Monday"
+        "@id": "schema:Monday",
+        "rdfs:label": [
+          {
+            "@language": "en",
+            "@value": "Monday"
+          },
+          {
+            "@language": "de",
+            "@value": "Montag"
+          }
+        ],
+        "rdfs:comment": [
+          {
+            "@language": "en",
+            "@value": "The first day of the week."
+          }
+        ]
       },
       {
         "@id": "schema:Tuesday"
@@ -49,7 +81,9 @@ The following table lists all possible terms that can be used by an Enumeration 
 | `@id` | true | *IRI* | The IRI of the Enumeration Node, which is based on the DS IRI it is in |
 | `@type` | true | `"sh:NodeShape"` | The fixed type for an Enumeration Node |
 | `sh:class` | true | [ *IRI* ] | The IRI of the expected Enumeration - it should be only one | Non-conform range |
-| `sh:in `| false | [ *IRI* ]  | The set of URIs (enumeration members) that are valid values for this Enumeration, these are given as `@id` wrapped strings (see example) | Non-conform enumeration value |
+| `rdfs:label` | false | List of *Language tagged String* |  The label for this Enumeration |
+| `rdfs:comment` | false | List of *Language tagged String* |  The description for this Enumeration |
+| `sh:in `| false | [ *IRI* ]  | The set of URIs (enumeration members) that are valid values for this Enumeration, these are given as `@id` wrapped strings (see example). Enumeration values can have their own `rdfs:label` and `rdfs:comment` | Non-conform enumeration value |
 
 ## 3. Semantics
 
@@ -72,6 +106,32 @@ Example:
     },
     {
       "@id": "schema:Wednesday"
+    }
+  ]
+}
+```
+
+Enumeration members can also have their own `rdfs:label` and/or `rdfs:comment` metadata.
+
+Example:
+
+```json
+{
+  "sh:in": [
+    {
+      "@id": "schema:Monday",
+      "rdfs:label": [
+        {
+          "@language": "en",
+          "@value": "Monday"
+        }
+      ],
+      "rdfs:comment": [
+        {
+          "@language": "en",
+          "@value": "The first day of the week."
+        }
+      ]
     }
   ]
 }
@@ -108,3 +168,85 @@ However, in the schema.org context file the properties that have an enumeration 
 ```
 
 Both variants should be seen as valid (even if the schema.org context file is not loaded), for compatibility reasons. However, it should be clear that an `@id` wrapping the referenced IRI is the correct variant.
+
+
+### 3.4. Metadata
+
+Following terms represent metadata about the given enumeration. These terms do not have any effects on the verification result; They have only informational character.
+
+#### 3.4.1. rdfs:label
+
+The term `rdfs:label` CAN be used to give the enumeration a label (in different languages). The value for this term is a language-tagged string. The standard label for an enumeration term is usually provided by its vocabulary itself, `rdfs:label` can be used to overwrite that standard label.
+
+Example:
+
+```JSON
+{
+  "@id": "https://semantify.it/ds/OBbzsh4_B#6hrhus",
+  "@type": "sh:NodeShape",
+  "sh:class": [
+    "schema:DayOfWeek"
+  ],
+  "rdfs:label": [
+    {
+      "@language": "en",
+      "@value":"Day of the Week"
+    }
+  ],
+  ...
+}
+```
+
+#### 3.4.2. rdfs:comment
+
+The term `rdfs:comment` CAN be used to describe the enumeration (in different languages). The value for this term is a language-tagged string. The standard description for an enumeration term is usually provided by its vocabulary itself, `rdfs:comment` can be used to overwrite that standard description or provide more information about the expected enumeration members.
+
+Example:
+
+```JSON
+{
+  "@id": "https://semantify.it/ds/OBbzsh4_B#6hrhus",
+  "@type": "sh:NodeShape",
+  "sh:class": [
+    "schema:DayOfWeek"
+  ],
+  "rdfs:comment": [
+    {
+      "@language": "en",
+      "@value": "A day of the Week. Valid values are only references to the seven days of the week."
+    }
+  ],
+  "sh:in": [
+    ...
+  ]
+}
+```
+
+#### 3.4.3. Enumeration Members
+
+Enumeration members can also use `rdfs:label` and `rdfs:comment` to provide meta-data about them.
+
+Example:
+
+```json
+{
+  ...
+  "sh:in": [
+    {
+      "@id": "schema:Monday",
+      "rdfs:label": [
+        {
+          "@language": "en",
+          "@value": "Monday"
+        }
+      ],
+      "rdfs:comment": [
+        {
+          "@language": "en",
+          "@value": "The first day of the week."
+        }
+      ]
+    }
+  ]
+}
+```
