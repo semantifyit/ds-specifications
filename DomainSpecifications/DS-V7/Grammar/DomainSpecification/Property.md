@@ -143,25 +143,25 @@ In the following example the constraint `sh:disjoint` specifies that the propert
 ]
 ```
 
-### 3.3.1. sh:equals
+#### 3.3.1. sh:equals
 
 See [SHACL specification](https://www.w3.org/TR/shacl/#EqualsConstraintComponent).
 
 Specifies the condition that the set of all value nodes is equal to the set of objects of the triples that have the focus node as subject and the value of `sh:equals` as predicate. (The property shape having `sh:equals` must have the same values as the property shape with the `sh:path` specified with `sh:equals`).
 
-### 3.3.2. sh:disjoint
+#### 3.3.2. sh:disjoint
 
 See [SHACL specification](https://www.w3.org/TR/shacl/#DisjointConstraintComponent).
 
 Specifies the condition that the set of value nodes is disjoint with the set of objects of the triples that have the focus node as subject and the value of `sh:disjoint` as predicate. (The property shape having `sh:disjoint` must NOT have the same values as the property shape with the `sh:path` specified with `sh:disjoint`).
 
-### 3.3.3. sh:lessThan
+#### 3.3.3. sh:lessThan
 
 See [SHACL specification](https://www.w3.org/TR/shacl/#LessThanConstraintComponent).
 
 Specifies the condition that each value node is smaller than all the objects of the triples that have the focus node as subject and the value of `sh:lessThan` as predicate. (The property shape having `sh:lessThan` must have the values that are less than the property shape with the `sh:path` specified with `sh:lessThan`). The comparison should be possible for all data types except boolean and URL.
 
-### 3.3.4. sh:lessThanOrEquals
+#### 3.3.4. sh:lessThanOrEquals
 
 See [SHACL specification](https://www.w3.org/TR/shacl/#LessThanOrEqualsConstraintComponent).
 

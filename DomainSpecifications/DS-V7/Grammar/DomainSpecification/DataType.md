@@ -366,11 +366,11 @@ This constraint can only be used for language-tagged strings (data type is `rdf:
 }
 ```
 
-### 3.2.3. Other Constraint Components
+#### 3.2.3. Other Constraint Components
 
 See [SHACL specification](https://www.w3.org/TR/shacl/#core-components-others).
 
-#### 3.2.3.1. sh:in
+##### 3.2.3.1. sh:in
 
 See [SHACL specification](https://www.w3.org/TR/shacl/#InConstraintComponent).
 
@@ -396,7 +396,7 @@ Example:
 }
 ```
 
-### 3.2.3.2. sh:hasValue
+##### 3.2.3.2. sh:hasValue
 
 See [SHACL specification](https://www.w3.org/TR/shacl/#HasValueConstraintComponent).
 

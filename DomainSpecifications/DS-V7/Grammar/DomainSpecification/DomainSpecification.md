@@ -222,7 +222,7 @@ Example:
 
 ```json
 "ds:usedVocabulary": [
-"https://semantify.it/voc/KEl6e6F0U"
+  "https://semantify.it/voc/KEl6e6F0U"
 ]
 ```
 
@@ -238,28 +238,28 @@ Example:
 
 ```json
 "sh:property": [
-{
-"@type": "sh:PropertyShape",
-"sh:order": 0,
-"sh:path": "schema:identifier"
-"sh:maxCount": 1,
-"sh:or": [
-{
-"sh:datatype": "xsd:string",
-}
-]
-},
-{
-"@type": "sh:PropertyShape",
-"sh:order": 1,
-"sh:path": "schema:alternateName"
-"sh:maxCount": 1,
-"sh:or": [
-{
-"sh:datatype": "xsd:string",
-}
-]
-}
+  {
+    "@type": "sh:PropertyShape",
+    "sh:order": 0,
+    "sh:path": "schema:identifier"
+    "sh:maxCount": 1,
+    "sh:or": [
+      {
+        "sh:datatype": "xsd:string",
+      }
+    ]
+  },
+  {
+    "@type": "sh:PropertyShape",
+    "sh:order": 1,
+    "sh:path": "schema:alternateName"
+    "sh:maxCount": 1,
+    "sh:or": [
+      {
+        "sh:datatype": "xsd:string",
+      }
+    ]
+  }
 ]
 ```
 
@@ -316,14 +316,14 @@ Example:
 
 ```json
 "schema:name": [
-{
-"@language": "en",
-"@value": "My example DS"
-},
-{
-"@language": "es",
-"@value": "Mi ejemplo DS"
-}
+  {
+    "@language": "en",
+    "@value": "My example DS"
+  },
+  {
+    "@language": "es",
+    "@value": "Mi ejemplo DS"
+  }
 ]
 ```
 
@@ -335,14 +335,14 @@ Example:
 
 ```json
 "schema:description": [
-{
-"@language": "en",
-"@value": "Example DS for our application."
-},
-{
-"@language": "es",
-"@value": "Ejemplo DS para nuestra aplicacion."
-}
+  {
+    "@language": "en",
+    "@value": "Example DS for our application."
+  },
+  {
+    "@language": "es",
+    "@value": "Ejemplo DS para nuestra aplicacion."
+  }
 ]
 ```
 
@@ -355,12 +355,12 @@ Example:
 
 ```json
 "schema:author": [
-"@type": "schema:Person",
-"schema:name": "John Doe",
-"schema:memberOf": {
-"@type": "schema:Organisation",
-"schema:name": "Johns Company"
-}
+  "@type": "schema:Person",
+  "schema:name": "John Doe",
+  "schema:memberOf": {
+    "@type": "schema:Organisation",
+    "schema:name": "Johns Company"
+  }
 ]
 ```
 
@@ -415,7 +415,7 @@ constraints of a DS and its Super-DS (and recursively their Super-DS). For the v
 constraints are important. All these tools that read a DS assume that the `ds:subDSOf` link is valid (that the target DS
 exists and that the semantic rules are followed).
 
-#### 3.5.1.1. ds:propertyDisplayOrder
+##### 3.5.1.1. ds:propertyDisplayOrder
 
 `ds:propertyDisplayOrder` is used in the root node of a DS to provide a list of property IRIs that reflect the order of the properties for this DS, including those inherited from its Super-DS (this is important to display the populated version of the DS). If this property is used, it replaces the order given by `sh:order` (which is deprecated now) of the property nodes in question. Both terms can coexist (but it is recommended to use `ds:propertyDisplayOrder` instead of `sh:order`), e.g. `sh:order` is taken for the property order for the unpopulated version, and `ds:propertyDisplayOrder` is taken for the populated version.
 
@@ -546,7 +546,7 @@ The process of resolving constraints from external references and from the Super
 
 Examples for the population are provided in the examples file [Examples file](./../../Examples/README.md).
 
-#### 3.5.3.1. Populate a Super-DS
+##### 3.5.3.1. Populate a Super-DS
 
 Details about the semantics of `ds:subDSOf` are given in chapter **3.5.1.** of this document.
 
@@ -563,7 +563,7 @@ In order to populate the constraints defined in a Super-DS the following steps h
 * **Consolidate internal references:** If the Super-DS had additional NodeShapes in the `@graph`, those must also be taken over in the `@graph` of the Sub-DS.
 * Take into account that population is recursive. In order to populate a Super-DS into a Sub-DS, the Super-DS must be populated first (if it has its own Super-DS, and/or external references).
   
-#### 3.5.3.2. Populate external references
+##### 3.5.3.2. Populate external references
 
 Details about the semantics of references are given in chapter **3.5.2.** of this document.
 
