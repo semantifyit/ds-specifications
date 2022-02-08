@@ -24,6 +24,13 @@ A detailed listing of patches for this specification version can be found below 
 
 ## Patches
 
+* **[2022-01-07]**
+  * Added `rdfs:label` and `rdfs:comment` as options for all DS grammar node types to be able to express metadata, except for the DomainSpecification-node, since it already has `schema:name` and `schema:description` for this purpose. The corresponding grammar node pages have been updated.
+    * [Grammar/DomainSpecification/Class](./Grammar/DomainSpecification/Class.md).
+    * [Grammar/DomainSpecification/Enumeration](./Grammar/DomainSpecification/Enumeration.md).
+    * [Grammar/DomainSpecification/DataType](./Grammar/DomainSpecification/DataType.md).
+    * [Grammar/DomainSpecification/Property](./Grammar/DomainSpecification/Property.md).
+
 * **[2021-10-18]**
   * `ds:propertyDisplayOrder` is introduced as a new property for the DS root node and Class nodes. It replaces `sh:order` in property nodes, which is deprecated now. Details at [Grammar/DomainSpecification/DomainSpecification](./Grammar/DomainSpecification/DomainSpecification.md). A corresponding entry in the standard `@context` is added. 
   * [Examples](Examples/README.md) have been updated to use the new property instead of `sh:order`.
@@ -36,10 +43,4 @@ A detailed listing of patches for this specification version can be found below 
   * Removed chapter 3.3. about internal references from [Grammar/DomainSpecification/Class](./Grammar/DomainSpecification/Class.md).
   * All changes and details regarding internal and external references, Super-DS, and the resolving of these relations (population) have been added to chapter 3.5. of [Grammar/DomainSpecification/DomainSpecification](./Grammar/DomainSpecification/DomainSpecification.md).
   * Examples for the population process have been added to [Examples](Examples/README.md).
-
-* **[2022-01-07]**
-  * Added `rdfs:label` and `rdfs:comment` as options for all DS grammar node types to be able to express metadata, except for the DomainSpecification-node, since it already has `schema:name` and `schema:description` for this purpose. The corresponding grammar node pages have been updated.
-    * [Grammar/DomainSpecification/Class](./Grammar/DomainSpecification/Class.md).
-    * [Grammar/DomainSpecification/Enumeration](./Grammar/DomainSpecification/Enumeration.md).
-    * [Grammar/DomainSpecification/DataType](./Grammar/DomainSpecification/DataType.md).
-    * [Grammar/DomainSpecification/Property](./Grammar/DomainSpecification/Property.md).
+  
