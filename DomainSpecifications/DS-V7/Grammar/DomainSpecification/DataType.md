@@ -299,7 +299,7 @@ The value for this constraint must be an array of strings (each string is its ow
 
 The optional term `sh:flags` can be used to specify the regex flags used (value is a string) which are applied on ALL regex patterns given with `sh:pattern`. (Note: Each regex should have their own flags, unfortunately this mapping is not trivial with sh:pattern, sh:flags and the RDF-format. Therefore, we have decided to specify flags only one time for all regex patterns)
 
-The flags allowed for this constraint are derived from [SPARQL -> XQuery](https://www.w3.org/TR/xpath-functions/#flags) and adapted to the DS context: `s` for single-line, `m` for multi-line, `i` for case-insensitive. Any of these flags can be combined as a string and passed as the value for `sh:flags`, e.g. `"sh:flags": "si"`, `"sh:flags": "msi"`, or `"sh:flags": "i"`. If no flags should be passed, the constraint `sh:pattern `should not be used at all (instead of an empty string).
+The flags allowed for this constraint are derived from [SPARQL -> XQuery](https://www.w3.org/TR/xpath-functions/#flags) and adapted to the DS context: `s` for single-line, `m` for multi-line, `i` for case-insensitive. Any of these flags can be combined as a string and passed as the value for `sh:flags`, e.g. `"sh:flags": "si"`, `"sh:flags": "msi"`, or `"sh:flags": "i"`. If no flags should be passed, the constraint `sh:flags `should not be used at all (instead of an empty string).
 
 Example of a DataType Node as range for `schema:telephone`:
 
