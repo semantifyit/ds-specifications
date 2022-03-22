@@ -65,26 +65,26 @@ Domain Specifications make use of the [W3C XML Schema Definition Language (XSD) 
 
 The following table lists all possible terms that can be used by a Data Type Node. The order in the table reflects the recommended order of these terms within a Data Type Node (optional).
 
-| key | required | value type | description |  related error |
-| :---: | :---: | :---: | :--- | :---: |
-| `sh:datatype` | true | _IRI_ | The XSD-IRI representing the datatype the value must have. Below are the mapping functions between schema.org data types and XSD data types | Non-conform range |
-| `rdfs:label` | false | List of *Language tagged String* |  The label for this datatype |
-| `rdfs:comment` | false | List of *Language tagged String* |  The description for this datatype |
-| `sh:defaultValue` | false | _Literal_ | The standard value for this DataType (must be of the respective datatype). This is only a representational key-property (non-validating) |
+|         key          | required | value type | description                                                                                                                                   |  related error |
+|:--------------------:| :---: | :---: |:----------------------------------------------------------------------------------------------------------------------------------------------| :---: |
+|    `sh:datatype`     | true | _IRI_ | The XSD-IRI representing the datatype the value must have. Below are the mapping functions between schema.org data types and XSD data types   | Non-conform range |
+|     `rdfs:label`     | false | List of *Language tagged String* | The label for this datatype                                                                                                                   |
+|    `rdfs:comment`    | false | List of *Language tagged String* | The description for this datatype                                                                                                             |
+|  `sh:defaultValue`   | false | _Literal_ | The standard value for this DataType (must be of the respective datatype). This is only a representational key-property (non-validating)      |
 | `ds:defaultLanguage` | false | _Language-Tag_ | The standard language tag for this DataType (must be a language-tagged string). This is only a representational key-property (non-validating) |
-| `sh:minExclusive` | false | same as constrained Data Type | The minimum exclusive value that the value must have |  Non-conform sh:minExclusive |
-| `sh:minInclusive` | false | same as constrained Data Type | The minimum inclusive value that the value must have | Non-conform sh:minInclusive |
-| `sh:maxExclusive` | false | same as constrained Data Type |  The maximum exclusive value that the value must have | Non-conform sh:maxExclusive |
-| `sh:maxInclusive` | false | same as constrained Data Type |  The maximum inclusive value that the value must have | Non-conform sh:maxInclusive |
-| `sh:minLength` | false |  _Integer_ | The minimum allowed string length of a literal (String or URL) | Non-conform sh:minLength |
-| `sh:maxLength` | false |  _Integer_ | The maximum allowed string length of a literal (String or URL) |Non-conform sh:maxLength |
-| `sh:pattern` | false |  List of _Regex_ |  A regular expression that the literal must match (String or URL) | Non-conform sh:pattern |
-| `sh:flag` | false |  _string_ | Optional regex flags for sh:pattern | Non-conform sh:pattern |
-| `sh:languageIn` | false | List of _Language-Tag_ |  The literal must use a language tag given in the list of language tags | Non-conform sh:languageIn |
-| `ds:hasLanguage` | false | List of _Language-Tag_  | The property must use all language tags in the given list | Non-conform ds:hasLanguage |
-| `sh:uniqueLang` | false | _Boolean_ | The property must not use the same language tag more than one time | Non-conform sh:uniqueLang |
-| `sh:in` | false | same as constrained Data Type | Specifies the condition that each value node is a member of a provided list | Non-conform sh:in |
-| `sh:hasValue ` | false | List of _same as constrained Data Type_ | Specifies the condition that at least one value node is equal to the given value | Non-conform sh:hasValue |
+|  `sh:minExclusive`   | false | same as constrained Data Type | The minimum exclusive value that the value must have                                                                                          |  Non-conform sh:minExclusive |
+|  `sh:minInclusive`   | false | same as constrained Data Type | The minimum inclusive value that the value must have                                                                                          | Non-conform sh:minInclusive |
+|  `sh:maxExclusive`   | false | same as constrained Data Type | The maximum exclusive value that the value must have                                                                                          | Non-conform sh:maxExclusive |
+|  `sh:maxInclusive`   | false | same as constrained Data Type | The maximum inclusive value that the value must have                                                                                          | Non-conform sh:maxInclusive |
+|    `sh:minLength`    | false |  _Integer_ | The minimum allowed string length of a literal (String or URL)                                                                                | Non-conform sh:minLength |
+|    `sh:maxLength`    | false |  _Integer_ | The maximum allowed string length of a literal (String or URL)                                                                                |Non-conform sh:maxLength |
+|     `sh:pattern`     | false |  List of _Regex_ | An array of regular expressions that the literal must match (String or URL)                                                                   | Non-conform sh:pattern |
+|      `sh:flags`      | false |  _string_ | Optional regex flags for all Regex in `sh:pattern`                                                                                              | Non-conform sh:pattern |
+|   `sh:languageIn`    | false | List of _Language-Tag_ | The literal must use a language tag given in the list of language tags                                                                        | Non-conform sh:languageIn |
+|   `ds:hasLanguage`   | false | List of _Language-Tag_  | The property must use all language tags in the given list                                                                                     | Non-conform ds:hasLanguage |
+|   `sh:uniqueLang`    | false | _Boolean_ | The property must not use the same language tag more than one time                                                                            | Non-conform sh:uniqueLang |
+|       `sh:in`        | false | same as constrained Data Type | Specifies the condition that each value node is a member of a provided list                                                                   | Non-conform sh:in |
+|    `sh:hasValue `    | false | List of _same as constrained Data Type_ | Specifies the condition that at least one value node is equal to the given value                                                              | Non-conform sh:hasValue |
 
 ## 3. Semantics
 
@@ -289,15 +289,17 @@ Example:
 }
 ```
 
-##### 3.2.2.3. sh:pattern
+##### 3.2.2.3. sh:pattern & sh:flags
 
 See [SHACL specification](https://www.w3.org/TR/shacl/#PatternConstraintComponent).
 
 `sh:pattern` specifies regular expressions that each literal (string or URL) must match.
 
-The value(s) for this constraint must be a string.
+The value for this constraint must be an array of strings (each string is its own regex), even if there is only one string inside. Expect the [JavaScript Regex Engine](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#writing_a_regular_expression_pattern) when it comes to writing patterns.
 
-The optional term `sh:flags` can be used to specify the regex flags used (value is a string).
+The optional term `sh:flags` can be used to specify the regex flags used (value is a string) which are applied on ALL regex patterns given with `sh:pattern`. (Note: Each regex should have their own flags, unfortunately this mapping is not trivial with sh:pattern, sh:flags and the RDF-format. Therefore, we have decided to specify flags only one time for all regex patterns)
+
+The flags allowed for this constraint are derived from [SPARQL -> XQuery](https://www.w3.org/TR/xpath-functions/#flags) and adapted to the DS context: `s` for single-line, `m` for multi-line, `i` for case-insensitive. Any of these flags can be combined as a string and passed as the value for `sh:flags`, e.g. `"sh:flags": "si"`, `"sh:flags": "msi"`, or `"sh:flags": "i"`. If no flags should be passed, the constraint `sh:pattern `should not be used at all (instead of an empty string).
 
 Example of a DataType Node as range for `schema:telephone`:
 
@@ -307,7 +309,7 @@ Example of a DataType Node as range for `schema:telephone`:
   "sh:pattern": [
     "^\\s*\\+?\\s*([0-9][\\s-]*){9,}$"
   ],
-  "sh:flag": "i"
+  "sh:flags": "is"
 }        
 ```
 
