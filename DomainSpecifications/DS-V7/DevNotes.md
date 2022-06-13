@@ -29,6 +29,7 @@ See the following list of example terms that should have this behaviour (any ter
 * sh:targetClass
 * sh:class
 * ds:usedVocabulary
+* ds:defaultLanguage
 * sh:property
 * schema:name
 * schema:description

@@ -65,26 +65,26 @@ Domain Specifications make use of the [W3C XML Schema Definition Language (XSD) 
 
 The following table lists all possible terms that can be used by a Data Type Node. The order in the table reflects the recommended order of these terms within a Data Type Node (optional).
 
-|         key          | required | value type | description                                                                                                                                   |  related error |
-|:--------------------:| :---: | :---: |:----------------------------------------------------------------------------------------------------------------------------------------------| :---: |
-|    `sh:datatype`     | true | _IRI_ | The XSD-IRI representing the datatype the value must have. Below are the mapping functions between schema.org data types and XSD data types   | Non-conform range |
-|     `rdfs:label`     | false | List of *Language tagged String* | The label for this datatype                                                                                                                   |
-|    `rdfs:comment`    | false | List of *Language tagged String* | The description for this datatype                                                                                                             |
-|  `sh:defaultValue`   | false | _Literal_ | The standard value for this DataType (must be of the respective datatype). This is only a representational key-property (non-validating)      |
-| `ds:defaultLanguage` | false | _Language-Tag_ | The standard language tag for this DataType (must be a language-tagged string). This is only a representational key-property (non-validating) |
-|  `sh:minExclusive`   | false | same as constrained Data Type | The minimum exclusive value that the value must have                                                                                          |  Non-conform sh:minExclusive |
-|  `sh:minInclusive`   | false | same as constrained Data Type | The minimum inclusive value that the value must have                                                                                          | Non-conform sh:minInclusive |
-|  `sh:maxExclusive`   | false | same as constrained Data Type | The maximum exclusive value that the value must have                                                                                          | Non-conform sh:maxExclusive |
-|  `sh:maxInclusive`   | false | same as constrained Data Type | The maximum inclusive value that the value must have                                                                                          | Non-conform sh:maxInclusive |
-|    `sh:minLength`    | false |  _Integer_ | The minimum allowed string length of a literal (String or URL)                                                                                | Non-conform sh:minLength |
-|    `sh:maxLength`    | false |  _Integer_ | The maximum allowed string length of a literal (String or URL)                                                                                |Non-conform sh:maxLength |
-|     `sh:pattern`     | false |  List of _Regex_ | An array of regular expressions that the literal must match (String or URL)                                                                   | Non-conform sh:pattern |
-|      `sh:flags`      | false |  _string_ | Optional regex flags for all Regex in `sh:pattern`                                                                                              | Non-conform sh:pattern |
-|   `sh:languageIn`    | false | List of _Language-Tag_ | The literal must use a language tag given in the list of language tags                                                                        | Non-conform sh:languageIn |
-|   `ds:hasLanguage`   | false | List of _Language-Tag_  | The property must use all language tags in the given list                                                                                     | Non-conform ds:hasLanguage |
-|   `sh:uniqueLang`    | false | _Boolean_ | The property must not use the same language tag more than one time                                                                            | Non-conform sh:uniqueLang |
-|       `sh:in`        | false | same as constrained Data Type | Specifies the condition that each value node is a member of a provided list                                                                   | Non-conform sh:in |
-|    `sh:hasValue `    | false | List of _same as constrained Data Type_ | Specifies the condition that at least one value node is equal to the given value                                                              | Non-conform sh:hasValue |
+|         key          | required |               value type                | description                                                                                                                                      |  related error |
+|:--------------------:| :---: |:---------------------------------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------| :---: |
+|    `sh:datatype`     | true |                  _IRI_                  | The XSD-IRI representing the datatype the value must have. Below are the mapping functions between schema.org data types and XSD data types      | Non-conform range |
+|     `rdfs:label`     | false |    List of *Language tagged String*     | The label for this datatype                                                                                                                      |
+|    `rdfs:comment`    | false |    List of *Language tagged String*     | The description for this datatype                                                                                                                |
+|  `sh:defaultValue`   | false |                _Literal_                | The standard value for this DataType (must be of the respective datatype). This is only a representational key-property (non-validating)         |
+| `ds:defaultLanguage` | false |         List of _Language-Tag_          | The standard language tag(s) for this DataType (must be a language-tagged string). This is only a representational key-property (non-validating) |
+|  `sh:minExclusive`   | false |      same as constrained Data Type      | The minimum exclusive value that the value must have                                                                                             |  Non-conform sh:minExclusive |
+|  `sh:minInclusive`   | false |      same as constrained Data Type      | The minimum inclusive value that the value must have                                                                                             | Non-conform sh:minInclusive |
+|  `sh:maxExclusive`   | false |      same as constrained Data Type      | The maximum exclusive value that the value must have                                                                                             | Non-conform sh:maxExclusive |
+|  `sh:maxInclusive`   | false |      same as constrained Data Type      | The maximum inclusive value that the value must have                                                                                             | Non-conform sh:maxInclusive |
+|    `sh:minLength`    | false |                _Integer_                | The minimum allowed string length of a literal (String or URL)                                                                                   | Non-conform sh:minLength |
+|    `sh:maxLength`    | false |                _Integer_                | The maximum allowed string length of a literal (String or URL)                                                                                   |Non-conform sh:maxLength |
+|     `sh:pattern`     | false |             List of _Regex_             | An array of regular expressions that the literal must match (String or URL)                                                                      | Non-conform sh:pattern |
+|      `sh:flags`      | false |                _string_                 | Optional regex flags for all Regex in `sh:pattern`                                                                                               | Non-conform sh:pattern |
+|   `sh:languageIn`    | false |         List of _Language-Tag_          | The literal must use a language tag given in the list of language tags                                                                           | Non-conform sh:languageIn |
+|   `ds:hasLanguage`   | false |         List of _Language-Tag_          | The property must use all language tags in the given list                                                                                        | Non-conform ds:hasLanguage |
+|   `sh:uniqueLang`    | false |                _Boolean_                | The property must not use the same language tag more than one time                                                                               | Non-conform sh:uniqueLang |
+|       `sh:in`        | false |      same as constrained Data Type      | Specifies the condition that each value node is a member of a provided list                                                                      | Non-conform sh:in |
+|    `sh:hasValue `    | false | List of _same as constrained Data Type_ | Specifies the condition that at least one value node is equal to the given value                                                                 | Non-conform sh:hasValue |
 
 ## 3. Semantics
 
@@ -449,7 +449,7 @@ The default value must have the respective datatype.
 
 #### 3.3.2. ds:defaultLanguage
 
-`ds:defaultLanguage` defines the standard language tag for a given DataType node with `"sh:datatype": "rdf:langString"`.
+`ds:defaultLanguage` defines the standard language tag(s) for a given DataType node with `"sh:datatype": "rdf:langString"`. An array is always used, even if there is only one default language tag.
 
 The default language must be a valid [language tag](https://tools.ietf.org/html/bcp47).
 
@@ -457,7 +457,13 @@ The default language must be a valid [language tag](https://tools.ietf.org/html/
 {
   "sh:datatype": "rdf:langString",
   "sh:defaultValue": "Vienna",
-  "ds:defaultLanguage": "en"
+  "ds:defaultLanguage": ["en"]
+}
+```
+```JSON
+{
+  "sh:datatype": "rdf:langString",
+  "ds:defaultLanguage": ["de","it","en"]
 }
 ```
 

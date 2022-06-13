@@ -24,6 +24,9 @@ A detailed listing of patches for this specification version can be found below 
 
 ## Patches
 
+* **[2022-06-13]**
+  * The range for `ds:defaultLanguage` has been changed from a string to an array of strings. This means multiple languages can be defined as "default". See [Grammar/DomainSpecification/DataType](./Grammar/DomainSpecification/DataType.md) for details.
+
 * **[2022-03-22]**
   * Adapted chapter **3.2.2.3. sh:pattern & sh:flags** in [Grammar/DomainSpecification/DataType](./Grammar/DomainSpecification/DataType.md): `sh:flags` has been corrected in all occurrences (was `sh:flag` sometimes). Details about the use and syntax of `sh:pattern` and `sh:flags` have been added.
 

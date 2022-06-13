@@ -410,7 +410,7 @@ In this example, the property `description` must have at least 2 string values, 
 
 ### 2.4. ds:defaultLanguage
 
-The new term `ds:defaultLanguage` specifies a default language tag for a Datatype node with `"sh:datatype": "rdf:langString"`. This term does not have any effects on the verification result but has only informational character.
+The new term `ds:defaultLanguage` specifies default language tags for a Datatype node with `"sh:datatype": "rdf:langString"`. This term does not have any effects on the verification result but has only informational character.
 
 Example in a Property node:
 
@@ -421,7 +421,9 @@ Example in a Property node:
   "sh:or": [
     {
       "sh:datatype": "rdf:langString",
-      "ds:defaultLanguage": "en"
+      "ds:defaultLanguage": [
+        "en"
+      ]
     }
   ]
 }
